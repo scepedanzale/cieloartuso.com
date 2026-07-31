@@ -1,68 +1,154 @@
 ---
 title: "Perché ho rifatto il mio sito"
-displayTitle: "Perché ho rifatto <br> <em>il mio sito</em>"
-description: "Una riflessione sul redesign del mio sito personale, tra identità visiva, portfolio e blog."
+description: "Una riflessione sul redesign del mio sito personale, tra servizi, portfolio, identità visiva e blog."
 date: 2026-05-12
-cover: "/images/blog/perche-ho-rifatto-il-mio-sito.jpg"
-readingTime: 4
-tag: "progetti"
+cover: "/images/blog/perche-ho-rifatto-il-mio-sito.webp"
+readingTime: 5
+tag: "siti web"
 draft: false
 ---
 
-
 Da mesi il mio sito non mi convinceva più.
-Non era brutto o rotto, semplicemente non mi rappresentava. Era un oggetto appoggiato lì sullo scaffale più alto, dimenticato.
-Era solo un sito online senza una direzione.
 
-Il problema era che non gli avevo dato uno scopo.
+Non era brutto o rotto, semplicemente non mi rappresentava davvero. Era online, funzionava, mostrava alcuni progetti, ma sembrava più un contenitore che uno spazio pensato con uno scopo preciso.
 
-Un **sito web personale** non dovrebbe essere soltanto una pagina in cui ammucchiare qualche informazione e stilare una smilza lista di progetti. Dovrebbe raccontare qualcosa: un modo di lavorare, un approccio, una visione d’insieme; dovrebbe far capire non soltanto chi, ma anche come.
+Il problema era proprio questo: **non gli avevo dato una direzione**.
 
-E il mio vecchio sito questo non lo faceva.  
-Quindi ho deciso di riprogettarlo da zero rispondendo a una domanda: cosa voglio che trasmetta?
+Un sito web personale non dovrebbe essere soltanto una pagina in cui raccogliere qualche informazione e una lista di lavori. Dovrebbe spiegare cosa fai, per chi lo fai e in che modo lavori.
 
-Ho capito che oltre a essere il mio **portfolio** di lavori, volevo trasmettere e lasciare qualcosa. Non volevo creare un sito pieno di cose, non è affatto il mio stile, ma nemmeno creare una vetrina rigida e troppo fredda.  
-Volevo uno spazio essenziale, pulito ma allo stesso tempo personale. Un portfolio in cui mostrare i miei progetti, raccontare il mio **metodo di lavoro** e le scelte che faccio.
+Il mio vecchio sito questo non lo faceva abbastanza.
 
+Così ho deciso di riprogettarlo da zero partendo da una domanda semplice:
+
+**cosa voglio che capisca una persona quando arriva qui?**
+
+La risposta, alla fine, è diventata la struttura stessa del sito.
+
+Volevo che fosse chiaro cosa faccio, quali servizi offro, che tipo di progetti realizzo e quale approccio seguo.
+
+Allo stesso tempo, non volevo trasformarlo in una vetrina troppo commerciale o impersonale.
+
+Cercavo uno spazio essenziale e ordinato, ma anche riconoscibile e personale.
+
+## Una homepage che racconta di più
+
+La homepage è stata una delle parti che ho ripensato maggiormente.
+
+Nella versione precedente aveva soprattutto il compito di presentarmi e mostrare alcuni progetti.
+
+Oggi invece funziona più come una panoramica di tutto il sito.
+
+Chi arriva può capire rapidamente chi sono, di cosa mi occupo, quali servizi offro, vedere alcuni lavori e approfondire le sezioni che gli interessano.
+
+Ho cercato di evitare una homepage troppo piena, ma allo stesso tempo non volevo più che fosse soltanto un'introduzione molto breve.
+
+L'obiettivo era trovare un equilibrio: dare abbastanza informazioni per orientarsi, senza raccontare tutto nella prima schermata.
+
+## Dare più spazio ai servizi
+
+Uno dei cambiamenti più importanti è stato separare meglio i diversi tipi di lavoro che posso offrire.
+
+Prima il sito raccontava soprattutto i progetti realizzati.
+
+Ora ho aggiunto pagine dedicate ai principali servizi:
+
+* rifacimento di siti web;
+* siti web su misura;
+* web app e gestionali;
+* manutenzione di siti web.
+
+Questa scelta non serve soltanto a presentare meglio quello che faccio.
+
+Mi permette anche di spiegare le differenze tra servizi che, visti dall'esterno, possono sembrare molto simili.
+
+Un restyling di un sito esistente, ad esempio, parte da esigenze molto diverse rispetto alla progettazione di un sito completamente nuovo.
+
+Allo stesso modo, una web app non ha gli stessi obiettivi di un sito vetrina.
+
+Avere pagine separate mi permette di raccontare meglio problemi, esigenze, funzionalità e modalità di lavoro senza comprimere tutto dentro poche righe.
 
 ## Ripartire dai progetti
-La prima cosa a cui ho lavorato è stata la homepage: volevo che, oltre al mio nome, si vedessero subito i miei lavori.
 
-Ho sviluppato quindi una griglia visiva ordinata che dà respiro a ogni progetto e rende la navigazione immediata. Ogni lavoro racchiude una storia diversa: restyling, soluzioni più tecniche e funzionalità create ad hoc per semplificare la gestione dei contenuti.
+Il portfolio rimane comunque una parte centrale del sito.
 
-Volevo dare spazio a ogni progetto senza costringere chi visita il sito a cercare troppe informazioni.
+Volevo che i lavori fossero facili da trovare e che avessero abbastanza spazio per essere osservati senza essere nascosti dentro pagine troppo dense.
 
-## Un’identità visiva più coerente
-La riprogettazione del sito mi ha costretto anche a ragionare meglio sulla mia **identità visiva**, cosa essenziale per qualsiasi sito web.
+Ogni progetto nasce da esigenze differenti: alcuni sono restyling, altri partono completamente da zero, altri ancora comprendono funzionalità più tecniche o strumenti creati per semplificare la gestione dei contenuti.
+
+Per questo non volevo limitarmi a mostrare una serie di screenshot.
+
+Le pagine dei singoli progetti mi permettono di raccontare meglio il contesto, il problema iniziale e il tipo di intervento che ho realizzato.
+
+In questo modo il portfolio non è soltanto una raccolta di lavori, ma anche un modo per mostrare concretamente il mio approccio.
+
+## Un'identità visiva più coerente
+
+La riprogettazione del sito mi ha costretto anche a ragionare meglio sulla mia **identità visiva**.
 
 Come volevo essere rappresentato?
 
-Volevo qualcosa di minimale, ma non freddo e anonimo. Ho scelto quindi una palette molto essenziale, con colori chiari e contrasto leggero, e ho dato molto spazio agli elementi in modo da guidare l’occhio del visitatore.
+Cercavo qualcosa di minimale, ma non freddo o anonimo.
 
-Come colore di accento, a rompere questa neutralità, ho scelto un rosso mattone: non è invadente, ma aggiunge carattere e un senso di calore ai dettagli.
+Ho scelto quindi una palette essenziale, con colori chiari, contrasti delicati e molto spazio tra gli elementi.
 
-La tipografia segue la stessa logica: font semplici, leggeri e leggibili. Ho creato un mix tra tono pulito e tono più tecnico, per avere un’interfaccia che comunichi sia umanità che sviluppo.
+Come colore di accento ho mantenuto un tono mattone, abbastanza presente da dare carattere all'interfaccia ma senza diventare dominante.
+
+Anche la tipografia segue la stessa logica: semplice, leggera e leggibile.
+
+L'obiettivo non era creare qualcosa di particolarmente appariscente, ma un sistema visivo coerente che lasciasse spazio ai contenuti e ai progetti.
+
+## Un sito pensato anche per spiegare
+
+Con il tempo ho capito che il sito non doveva servire soltanto a mostrare ciò che realizzo.
+
+Volevo anche che aiutasse chi arriva a capire meglio alcune scelte e alcuni concetti legati al web.
+
+Quando si cerca un professionista per realizzare o rifare un sito, infatti, ci si trova facilmente davanti a termini come dominio, hosting, SEO, manutenzione, responsive design o CMS.
+
+Per chi lavora nel settore sono parole normali.
+
+Per chi deve semplicemente creare il sito della propria attività, non sempre lo sono.
+
+Per questo alcune pagine del sito cercano di spiegare non soltanto **cosa posso fare**, ma anche **perché può essere utile** e quali problemi può risolvere.
+
+È un approccio che sto portando anche nel blog.
 
 ## Perché aprire un blog
-Verso la fine dello sviluppo ho capito che non mi bastava solo “mostrare cose belle”. Volevo lasciare qualcosa al visitatore, avere uno spazio più libero per comunicare e raccontare meglio il mio modo di lavorare.
 
-Il portfolio mostra tanto, ma non mi permette sempre di spiegare a fondo alcune scelte fatte: perché una pagina è costruita in un certo modo, perché ho scelto una determinata struttura, cosa c’è dietro a un dettaglio grafico o tecnico.
+Verso la fine dello sviluppo ho capito che non mi bastava mostrare progetti e servizi.
 
-Ho deciso quindi di implementare anche questa sezione: il blog.
+Volevo avere uno spazio più libero in cui approfondire argomenti che nelle pagine principali avrebbero avuto poco spazio.
 
-Il primo motivo è legato al mio lavoro. Volevo uno spazio in cui approfondire alcune scelte che faccio nei miei progetti: web design, sviluppo web, dettagli tecnici, struttura dei contenuti e scelte progettuali.
+Il portfolio mostra il risultato finale, ma non permette sempre di spiegare perché una pagina è strutturata in un certo modo, quali compromessi sono stati fatti o cosa c'è dietro a una determinata scelta tecnica.
 
-Non sarà un blog pensato per inseguire argomenti generici, ma un archivio di appunti e riflessioni legate al modo in cui costruisco **siti web e applicazioni**.
+Il blog nasce quindi da due esigenze.
 
-Il secondo motivo, invece, è più divulgativo. Vorrei usare questo spazio anche per rendere più comprensibili alcuni concetti legati al web e allo sviluppo, soprattutto per chi non lavora in questo settore e non ha familiarità con certi termini o ragionamenti.
+La prima è raccontare meglio il mio lavoro.
 
-L’idea è parlare di web e sviluppo software con un linguaggio semplice e accessibile: da una parte per raccontare meglio il mio metodo, dall’altra per aiutare chi non conosce questo mondo a orientarsi con più consapevolezza.
+Qui posso parlare di sviluppo web, progettazione, restyling, manutenzione, performance e delle decisioni che prendo durante i progetti.
 
-## Punto di inizio
-Probabilmente questo sito continuerà a cambiare. Aggiungerò nuovi progetti, nuovi articoli, nuove sezioni o piccoli dettagli che oggi magari non ho ancora previsto.
+La seconda è più divulgativa.
 
-Però, rispetto alla versione precedente, ora ha uno scopo più chiaro.
+Vorrei utilizzare questo spazio anche per rendere più comprensibili alcuni concetti legati al web e allo sviluppo, soprattutto per chi non lavora in questo settore.
 
-È uno spazio per raccogliere il mio lavoro, raccontare meglio cosa faccio e costruire una presenza online più coerente con il modo in cui voglio lavorare.
+L'idea è spiegare argomenti tecnici con un linguaggio semplice, senza dare per scontato che chi legge sappia già cosa siano un dominio, un server o un DNS.
 
-Un sito personale non deve per forza dire tutto subito, ma deve almeno iniziare a dire qualcosa di vero.
+Non sarà quindi un blog pensato per inseguire continuamente nuovi argomenti, ma un archivio di guide, appunti e riflessioni che possano avere senso anche nel tempo.
+
+## Un sito che può continuare a crescere
+
+Una delle cose che volevo evitare era creare nuovamente un sito destinato a rimanere immobile.
+
+La struttura attuale mi permette invece di aggiungere nuovi progetti, articoli e contenuti senza dover ripensare ogni volta tutto da capo.
+
+Probabilmente continuerà a cambiare.
+
+Cambieranno i lavori che realizzo, il mio modo di progettare e forse anche alcuni servizi.
+
+Ma oggi il sito ha finalmente una direzione più chiara.
+
+Non è più soltanto un portfolio.
+
+È uno spazio in cui posso mostrare il mio lavoro, spiegare cosa faccio, raccontare come lo faccio e condividere quello che imparo lungo il percorso.
+
+Ed è probabilmente questa la differenza più importante rispetto alla versione precedente.

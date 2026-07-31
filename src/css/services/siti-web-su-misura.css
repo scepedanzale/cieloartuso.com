@@ -1,0 +1,512 @@
+
+
+
+/* 02. SOLUZIONI */
+.service-page--custom .web-solutions .button--secondary{
+    color: var(--color-on-dark);
+}
+.service-page--custom .web-solutions {
+    color: var(--color-on-dark);
+    background-color: var(--color-section-dark);
+}
+
+.service-page--custom .web-solutions__heading {
+    max-width: 720px;
+    margin-bottom: 60px;
+}
+
+.service-page--custom .web-solutions__heading .eyebrow {
+    color: var(--color-accent);
+}
+
+.service-page--custom .web-solutions__heading > p:last-child {
+    color: var(--color-on-dark-muted);
+}
+
+.service-page--custom .web-solutions__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.service-page--custom .solution-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: clamp(30px, 4vw, 55px);
+    border: 1px solid rgba(244, 243, 243, 0.3);
+}
+
+.service-page--custom .solution-card--featured {
+    border-color: var(--color-accent);
+    background-color: rgba(137, 79, 48, 0.08);
+}
+
+.service-page--custom .solution-card__badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 9px 14px;
+    color: var(--color-on-dark);
+    background-color: var(--color-accent);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.service-page--custom .solution-card__top {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.service-page--custom .solution-card__label {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 14px;
+}
+
+.service-page--custom .solution-card h3 {
+    margin-bottom: 18px;
+    font-size: clamp(30px, 4vw, 46px);
+}
+
+.service-page--custom .solution-card__description {
+    max-width: 540px;
+    color: var(--color-on-dark-muted);
+}
+
+.service-page--custom .solution-card__price {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0;
+    padding: 25px 0;
+    border-top: 1px solid rgba(244, 243, 243, 0.2);
+    border-bottom: 1px solid rgba(244, 243, 243, 0.2);
+}
+
+.service-page--custom .solution-card__price span {
+    color: var(--color-muted);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.service-page--custom .solution-card__price strong {
+    margin-top: 5px;
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1;
+}
+
+.service-page--custom .solution-card__ideal {
+    flex: 1;
+    margin-bottom: 35px;
+}
+
+.service-page--custom .solution-card__ideal h4 {
+    margin-bottom: 18px;
+}
+
+.service-page--custom .solution-card__ideal ul {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.service-page--custom .solution-card__ideal li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--color-on-dark-muted);
+}
+
+.service-page--custom .solution-card__ideal li .icon,
+.service-page--custom .solution-card__ideal li svg {
+    width: 20px;
+    min-width: 20px;
+    color: var(--color-accent);
+}
+
+/* 03. COME SCEGLIERE */
+.service-page--custom .solution-choice .container {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.25fr);
+    gap: clamp(60px, 9vw, 140px);
+}
+
+.service-page--custom .solution-choice__intro p:last-of-type {
+    margin-bottom: 25px;
+}
+
+.service-page--custom .solution-choice__intro img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.service-page--custom .solution-choice__list {
+    border-top: 1px solid var(--color-border);
+}
+
+.service-page--custom .solution-choice__item {
+    display: grid;
+    grid-template-columns: 50px minmax(0, 1fr);
+    gap: 25px;
+    padding: 35px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.service-page--custom .solution-choice__item > span {
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+.service-page--custom .solution-choice__item h3 {
+    margin-bottom: 10px;
+}
+
+.service-page--custom .solution-choice__item p {
+    margin-bottom: 0;
+    font-size: 17px;
+    color: var(--color-muted);
+}
+
+/* 04. SOSTENIBILITÀ */
+.service-page--custom .sustainability-preview .container {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-soft);
+}
+
+.service-page--custom .sustainability-preview__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    border: 1px solid var(--color-bg);
+    color: var(--color-on-dark);
+}
+
+.service-page--custom .sustainability-preview__icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.service-page--custom .sustainability-preview__content {
+    max-width: 720px;
+}
+
+.service-page--custom .sustainability-preview__content .eyebrow {
+    margin-bottom: 10px;
+    color: var(--color-on-dark);
+}
+
+.service-page--custom .sustainability-preview__content h2 {
+    max-width: 650px;
+    margin-bottom: 15px;
+    color: var(--color-on-dark);
+    font-size: clamp(26px, 3vw, 38px);
+}
+
+.service-page--custom .sustainability-preview__content > p:last-child {
+    max-width: 680px;
+    margin: 0;
+    color: var(--color-on-dark);
+}
+
+.service-page--custom .sustainability-preview__action {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.service-page--custom .sustainability-preview__action .button:hover {
+    border-color: var(--color-text);
+    color: var(--color-text);
+}
+
+/* 05. COSA COMPRENDE */
+.service-page--custom .project-includes {
+    background-color: var(--color-bg-dark);
+}
+
+.service-page--custom .project-includes__header {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.service-page--custom .project-includes__header p:last-of-type {
+    max-width: 720px;
+    margin: auto;
+}
+
+.service-page--custom .project-includes__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+}
+
+.service-page--custom .project-includes__grid article {
+    min-height: 270px;
+    padding: 35px;
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.service-page--custom .project-includes__grid article .icon {
+    display: inline-block;
+    width: 50px;
+    max-width: 50px;
+    margin-bottom: 40px;
+    color: var(--color-accent);
+}
+
+.service-page--custom .project-includes__grid h3 {
+    margin-bottom: 12px;
+}
+
+.service-page--custom .project-includes__grid p {
+    margin-bottom: 0;
+    font-size: 17px;
+    color: var(--color-muted);
+}
+
+
+
+
+/* 07. PROCESSO */
+.service-page--custom .custom-process{
+    background-color: var(--color-bg-dark);
+}
+.service-page--custom .custom-process .container {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.25fr);
+    align-items: start;
+    gap: clamp(60px, 9vw, 140px);
+}
+
+.service-page--custom .custom-process__heading {
+    position: sticky;
+    top: 120px;
+}
+
+.service-page--custom .custom-process__steps {
+    list-style: none;
+    border-top: 1px solid var(--color-border);
+}
+
+.service-page--custom .custom-process__steps li {
+    display: grid;
+    grid-template-columns: 60px minmax(0, 1fr);
+    gap: 25px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.service-page--custom .custom-process__steps li > span {
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+.service-page--custom .custom-process__steps h3 {
+    margin-bottom: 8px;
+}
+
+.service-page--custom .custom-process__steps p {
+    margin-bottom: 0;
+    font-size: 17px;
+    color: var(--color-muted);
+}
+
+
+
+/* =========================================================
+   RESPONSIVE CONDIVISO + PAGINA SITI WEB SU MISURA
+========================================================= */
+
+@media (max-width: 900px) {
+    /* Condiviso */
+    .service-page .per-chi .container,
+    .service-page .perchè .container,
+    .service-page .cosa-include .container {
+        grid-template-columns: 1fr;
+    }
+
+    .service-page .perchè ul {
+        margin: 30px 0 0;
+    }
+
+    /* Pagina su misura */
+    .service-page--custom .service-hero__grid,
+    .service-page--custom .solution-choice .container,
+    .service-page--custom .custom-process .container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .service-page--custom .service-hero__features {
+        max-width: 600px;
+    }
+
+    .service-page--custom .web-solutions__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-page--custom .sustainability-preview .container {
+        grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    .service-page--custom .sustainability-preview__action {
+        grid-column: 2;
+        justify-content: flex-start;
+    }
+
+    .service-page--custom .project-includes__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .service-page--custom .project-cta .container,
+    .service-page--custom .service-alternative .container {
+        grid-template-columns: 1fr;
+        align-items: start;
+        gap: 35px;
+    }
+
+    .service-page--custom .custom-process__heading {
+        position: static;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Condiviso */
+    .service-page .per-chi .container > div,
+    .service-page .cosa-include__box {
+        padding: 25px;
+    }
+
+    .service-page .perchè ul li {
+        gap: 14px;
+        padding: 16px 12px;
+    }
+
+    .service-page .cosa-include ul {
+        margin-left: 0;
+    }
+
+    .service-page .dove-iniziare .container {
+        padding: 45px 20px;
+    }
+
+    /* Pagina su misura */
+    .service-page--custom .service-hero {
+        padding-bottom: 70px;
+    }
+
+    .service-page--custom .service-hero__grid {
+        margin-top: 40px;
+        gap: 40px;
+    }
+
+    .service-page--custom .service-hero__feature {
+        margin-bottom: 20px;
+    }
+
+    .service-page--custom .service-hero__feature:not(:last-child) {
+        padding-bottom: 20px;
+    }
+
+    .service-page--custom .web-solutions,
+    .service-page--custom .solution-choice,
+    .service-page--custom .project-includes,
+    .service-page--custom .custom-process {
+        padding: 75px 0;
+    }
+
+    .service-page--custom .solution-card {
+        padding: 30px 22px;
+    }
+
+    .service-page--custom .solution-card__badge {
+        position: static;
+        align-self: flex-start;
+        margin: -30px -22px 30px auto;
+    }
+
+    .service-page--custom .solution-card__top {
+        margin-bottom: 35px;
+    }
+
+    .service-page--custom .solution-choice__item,
+    .service-page--custom .custom-process__steps li {
+        grid-template-columns: 36px minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .service-page--custom .sustainability-preview {
+        padding: 50px 0;
+    }
+
+    .service-page--custom .sustainability-preview .container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 30px 24px;
+    }
+
+    .service-page--custom .sustainability-preview__icon {
+        width: 58px;
+        height: 58px;
+    }
+
+    .service-page--custom .sustainability-preview__action {
+        grid-column: auto;
+    }
+
+    .service-page--custom .project-includes__header {
+        margin-bottom: 40px;
+    }
+
+    .service-page--custom .project-includes__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-page--custom .project-includes__grid article {
+        min-height: auto;
+        padding: 28px 24px;
+    }
+
+    .service-page--custom .project-includes__grid article .icon {
+        margin-bottom: 30px;
+    }
+
+    .service-page--custom .project-cta {
+        padding: 60px 0;
+    }
+
+    .service-page--custom .service-alternative .container {
+        padding: 30px 24px;
+    }
+
+    .service-page--custom .service-alternative h2 {
+        font-size: clamp(1.6rem, 8vw, 2rem);
+    }
+}
+
+
+/* Correzioni specifiche dark mode */
+html[data-theme="dark"] .service-page--custom .project-includes {
+    background-color: var(--color-bg-dark);
+}
+
+html[data-theme="dark"] .service-page--custom .sustainability-preview .container {
+    background-color: #56685c;
+}

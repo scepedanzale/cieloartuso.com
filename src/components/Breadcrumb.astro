@@ -1,0 +1,27 @@
+---
+import { getBreadcrumbs } from "../utils/breadcrumb";
+
+const pathname = Astro.url.pathname;
+const breadcrumbs = getBreadcrumbs(pathname);
+
+const { activePage } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class="breadcrumb">
+  {breadcrumbs.map((item, index) => {
+    const isLast = index === breadcrumbs.length - 1;
+    const label = isLast && activePage ? activePage : item.label;
+
+    return (
+      <>
+        {index > 0 && <span> / </span>}
+
+        {isLast ? (
+          <span aria-current="page">{label}</span>
+        ) : (
+          <a href={item.href}>{item.label}</a>
+        )}
+      </>
+    );
+  })}
+</nav>

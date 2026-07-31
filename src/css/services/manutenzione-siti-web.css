@@ -1,0 +1,450 @@
+
+
+/* ==================================================
+   HERO
+================================================== */
+
+
+.service-page--maintenance .maintenance-hero__content {
+    max-width: 900px;
+}
+
+
+/* ==================================================
+   A CHI È RIVOLTO
+================================================== */
+
+
+.service-page--maintenance .maintenance-audience .container {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    align-items: stretch;
+}
+
+.service-page--maintenance .maintenance-audience__image {
+    min-height: 460px;
+    overflow: hidden;
+    order: 0;
+}
+
+.service-page--maintenance .maintenance-audience__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-page--maintenance .maintenance-audience__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(40px, 6vw, 85px);
+    color: var(--color-on-dark);
+    background-color: var(--color-section-dark);
+    order: 1;
+}
+
+.service-page--maintenance .maintenance-audience__content .eyebrow {
+    color: var(--color-accent);
+}
+
+
+.service-page--maintenance .maintenance-audience__content ul {
+    display: grid;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.service-page--maintenance .maintenance-audience__content li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(244, 243, 243, 0.2);
+}
+
+.service-page--maintenance .maintenance-audience__content li svg {
+    flex: 0 0 auto;
+    width: 20px;
+    margin-top: 2px;
+    color: var(--color-accent);
+}
+
+/* ==================================================
+   PROBLEMI
+================================================== */
+
+
+.service-page--maintenance .maintenance-problems .container {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(50px, 8vw, 120px);
+    align-items: start;
+}
+
+.service-page--maintenance .maintenance-problems__heading {
+    position: sticky;
+    top: 130px;
+    align-self: start;
+}
+
+
+.service-page--maintenance .maintenance-problems__heading p:last-child {
+    max-width: 570px;
+    line-height: 1.7;
+}
+
+.service-page--maintenance .maintenance-problems__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: none;
+}
+
+.service-page--maintenance .maintenance-problems__list li {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 25px;
+    padding: 35px 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.service-page--maintenance .maintenance-problems__list li:last-child {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.service-page--maintenance .maintenance-problems__number {
+    color: var(--color-accent);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.service-page--maintenance .maintenance-problems__list h3 {
+    margin-bottom: 10px;
+}
+
+.service-page--maintenance .maintenance-problems__list p {
+    max-width: 600px;
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 17px;
+}
+
+/* ==================================================
+   MODALITÀ DI ASSISTENZA
+================================================== */
+
+.service-page--maintenance .maintenance-options {
+    color: var(--color-on-dark);
+    background-color: var(--color-section-dark);
+}
+
+.service-page--maintenance .maintenance-options__heading {
+    max-width: 780px;
+    margin-bottom: 60px;
+}
+
+.service-page--maintenance .maintenance-options__heading .eyebrow {
+    color: var(--color-accent);
+}
+
+
+
+.service-page--maintenance .maintenance-options__heading > p:last-child {
+    max-width: 680px;
+}
+
+.service-page--maintenance .maintenance-options__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.service-page--maintenance .maintenance-option {
+    display: flex;
+    flex-direction: column;
+    min-height: 630px;
+    padding: clamp(30px, 4vw, 55px);
+    border: 1px solid rgba(244, 243, 243, 0.25);
+}
+
+.service-page--maintenance .maintenance-option--featured {
+    color: var(--color-text);
+    background-color: var(--color-on-dark);
+    border-color: var(--color-on-dark);
+}
+
+.service-page--maintenance .maintenance-option__label {
+    display: inline-block;
+    margin-bottom: 35px;
+    font-size: 15px;
+    color: var(--color-dark);
+}
+
+.service-page--maintenance .maintenance-option h3 {
+    margin-bottom: 18px;
+    font-size: clamp(31px, 3.5vw, 48px);
+}
+
+.service-page--maintenance .maintenance-option__top > p {
+    max-width: 540px;
+    line-height: 1.65;
+}
+
+.service-page--maintenance .maintenance-option ul {
+    display: grid;
+    gap: 0;
+    margin: 38px 0;
+}
+
+.service-page--maintenance .maintenance-option li {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 15px 0;
+    border-top: 1px solid rgba(244, 243, 243, 0.2);
+}
+
+.service-page--maintenance .maintenance-option--featured li {
+    border-color: rgba(43, 51, 60, 0.18);
+}
+
+.service-page--maintenance .maintenance-option li:last-child {
+    border-bottom: 1px solid rgba(244, 243, 243, 0.2);
+}
+
+.service-page--maintenance .maintenance-option--featured li:last-child {
+    border-color: rgba(43, 51, 60, 0.18);
+}
+
+.service-page--maintenance .maintenance-option li svg {
+    flex: 0 0 auto;
+    width: 19px;
+    color: var(--color-accent);
+}
+
+.service-page--maintenance .maintenance-option__footer {
+    margin-top: auto;
+}
+
+.service-page--maintenance .maintenance-option__footer p {
+    margin-bottom: 25px;
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.75;
+}
+
+.service-page--maintenance .maintenance-options__note {
+    max-width: 850px;
+    margin: 35px auto 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.7;
+    opacity: 0.7;
+}
+
+/* ==================================================
+   COSA INCLUDE
+================================================== */
+
+
+.service-page--maintenance .maintenance-includes__intro{
+    text-align: center;
+}
+
+
+.service-page--maintenance .maintenance-includes__intro > p:not(.eyebrow) {
+    margin-bottom: 18px;
+    max-width: 680px;
+    margin: auto;
+}
+
+
+.service-page--maintenance .maintenance-includes__content{
+    margin-top: 50px;
+}
+.service-page--maintenance .maintenance-includes__content ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+}
+
+.service-page--maintenance .maintenance-includes__content li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    min-height: 160px;
+    padding: 28px;
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.service-page--maintenance .maintenance-includes__content li svg {
+    flex: 0 0 auto;
+    width: 20px;
+    margin-top: 3px;
+    color: var(--color-accent);
+}
+
+.service-page--maintenance .maintenance-includes__content li div {
+    display: grid;
+    gap: 9px;
+}
+
+
+.service-page--maintenance .maintenance-includes__content span {
+   color: var(--color-muted);
+    font-size: 17px;
+}
+
+/* ==================================================
+   APPROCCIO E SUPPORTO
+================================================== */
+
+.service-page--maintenance .maintenance-support {
+    background-color: var(--color-bg-dark);
+}
+
+.service-page--maintenance .maintenance-support .container {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(20px, 9vw, 130px);
+}
+
+
+
+.service-page--maintenance .maintenance-support__content > p:not(.eyebrow) {
+    margin-bottom: 18px;
+}
+
+.service-page--maintenance .maintenance-support__box ol{
+    list-style: none;
+}
+.service-page--maintenance .maintenance-support__box ol li{
+    border-bottom: 1px solid var(--color-border);
+    padding: 20px 0;
+}
+
+.service-page--maintenance .maintenance-support__box span {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--color-accent);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+
+.service-page--maintenance .maintenance-support__box p {
+    margin: 0 0 32px;
+    padding-bottom: 32px;
+    color: var(--color-muted);
+    font-size: 17px;
+    
+}
+
+.service-page--maintenance .maintenance-support__box p:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+
+
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width: 1000px) {
+    .service-page--maintenance .maintenance-audience .container,
+    .service-page--maintenance .maintenance-problems .container,
+    .service-page--maintenance .maintenance-includes .container,
+    .service-page--maintenance .maintenance-support .container {
+        grid-template-columns: 1fr;
+    }
+
+    .service-page--maintenance .maintenance-audience__image {
+        min-height: 420px;
+        order: 1;
+    }
+    .service-page--maintenance .maintenance-audience__content {
+        order: 0;
+    }
+
+    .service-page--maintenance .maintenance-problems__heading {
+        position: static;
+    }
+
+    .service-page--maintenance .maintenance-includes__intro {
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .service-page--maintenance .maintenance-options__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-page--maintenance .maintenance-option {
+        min-height: auto;
+    }
+
+    .service-page--maintenance .maintenance-includes__content ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+  
+
+    .service-page--maintenance .maintenance-audience__image {
+        min-height: 300px;
+    }
+
+    .service-page--maintenance .maintenance-audience__content {
+        padding: 35px 25px;
+    }
+
+    .service-page--maintenance .maintenance-problems__list li {
+        grid-template-columns: 45px 1fr;
+        gap: 15px;
+        padding: 27px 0;
+    }
+
+    .service-page--maintenance .maintenance-option {
+        padding: 30px 24px;
+    }
+
+    .service-page--maintenance .maintenance-includes__content li {
+        min-height: auto;
+        padding: 24px 20px;
+    }
+
+    .service-page--maintenance .maintenance-support__box {
+        padding: 35px 25px;
+    }
+
+    .service-page--maintenance .service-alternative {
+        padding: 70px 0;
+    }
+}
+
+/* La card evidenziata resta chiara nel tema light, ma non nel dark */
+html[data-theme="dark"] .service-page--maintenance .maintenance-option--featured {
+    color: var(--color-text);
+    background-color: var(--color-surface);
+    border-color: var(--color-border);
+}
+
+html[data-theme="dark"] .service-page--maintenance .maintenance-option--featured .maintenance-option__label {
+    color: var(--color-muted);
+}
+
+html[data-theme="dark"] .service-page--maintenance .maintenance-option--featured li,
+html[data-theme="dark"] .service-page--maintenance .maintenance-option--featured li:last-child {
+    border-color: var(--color-border);
+}

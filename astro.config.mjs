@@ -1,10 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-import sitemap from '@astrojs/sitemap';
-
 // https://astro.build/config
 export default defineConfig({
-  site: "https://cieloartuso.com",
-  integrations: [sitemap()]
+  site: "https://www.cieloartuso.com",
 });

@@ -1,0 +1,413 @@
+---
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import ArrowIcon from "../../components/icons/ArrowIcon.astro";
+import CheckIcon from "../../components/icons/CheckIcon.astro";
+import Separator from "../../components/Separator.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import "../../css/service-page.css";
+import "../../css/services/rifacimento-siti-web.css";
+import ServiceHeroVisual from "../../components/ServiceHeroVisual.astro";
+
+const faqs = [
+    {
+        question: "Quando conviene rifare un sito web?",
+        answer: "Conviene valutare un rifacimento quando il sito è lento, difficile da usare da smartphone, graficamente datato o non rappresenta più correttamente la tua attività. Anche una struttura complicata da aggiornare può essere un buon motivo per intervenire.",
+    },
+    {
+        question: "È necessario rifare completamente il sito?",
+        answer: "Non sempre. Prima di iniziare analizzo il sito esistente per capire cosa può essere mantenuto e cosa invece deve essere ripensato. Testi, immagini, dominio e alcuni contenuti possono spesso essere recuperati e riorganizzati.",
+    },
+    {
+        question: "Il sito resterà online durante il rifacimento?",
+        answer: "Sì. Il nuovo sito viene normalmente sviluppato in un ambiente separato, mentre quello attuale continua a rimanere online. La sostituzione avviene soltanto quando il nuovo progetto è completo e approvato.",
+    },
+    {
+        question: "Perderò il posizionamento raggiunto su Google?",
+        answer: "Durante il rifacimento presto attenzione alla struttura delle pagine, agli indirizzi esistenti e ai contenuti già indicizzati. Quando necessario vengono impostati dei reindirizzamenti, così da ridurre il rischio di perdere traffico e posizionamenti.",
+    },
+    {
+        question: "Quanto tempo richiede il rifacimento?",
+        answer: "Le tempistiche dipendono dal numero di pagine, dai contenuti da recuperare e dalle funzionalità richieste. Un sito vetrina semplice può richiedere alcune settimane, mentre un progetto più articolato necessita di più tempo. Le scadenze vengono definite prima dell'inizio dei lavori.",
+    },
+    {
+        question: "Quanto costa rifare un sito web?",
+        answer: "Il costo dipende dallo stato del sito attuale, dai contenuti e dalle funzionalità necessarie. Dopo una prima call preparo un preventivo chiaro e personalizzato, includendo soltanto ciò che serve davvero al progetto.",
+    },
+];
+
+const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Rifacimento siti web",
+    description:
+        "Rifacimento e restyling di siti web esistenti per migliorarne design, velocità e usabilità.",
+    url: Astro.url.href,
+    provider: {
+        "@id": "https://www.cieloartuso.com/#person",
+    },
+    areaServed: {
+        "@type": "Country",
+        name: "Italia",
+    },
+};
+
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+        },
+    })),
+};
+
+const structuredData = [serviceSchema, faqSchema];
+---
+
+<BaseLayout
+    title="Rifacimento siti web | Cielo Artuso"
+    description="Ridisegno e miglioro il tuo sito esistente per renderlo moderno, chiaro, veloce e affidabile."
+    structuredData={structuredData}
+>
+    <div class="service-page service-page--refit">
+        <section class="service-hero">
+            <div class="container">
+                <Breadcrumb />
+                <div class="service-hero__grid">
+                    <div class="service-hero__content">
+                        <h1>Rifacimento Siti Web</h1>
+                        <p class="page-intro">
+                            Mi occupo del rifacimento di siti web lenti, vecchi o difficili da usare; ridisegno e miglioro il tuo sito esistente per
+                            renderlo moderno, chiaro, veloce e affidabile.
+                        </p>
+                        <a href="#cosa-include" class="button button--primary">
+                            Scopri servizio <ArrowIcon />
+                        </a>
+                    </div>
+
+                    <ServiceHeroVisual type="refit" />
+                </div>
+            </div>
+        </section>
+
+        <section class="per-chi">
+            <div class="container">
+                <img src="/images/site/rifacimento-siti-web.webp" alt="Bozza grafica su carta di una homepage" />
+                <div class="per-chi__inner reveal">
+                    <p class="eyebrow">Quando il sito non funziona più</p>
+                    <h2>Non devi necessariamente ripartire da zero</h2>
+
+                    <p>
+                        Se hai già un sito ma non rappresenta più la tua
+                        attività, possiamo analizzare ciò che esiste e capire
+                        cosa recuperare, aggiornare o riprogettare.
+                    </p>
+
+                    <p>
+                        Il rifacimento permette di migliorare grafica,
+                        struttura, prestazioni e facilità di utilizzo,
+                        mantenendo ciò che ha ancora valore.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <Separator position="center" />
+
+        <section class="perchè">
+            <div class="container">
+                <div class="section-heading reveal">
+                        <p class="eyebrow">I segnali da non ignorare</p>
+                    <h2>Quando rifare il sito</h2>
+
+                    <p>
+                        Un sito datato non è soltanto meno bello da vedere. Può
+                        rendere difficile trovare informazioni, trasmettere poca
+                        affidabilità e scoraggiare chi lo visita da smartphone.
+                    </p>
+
+                    <p>
+                        Intervenire significa trasformare una presenza online
+                        trascurata in uno strumento più chiaro e utile.
+                    </p>
+                </div>
+
+                <ul>
+                    <li class="reveal">
+                        <span>
+                            <svg
+                                class="icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.7"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <circle cx="12" cy="12" r="9"></circle>
+                                <path d="m9 9 6 6"></path>
+                                <path d="m15 9-6 6"></path>
+                            </svg>
+                        </span>
+                        <p>
+                            Hai investito tempo e denaro a far fare un sito che <b
+                                >non ti rappresenta, non porta contatti o
+                                risultati</b
+                            >.
+                        </p>
+                    </li>
+                    <li class="reveal d1">
+                        <span>
+                            <svg
+                                class="icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.7"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <circle cx="12" cy="12" r="9"></circle>
+                                <path d="m9 9 6 6"></path>
+                                <path d="m15 9-6 6"></path>
+                            </svg>
+                        </span>
+                        <p>
+                            Navighi sul sito ed è <b>lentissimo a caricarsi</b> e
+                            a spostarsi sulle pagine.
+                        </p>
+                    </li>
+                    <li class="reveal d2">
+                        <span>
+                            <svg
+                                class="icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.7"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <circle cx="12" cy="12" r="9"></circle>
+                                <path d="m9 9 6 6"></path>
+                                <path d="m15 9-6 6"></path>
+                            </svg>
+                        </span>
+                        <p>
+                            Hai un sito che si vede bene sul computer ma poi <b
+                                >su telefono è tutto storto</b
+                            > e schiacciato.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PROCESSO -->
+
+        <section class="refit-process">
+            <div class="container">
+                <div class="section-heading refit-process__heading reveal">
+                    <p class="eyebrow">Dal vecchio al nuovo sito</p>
+
+                    <h2>Come avviene il rifacimento</h2>
+
+                    <p>
+                        Il sito attuale non viene cancellato da un giorno
+                        all’altro. Prima analizzo ciò che esiste, preparo la
+                        nuova versione in uno spazio separato e la pubblico
+                        soltanto quando è completa e approvata.
+                    </p>
+                </div>
+
+                <ol class="refit-process__steps">
+                    <li class="reveal">
+                        <span>01</span>
+
+                        <div>
+                            <h3>Analizzo il sito attuale</h3>
+
+                            <p>
+                                Controllo struttura, contenuti, prestazioni,
+                                versione mobile e aspetti tecnici per capire
+                                cosa funziona e cosa deve essere migliorato.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="reveal d1">
+                        <span>02</span>
+
+                        <div>
+                            <h3>Decidiamo cosa mantenere</h3>
+
+                            <p>
+                                Individuiamo testi, immagini, pagine e
+                                posizionamenti che possono essere recuperati,
+                                aggiornati o riorganizzati.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li  class="reveal d2">
+                        <span>03</span>
+
+                        <div>
+                            <h3>Realizzo la nuova versione</h3>
+
+                            <p>
+                                Il nuovo sito viene progettato e sviluppato in
+                                un ambiente separato, mentre quello esistente
+                                continua a rimanere online.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="reveal d3">
+                        <span>04</span>
+
+                        <div>
+                            <h3>Test e pubblicazione</h3>
+
+                            <p>
+                                Controlliamo insieme il risultato, imposto gli
+                                eventuali reindirizzamenti e sostituisco il
+                                vecchio sito soltanto quando tutto è pronto.
+                            </p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="cosa-include" class="cosa-include">
+            <div class="container">
+                <div>
+                    <div class="section-heading reveal">
+                        <p class="eyebrow">Il mio intervento</p>
+                        <h2>Non un semplice restyling</h2>
+                        <p>
+                            Rifare un sito non significa semplicemente cambiarne
+                            i colori o renderlo più moderno. Parto da ciò che
+                            hai già per capire cosa funziona, cosa può essere
+                            recuperato e cosa invece deve essere ripensato.
+                        </p>
+                        <p>
+                            L’obiettivo è <b
+                                >costruire un sito più chiaro per chi lo visita</b
+                            >, più semplice da gestire e realmente utile alla
+                            tua attività. Durante tutto il progetto saprai
+                            sempre a che punto siamo e quali decisioni stiamo
+                            prendendo.
+                        </p>
+                    </div>
+                    <h3 class="reveal">Cosa include</h3>
+                    <ul class="reveal">
+                        <li><CheckIcon /> Analisi del sito attuale</li>
+                        <li><CheckIcon />Nuova struttura delle pagine</li>
+                        <li><CheckIcon />Redesign grafico personalizzato</li>
+                        <li><CheckIcon />Sviluppo responsive</li>
+                        <li><CheckIcon />SEO base</li>
+                        <li><CheckIcon />Test e pubblicazione online</li>
+                    </ul>
+                </div>
+                <div class="cosa-include__box reveal">
+                    <h3>Parliamo del tuo sito</h3>
+                    <p>
+                        Raccontami cosa non funziona nel tuo sito attuale e
+                        quali risultati vorresti ottenere. Ti ricontatterò per
+                        capire meglio il progetto e <b
+                            >proporti una soluzione adatta</b
+                        >, senza inserire servizi che non ti servono.
+                    </p>
+
+                    <a
+                        href="/contatti?service=rifacimento-sito#form-section"
+                        class="button button--primary"
+                    >
+                        Richiedi informazioni <ArrowIcon />
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+
+        <section class="project-cta">
+            <div class="container reveal">
+                <p class="eyebrow">Partiamo dal tuo sito attuale</p>
+
+                <h2>Raccontami cosa vorresti migliorare</h2>
+
+                <p>
+                    Non serve sapere già quali parti mantenere o come dovrebbe
+                    essere strutturato il nuovo sito. <br />Partiamo da ciò che
+                    hai e capiamo insieme quale intervento può essere più utile.
+                </p>
+
+                <a href="/contatti#form-section" class="button button--dark">
+                    Richiedi un primo confronto
+                    <ArrowIcon />
+                </a>
+
+                <p>Prima call gratuita di 30 minuti e senza impegno</p>
+            </div>
+        </section>
+
+        <!-- SERVIZIO ALTERNATIVO -->
+
+        <section class="service-alternative">
+            <div class="container reveal">
+                <h2>Non hai ancora un sito?</h2>
+
+                <p>
+                    Posso progettare un sito su misura per la tua attività,
+                    partendo dai tuoi obiettivi e da ciò che vuoi comunicare.
+                </p>
+
+                <a
+                    class="button button--primary"
+                    href="/servizi/siti-web-su-misura"
+                >
+                    Siti web su misura
+                    <ArrowIcon />
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+
+        <section class="faq">
+            <div class="container">
+                <div class="faq__header">
+                    <p class="eyebrow">Dubbi sul rifacimento?</p>
+                    <h2>Domande frequenti</h2>
+                    <Separator position="center" />
+                </div>
+
+                <ul class="faq__list">
+                    {
+                        faqs.map((faq) => (
+                            <li class="faq__item reveal">
+                                <details>
+                                    <summary>{faq.question}</summary>
+
+                                    <div class="faq__answer">
+                                        <p>{faq.answer}</p>
+                                    </div>
+                                </details>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </section>
+    </div>
+</BaseLayout>

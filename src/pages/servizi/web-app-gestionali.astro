@@ -1,0 +1,849 @@
+---
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import ArrowIcon from "../../components/icons/ArrowIcon.astro";
+import CheckIcon from "../../components/icons/CheckIcon.astro";
+import Separator from "../../components/Separator.astro";
+import ServiceHeroVisual from "../../components/ServiceHeroVisual.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import "../../css/service-page.css";
+import "../../css/services/web-app-gestionali.css";
+
+const faqs = [
+    {
+        question: "Qual è la differenza tra un sito e una web app?",
+        answer:
+            "Un sito viene utilizzato principalmente per presentare contenuti e raccontare un’attività. Una web app permette invece agli utenti di accedere, inserire dati, gestire informazioni e svolgere operazioni.",
+    },
+    {
+        question: "Devo sapere già quali funzioni mi servono?",
+        answer:
+            "No. Durante il primo confronto analizziamo il processo attuale e individuiamo insieme le funzioni realmente necessarie. Non devi preparare una documentazione tecnica.",
+    },
+    {
+        question: "È possibile partire da una versione semplice?",
+        answer:
+            "Sì. Una prima versione permette di concentrarsi sulle funzioni principali, iniziare a utilizzare lo strumento e ampliarlo in base alle esigenze reali.",
+    },
+    {
+        question: "La web app funzionerà anche da smartphone?",
+        answer:
+            "L’interfaccia viene progettata in base ai dispositivi utilizzati dagli utenti. Può essere completamente responsive oppure ottimizzata soprattutto per computer o smartphone, secondo il contesto.",
+    },
+    {
+        question: "Può collegarsi agli strumenti che utilizzo già?",
+        answer:
+            "Dipende dai servizi utilizzati e dalla disponibilità di API o altri sistemi di integrazione. Questa possibilità viene verificata durante la fase iniziale di analisi.",
+    },
+    {
+        question: "Quanto costa sviluppare una web app?",
+        answer:
+            "Il costo dipende dalle funzionalità, dal numero di tipologie di utenti, dalla gestione dei dati e dalle integrazioni. Dopo l’analisi iniziale preparo una proposta con fasi, priorità e costi definiti.",
+    },
+];
+
+const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+
+    name: "Web app e gestionali",
+    description:
+        "Creazione di applicazioni web, gestionali e dashboard per gestire le attività.",
+
+    url: Astro.url.href,
+
+    provider: {
+        "@id": "https://www.cieloartuso.com/#person",
+    },
+
+    areaServed: {
+        "@type": "Country",
+        name: "Italia",
+    },
+};
+
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+
+    mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+        },
+    })),
+};
+
+const structuredData = [serviceSchema, faqSchema];
+---
+
+<BaseLayout
+    title="Web app e gestionali su misura | Cielo Artuso"
+    description="Progetto e sviluppo web app, gestionali e strumenti digitali su misura per organizzare dati, automatizzare attività e semplificare il lavoro."
+    structuredData={structuredData}
+>
+    <div class="service-page service-page--webapp">
+        <!-- HERO -->
+
+        <section class="service-hero webapp-hero">
+            <div class="container">
+                <Breadcrumb />
+
+                <div class="service-hero__grid">
+                    <div class="service-hero__content">
+                        <h1>Web app e gestionali su misura</h1>
+
+                        <p class="page-intro">
+                            Progetto strumenti digitali personalizzati per
+                            organizzare informazioni, automatizzare attività e
+                            rendere più semplici i processi della tua attività.
+                        </p>
+
+                        <a
+                            href="#possibili-progetti"
+                            class="button button--primary"
+                        >
+                            Scopri il servizio
+                            <ArrowIcon />
+                        </a>
+                    </div>
+
+                    <ServiceHeroVisual type="webapp" />
+                </div>
+            </div>
+        </section>
+
+        <!-- PERCHÉ È UTILE -->
+
+        <section class="webapp-benefits">
+            <div class="container">
+                <div class="section-heading webapp-benefits__intro">
+                    <p class="eyebrow">Quando un sito non basta</p>
+
+                    <h2>
+                        Uno strumento costruito intorno al tuo modo di lavorare
+                    </h2>
+
+                    <div class="webapp-benefits__text reveal">
+                        <p>
+                            Una web app permette alle persone di inserire
+                            informazioni, gestire attività e utilizzare funzioni
+                            specifiche direttamente dal browser.
+                        </p>
+
+                        <p>
+                            Può riunire fogli di calcolo, documenti, email e
+                            operazioni manuali in un unico ambiente, più
+                            semplice da controllare e condividere.
+                        </p>
+
+                        <p>
+                            Non parto da un software già pronto da adattare.
+                            Prima comprendo come funziona la tua attività, poi
+                            progetto soltanto gli strumenti che possono
+                            migliorare davvero il lavoro quotidiano.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="webapp-comparison">
+                    <article
+                        class="webapp-comparison__card webapp-comparison__card--before reveal"
+                    >
+                        <div class="webapp-comparison__header">
+                            <svg
+                                class="icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.7"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <circle cx="12" cy="12" r="9"></circle>
+                                <path d="m9 9 6 6"></path>
+                                <path d="m15 9-6 6"></path>
+                            </svg>
+
+                            <div>
+                                <p class="eyebrow">La situazione attuale</p>
+                                <h3>Prima dello strumento</h3>
+                            </div>
+                        </div>
+
+                        <ul>
+                            <li>
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.7"
+                                    stroke-linecap="round"
+                                    aria-hidden="true"
+                                >
+                                    <path d="m7 7 10 10"></path>
+                                    <path d="M17 7 7 17"></path>
+                                </svg>
+                                <span>
+                                    Informazioni distribuite tra file, email e
+                                    programmi diversi
+                                </span>
+                            </li>
+
+                            <li>
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.7"
+                                    stroke-linecap="round"
+                                    aria-hidden="true"
+                                >
+                                    <path d="m7 7 10 10"></path>
+                                    <path d="M17 7 7 17"></path>
+                                </svg>
+                                <span>
+                                    Dati inseriti più volte e difficili da
+                                    mantenere aggiornati
+                                </span>
+                            </li>
+
+                            <li>
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.7"
+                                    stroke-linecap="round"
+                                    aria-hidden="true"
+                                >
+                                    <path d="m7 7 10 10"></path>
+                                    <path d="M17 7 7 17"></path>
+                                </svg>
+                                <span>
+                                    Operazioni ripetitive che richiedono tempo
+                                    ogni giorno
+                                </span>
+                            </li>
+
+                            <li>
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.7"
+                                    stroke-linecap="round"
+                                    aria-hidden="true"
+                                >
+                                    <path d="m7 7 10 10"></path>
+                                    <path d="M17 7 7 17"></path>
+                                </svg>
+                                <span>
+                                    Difficoltà nel capire attività,
+                                    responsabilità e avanzamento
+                                </span>
+                            </li>
+
+                            <li>
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.7"
+                                    stroke-linecap="round"
+                                    aria-hidden="true"
+                                >
+                                    <path d="m7 7 10 10"></path>
+                                    <path d="M17 7 7 17"></path>
+                                </svg>
+                                <span>
+                                    Software generici pieni di funzioni che non
+                                    vengono utilizzate
+                                </span>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article
+                        class="webapp-comparison__card webapp-comparison__card--after reveal d1"
+                    >
+                        <div class="webapp-comparison__header">
+                            <svg
+                                class="icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.7"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <circle cx="12" cy="12" r="9"></circle>
+                                <path d="m8 12 2.5 2.5L16 9"></path>
+                            </svg>
+
+                            <div>
+                                <p class="eyebrow">La soluzione</p>
+                                <h3>Dopo la web app</h3>
+                            </div>
+                        </div>
+
+                        <ul>
+                            <li>
+                                <CheckIcon />
+                                <span>
+                                    Tutte le informazioni raccolte in un unico
+                                    ambiente
+                                </span>
+                            </li>
+
+                            <li>
+                                <CheckIcon />
+                                <span>
+                                    Dati organizzati, ricercabili e sempre
+                                    aggiornati
+                                </span>
+                            </li>
+
+                            <li>
+                                <CheckIcon />
+                                <span>
+                                    Operazioni automatizzate o più veloci da
+                                    completare
+                                </span>
+                            </li>
+
+                            <li>
+                                <CheckIcon />
+                                <span>
+                                    Ruoli, permessi e attività chiaramente
+                                    definiti
+                                </span>
+                            </li>
+
+                            <li>
+                                <CheckIcon />
+                                <span>
+                                    Soltanto le funzioni realmente utili alla
+                                    tua attività
+                                </span>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- POSSIBILI PROGETTI -->
+
+        <section id="possibili-progetti" class="webapp-examples">
+            <div class="container">
+                <div class="section-heading webapp-examples__heading">
+                    <p class="eyebrow">Possibili applicazioni</p>
+
+                    <h2>Cosa posso sviluppare</h2>
+
+                    <p>
+                        Ogni progetto nasce da un’esigenza diversa. Le
+                        funzionalità possono essere combinate e adattate al
+                        flusso di lavoro della tua attività.
+                    </p>
+                </div>
+
+                <div class="webapp-examples__list">
+                    <article class="reveal">
+                        <svg
+                            class="icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <rect x="3" y="4" width="18" height="16" rx="2">
+                            </rect>
+                            <path d="M3 9h18"></path>
+                            <path d="M8 9v11"></path>
+                            <path d="M12 13h5"></path>
+                            <path d="M12 17h3"></path>
+                        </svg>
+
+                        <div>
+                            <h3>Gestionali interni</h3>
+
+                            <p>
+                                Per organizzare clienti, progetti, richieste,
+                                attività, scadenze e documenti in un unico
+                                spazio.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="reveal d1">
+                        <svg
+                            class="icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <rect x="3" y="3" width="18" height="18" rx="2">
+                            </rect>
+                            <circle cx="12" cy="9" r="3"></circle>
+                            <path d="M6.5 19c.7-3 2.7-5 5.5-5s4.8 2 5.5 5">
+                            </path>
+                        </svg>
+
+                        <div>
+                            <h3>Aree clienti</h3>
+
+                            <p>
+                                Spazi personali in cui clienti e collaboratori
+                                possono trovare documenti, materiali,
+                                comunicazioni e richieste.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="reveal">
+                        <svg
+                            class="icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <path d="M4 19V10"></path>
+                            <path d="M10 19V5"></path>
+                            <path d="M16 19v-7"></path>
+                            <path d="M22 19H2"></path>
+                        </svg>
+
+                        <div>
+                            <h3>Dashboard e statistiche</h3>
+
+                            <p>
+                                Per consultare dati, risultati e informazioni
+                                importanti attraverso riepiloghi chiari e
+                                aggiornati.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="reveal d1">
+                        <svg
+                            class="icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <path d="M8 3h8"></path>
+                            <path d="M12 3v5"></path>
+                            <rect x="7" y="8" width="10" height="8" rx="2">
+                            </rect>
+                            <path d="M12 16v5"></path>
+                            <path d="M8 21h8"></path>
+                            <path d="M3 12h4"></path>
+                            <path d="M17 12h4"></path>
+                        </svg>
+
+                        <div>
+                            <h3>Automazioni</h3>
+
+                            <p>
+                                Per ridurre inserimenti manuali, aggiornare dati
+                                e avviare azioni quando si verifica una
+                                determinata condizione.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="reveal">
+                        <svg
+                            class="icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <rect x="4" y="5" width="16" height="15" rx="2">
+                            </rect>
+                            <path d="M8 3v4"></path>
+                            <path d="M16 3v4"></path>
+                            <path d="M4 10h16"></path>
+                            <path d="m9 15 2 2 4-4"></path>
+                        </svg>
+
+                        <div>
+                            <h3>Prenotazioni e appuntamenti</h3>
+
+                            <p>
+                                Per gestire disponibilità, richieste, conferme e
+                                comunicazioni con clienti o utenti.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="reveal d1">
+                        <svg
+                            class="icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M8 7H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3"
+                            >
+                            </path>
+                            <path d="M16 5h3a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2">
+                            </path>
+                            <path d="m9 12 3-3 3 3"></path>
+                            <path d="M12 9v8"></path>
+                        </svg>
+
+                        <div>
+                            <h3>Integrazioni</h3>
+
+                            <p>
+                                Per collegare la web app ad altri servizi,
+                                software o API già presenti nel tuo flusso di
+                                lavoro.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOTO + APPROCCIO AL PROGETTO -->
+
+        <section class="webapp-development">
+            <div class="container">
+                <figure class="webapp-development__image">
+                    <img
+                        src="/images/site/web-app-gestionali.webp"
+                        alt="Schermi di computer con codice"
+                    />
+
+                    <figcaption>
+                        Lo strumento viene progettato pensando alle persone che
+                        dovranno utilizzarlo ogni giorno.
+                    </figcaption>
+                </figure>
+
+                <div class="webapp-development__content reveal">
+                    <div class="section-heading">
+                        <p class="eyebrow">Un progetto pensato per evolvere</p>
+
+                    <h2>
+                        Partiamo dalle priorità, senza trascurare ciò che viene
+                        dopo
+                    </h2>
+
+                    <p>
+                        Non è necessario sviluppare subito ogni funzione
+                        immaginata. Possiamo iniziare da una prima versione
+                        concentrata sul problema più importante e sulle
+                        operazioni indispensabili.
+                    </p>
+
+                    <p>
+                        Allo stesso tempo, la struttura viene progettata in modo
+                        ordinato, così da poter aggiungere nuove funzioni,
+                        integrazioni e tipologie di utenti senza ricominciare da
+                        zero.
+                    </p>
+                    </div>
+
+                    <ul class="webapp-development__list">
+                        <li>
+                            <svg
+                                class="icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path d="M4 19h16"></path>
+                                <path d="M6 16V8"></path>
+                                <path d="M12 16V4"></path>
+                                <path d="M18 16v-5"></path>
+                            </svg>
+
+                            <div>
+                                <strong>Una prima versione già utilizzabile</strong>
+                                <span>
+                                    Uno strumento concreto che inizia subito a
+                                    semplificare il processo principale.
+                                </span>
+                            </div>
+                        </li>
+
+                        <li>
+                            <svg
+                                class="icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <circle cx="9" cy="8" r="3"></circle>
+                                <circle cx="17" cy="9" r="2"></circle>
+                                <path d="M3 20c0-4 2.5-7 6-7s6 3 6 7"></path>
+                                <path d="M15 14c3 0 5 2 5 5"></path>
+                            </svg>
+
+                            <div>
+                                <strong>Ruoli e permessi personalizzati</strong>
+                                <span>
+                                    Ogni persona può accedere soltanto alle
+                                    informazioni e alle azioni di sua
+                                    competenza.
+                                </span>
+                            </div>
+                        </li>
+
+                        <li>
+                            <svg
+                                class="icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <ellipse cx="12" cy="5" rx="7" ry="3"></ellipse>
+                                <path d="M5 5v6c0 1.7 3.1 3 7 3s7-1.3 7-3V5">
+                                </path>
+                                <path d="M5 11v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6">
+                                </path>
+                            </svg>
+
+                            <div>
+                                <strong>Dati organizzati fin dall’inizio</strong>
+                                <span>
+                                    Le informazioni vengono strutturate per
+                                    essere ricercate, filtrate e aggiornate
+                                    facilmente.
+                                </span>
+                            </div>
+                        </li>
+
+                        <li>
+                            <svg
+                                class="icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path d="M5 8V5h3"></path>
+                                <path d="M16 5h3v3"></path>
+                                <path d="M19 16v3h-3"></path>
+                                <path d="M8 19H5v-3"></path>
+                                <rect x="8" y="8" width="8" height="8" rx="1">
+                                </rect>
+                            </svg>
+
+                            <div>
+                                <strong>Una struttura pronta a crescere</strong>
+                                <span>
+                                    Nuove sezioni, automazioni e integrazioni
+                                    possono essere aggiunte nel tempo.
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <a
+                        href="/contatti?service=web-app#form-section"
+                        class="button button--secondary"
+                    >
+                        Parliamo della tua idea
+                        <ArrowIcon />
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESSO -->
+
+        <section class="webapp-process">
+            <div class="container">
+                <div class="section-heading webapp-process__heading">
+                    <p class="eyebrow">Come lavoreremo</p>
+
+                    <h2>Dal problema a uno strumento comprensibile</h2>
+
+                    <p>
+                        Non devi arrivare con una documentazione tecnica già
+                        pronta. Durante il primo confronto sarò io a farti le
+                        domande necessarie.
+                    </p>
+                </div>
+
+                <ol class="webapp-process__steps">
+                    <li class="reveal">
+                        <span>01</span>
+
+                        <div>
+                            <h3>Analizziamo il processo</h3>
+
+                            <p>
+                                Mi racconti come lavori oggi, quali persone sono
+                                coinvolte e dove si creano difficoltà.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="reveal d1">
+                        <span>02</span>
+
+                        <div>
+                            <h3>Definiamo le funzioni</h3>
+
+                            <p>
+                                Trasformiamo esigenze e passaggi quotidiani in
+                                schermate, ruoli e operazioni concrete.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="reveal d2">
+                        <span>03</span>
+
+                        <div>
+                            <h3>Progetto e sviluppo</h3>
+
+                            <p>
+                                Realizzo lo strumento per fasi e ti mostro
+                                aggiornamenti e versioni da provare.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="reveal d3">
+                        <span>04</span>
+
+                        <div>
+                            <h3>Test e consegna</h3>
+
+                            <p>
+                                Verifichiamo il funzionamento nell’utilizzo
+                                reale e ti mostro come gestire la piattaforma.
+                            </p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- CTA -->
+
+        <section class="project-cta">
+            <div class="container reveal">
+                <p class="eyebrow">Partiamo dal problema</p>
+
+                <h2>Quale parte del tuo lavoro vorresti semplificare?</h2>
+
+                <p>
+                    Raccontami come gestisci oggi attività e informazioni.
+                    <br />
+                    Possiamo capire insieme se una web app su misura è la
+                    soluzione più adatta.
+                </p>
+
+                <a href="/contatti#form-section" class="button button--dark">
+                    Richiedi un primo confronto
+                    <ArrowIcon />
+                </a>
+
+                <p>Prima call gratuita di 30 minuti e senza impegno</p>
+            </div>
+        </section>
+
+        <!-- SERVIZIO ALTERNATIVO -->
+
+        <section class="service-alternative">
+            <div class="container reveal">
+                <h2>Ti serve un sito, non un gestionale?</h2>
+
+                <p>
+                    Se il tuo obiettivo è presentare online l’attività, i
+                    servizi e i tuoi progetti, posso realizzare un sito web su
+                    misura.
+                </p>
+
+                <a
+                    href="/servizi/siti-web-su-misura"
+                    class="button button--primary"
+                >
+                    Scopri i siti web su misura
+                    <ArrowIcon />
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+
+        <section class="faq">
+            <div class="container">
+                <div class="faq__header">
+                    <p class="eyebrow">Prima di iniziare</p>
+                    <h2>Domande frequenti</h2>
+                    <Separator position="center" />
+                </div>
+
+                <ul class="faq__list">
+                    {
+                        faqs.map((faq) => (
+                            <li class="faq__item reveal">
+                                <details>
+                                    <summary>{faq.question}</summary>
+
+                                    <div class="faq__answer">
+                                        <p>{faq.answer}</p>
+                                    </div>
+                                </details>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </section>
+    </div>
+</BaseLayout>

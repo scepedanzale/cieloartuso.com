@@ -1,48 +1,287 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import BlogPostLayout from "../../layouts/BlogPostLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 import { getCollection, render } from "astro:content";
-
-type BlogPost = CollectionEntry<"blog">;
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import { formatItalianDate } from "../../utils/date";
+import { capitalizeFirstLetter } from "../../utils/text";
 
 export async function getStaticPaths() {
-  const posts = ((await getCollection("blog")) as BlogPost[])
-    .filter((post: BlogPost) => post.data.draft !== true)
-    .sort((a: BlogPost, b: BlogPost) => {
-      return b.data.date.getTime() - a.data.date.getTime();
-    });
-
-  return posts.map((post: BlogPost, index: number) => {
-    const prevPost = posts[index - 1] ?? null;
-    const nextPost = posts[index + 1] ?? null;
-
-    return {
-      params: {
-        slug: post.id,
-      },
-      props: {
-        post,
-        prevPost,
-        nextPost,
-      },
-    };
+  const posts = await getCollection("blog", ({ data }) => {
+    console.log(data);
+    return data.draft !== true;
   });
+
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
 }
 
-type Props = {
-  post: BlogPost;
-  prevPost: BlogPost | null;
-  nextPost: BlogPost | null;
-};
+const allPosts = await getCollection("blog", ({ data }) => data.draft !== true);
 
-const { post, prevPost, nextPost } = Astro.props as Props;
-const { Content } = await render(post);
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+
+const toc = headings.filter((heading) => heading.depth === 2);
+
+const currentUrl = Astro.url.href;
+const encodedUrl = encodeURIComponent(currentUrl);
+const encodedTitle = encodeURIComponent(post.data.title);
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.date.toISOString(),
+  url: currentUrl,
+  author: {
+    "@type": "Person",
+    name: "Cielo Artuso",
+    url: "https://www.cieloartuso.com",
+  },
+  publisher: {
+    "@type": "Person",
+    name: "Cielo Artuso",
+    url: "https://www.cieloartuso.com",
+  },
+  ...(post.data.cover && {
+    image: new URL(post.data.cover, Astro.site).href,
+  }),
+};
 ---
 
-<BlogPostLayout
-  post={post}
-  prevPost={prevPost}
-  nextPost={nextPost}
+<BaseLayout
+  title={`${post.data.title} | Cielo Artuso`}
+  description={post.data.description}
+  structuredData={articleSchema}
 >
-  <Content />
-</BlogPostLayout>
+  <article class="blog-post">
+    <header class="blog-post__header">
+      <div class="container">
+        <Breadcrumb activePage={post.data.title} />
+
+        <h1>{post.data.title}</h1>
+
+        <p class="blog-post__meta">
+          <span>{capitalizeFirstLetter(post.data.tag)}</span>
+          <span>{formatItalianDate(post.data.date)}</span>
+          <span>{post.data.readingTime} min di lettura</span>
+        </p>
+
+        {
+          post.data.cover && (
+            <img class="blog-post__cover" src={post.data.cover} alt={post.data.title} />
+          )
+        }
+      </div>
+    </header>
+
+    <div class="container blog-post__layout">
+      <div class="blog-post__sidebar">
+        {
+          toc.length > 0 && (
+            <aside
+              class="blog-post__toc reveal"
+              aria-label="Indice dei contenuti"
+            >
+              <p>Indice</p>
+
+              <nav>
+                {toc.map((heading, i) => (
+                  <a href={`#${heading.slug}`}>
+                    {i + 1}. {heading.text}
+                  </a>
+                ))}
+              </nav>
+            </aside>
+          )
+        }
+
+        <aside class="blog-post__share reveal" aria-label="Condividi articolo">
+          <p>Condividi</p>
+
+          <div>
+            <a
+              href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                class="icon"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 256 256"
+                xmlns="http://www.w3.org/2000/svg"
+                ><path
+                  d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"
+                ></path></svg
+              >
+            </a>
+
+            <a href={`mailto:?subject=${encodedTitle}&body=${encodedUrl}`}>
+              <svg
+                class="icon"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+                ><rect
+                  width="416"
+                  height="320"
+                  x="48"
+                  y="96"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                  rx="40"
+                  ry="40"></rect><path
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                  d="m112 160 144 112 144-112"></path></svg
+              >
+            </a>
+
+            <button type="button" data-copy-link={currentUrl}>
+              <svg
+                class="icon"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 256 256"
+                xmlns="http://www.w3.org/2000/svg"
+                ><path
+                  d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"
+                ></path></svg
+              >
+            </button>
+          </div>
+        </aside>
+      </div>
+
+      <div class="blog-post__content">
+        <Content />
+        <div class="blog-post__share reveal" aria-label="Condividi articolo">
+          <p>Condividi l'articolo!</p>
+
+          <div>
+            <a
+              href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                class="icon"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 256 256"
+                xmlns="http://www.w3.org/2000/svg"
+                ><path
+                  d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"
+                ></path></svg
+              >
+            </a>
+
+            <a href={`mailto:?subject=${encodedTitle}&body=${encodedUrl}`}>
+              <svg
+                class="icon"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+                ><rect
+                  width="416"
+                  height="320"
+                  x="48"
+                  y="96"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                  rx="40"
+                  ry="40"></rect><path
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="32"
+                  d="m112 160 144 112 144-112"></path></svg
+              >
+            </a>
+
+            <button type="button" data-copy-link={currentUrl}>
+              <svg
+                class="icon"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 256 256"
+                xmlns="http://www.w3.org/2000/svg"
+                ><path
+                  d="M240,88.23a54.43,54.43,0,0,1-16,37L189.25,160a54.27,54.27,0,0,1-38.63,16h-.05A54.63,54.63,0,0,1,96,119.84a8,8,0,0,1,16,.45A38.62,38.62,0,0,0,150.58,160h0a38.39,38.39,0,0,0,27.31-11.31l34.75-34.75a38.63,38.63,0,0,0-54.63-54.63l-11,11A8,8,0,0,1,135.7,59l11-11A54.65,54.65,0,0,1,224,48,54.86,54.86,0,0,1,240,88.23ZM109,185.66l-11,11A38.41,38.41,0,0,1,70.6,208h0a38.63,38.63,0,0,1-27.29-65.94L78,107.31A38.63,38.63,0,0,1,144,135.71a8,8,0,0,0,16,.45A54.86,54.86,0,0,0,144,96a54.65,54.65,0,0,0-77.27,0L32,130.75A54.62,54.62,0,0,0,70.56,224h0a54.28,54.28,0,0,0,38.64-16l11-11A8,8,0,0,0,109,185.66Z"
+                ></path></svg
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <section class="related-posts">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Continua a leggere</p>
+        <h2>Articoli consigliati</h2>
+      </div>
+
+      <div class="related-posts__grid">
+        {
+          allPosts
+            .filter((item) => item.id !== post.id)
+            .slice(0, 3)
+            .map((item, i) => (
+              <a
+                href={`/blog/${item.id}`}
+                class={`related-post reveal ${i > 0 && "d" + i}`}
+              >
+                <div class="related-post__image">
+                  <img src={item.data.cover} alt="" />
+                </div>
+
+                <div class="related-post__content">
+                  <div class="related-post__meta">
+                    <span>{capitalizeFirstLetter(item.data.tag)}</span>
+                    <span>{item.data.readingTime} min</span>
+                  </div>
+
+                  <h3>{item.data.title}</h3>
+                </div>
+              </a>
+            ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const buttons = document.querySelectorAll("[data-copy-link]");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", async () => {
+        const url = button.getAttribute("data-copy-link");
+
+        if (!url) return;
+
+        await navigator.clipboard.writeText(url);
+        button.textContent = "Link copiato";
+      });
+    });
+  </script>
+</BaseLayout>

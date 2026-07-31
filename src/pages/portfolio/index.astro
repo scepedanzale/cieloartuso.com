@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const works = await getCollection("works");
+
+const sortedWorks = works.sort(
+  (a, b) => b.data.year.valueOf() - a.data.year.valueOf(),
+);
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Progetti | Cielo Artuso",
+  description:
+    "Una selezione di siti web, restyling e progetti digitali realizzati da Cielo Artuso.",
+  url: Astro.url.href,
+  author: {
+    "@id": "https://www.cieloartuso.com/#person"
+  }
+};
+---
+
+<BaseLayout
+  title="Portfolio | Cielo Artuso"
+  description="Alcuni siti web che ho progettato, rifatto o migliorato"
+  structuredData={structuredData}
+>
+  <div class="portfolio-page">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Progetti realizzati</p>
+        <h1>Portfolio</h1>
+        <p class="page-intro">
+          Una selezione di progetti web realizzati per attività, professionisti
+          e brand <br />che avevano bisogno di una presenza online più chiara e
+          curata.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="projects__grid">
+          {
+            sortedWorks.map((work) => (
+              <a href={`/portfolio/${work.id}`} class="project reveal">
+                <div class="project__image">
+                  <img
+                    src={work.data.cover}
+                    alt={`Anteprima del progetto ${work.data.title}`}
+                  />
+                </div>
+
+                <div class="project__content">
+                  <div>
+                    <span>{work.data.tipo}</span>
+                    <span>{work.data.year}</span>
+                  </div>
+
+                  <h3>{work.data.title}</h3>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    
+    </section>
+  </div>
+</BaseLayout>

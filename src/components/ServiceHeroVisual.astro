@@ -1,0 +1,269 @@
+
+---
+interface Props {
+    type: "webapp" | "refit" | "custom" | "maintenance";
+}
+
+const { type } = Astro.props;
+---
+
+<div class:list={["service-visual", `service-visual--${type}`]}>
+    <div class="service-visual__window">
+        <div class="service-visual__browser" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        {
+            type === "webapp" && (
+                <div
+                    class="service-visual__app"
+                    role="img"
+                    aria-label="Interfaccia stilizzata di un'applicazione gestionale"
+                >
+                    <aside>
+                        <span class="is-active"></span>
+                        <span></span>
+                        <span></span>
+                    </aside>
+
+                    <main>
+                        <div class="app-toolbar">
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <div class="app-summary">
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <div class="app-table">
+                            <div>
+                                <span></span>
+                                <span></span>
+                                <i></i>
+                            </div>
+
+                            <div>
+                                <span></span>
+                                <span></span>
+                                <i></i>
+                            </div>
+
+                            <div>
+                                <span></span>
+                                <span></span>
+                                <i></i>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            )
+        }
+
+        {
+            type === "refit" && (
+                <div
+                    class="service-visual__refit"
+                    role="img"
+                    aria-label="Confronto stilizzato tra un vecchio sito e un sito rifatto"
+                >
+                    <div class="refit-page refit-page--before">
+                        <div class="refit-page__header">
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <div class="refit-page__content">
+                            <span class="refit-line refit-line--large"></span>
+                            <span class="refit-line"></span>
+                            <span class="refit-line refit-line--short"></span>
+
+                            <div class="refit-page__old-columns">
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="refit-change">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <path d="M5 12h14"></path>
+                            <path d="m15 8 4 4-4 4"></path>
+                        </svg>
+                    </div>
+
+                    <div class="refit-page refit-page--after">
+                        <div class="refit-page__header">
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <div class="refit-page__hero">
+                            <span class="refit-line refit-line--large"></span>
+                            <span class="refit-line"></span>
+                            <span class="refit-button"></span>
+                        </div>
+
+                        <div class="refit-page__new-columns">
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+
+        {
+            type === "custom" && (
+                <div
+                    class="service-visual__custom"
+                    role="img"
+                    aria-label="Struttura stilizzata di un sito web progettato su misura"
+                >
+                    <header class="custom-site__header">
+                        <span class="custom-site__logo"></span>
+
+                        <div>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </header>
+
+                    <div class="custom-site__hero">
+                        <div class="custom-site__copy">
+                            <span class="custom-site__accent"></span>
+                            <span class="custom-site__title"></span>
+                            <span class="custom-site__title custom-site__title--short"></span>
+                            <span class="custom-site__text"></span>
+                            <span class="custom-site__button"></span>
+                        </div>
+
+                        <div class="custom-site__visual">
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="custom-site__sections">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            )
+        }
+
+        {
+            type === "maintenance" && (
+                <div
+                    class="service-visual__maintenance"
+                    role="img"
+                    aria-label="Controlli stilizzati per la manutenzione di un sito web"
+                >
+                    <div class="maintenance-site">
+                        <div class="maintenance-site__top">
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <div class="maintenance-site__body">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <div class="maintenance-site__status">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path d="m7 12 3 3 7-7"></path>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="maintenance-tools">
+                        <div class="maintenance-tool maintenance-tool--update">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path d="M20 7v5h-5"></path>
+                                <path d="M4 17v-5h5"></path>
+                                <path d="M6.1 8a7 7 0 0 1 11.2-1.8L20 9"></path>
+                                <path d="M17.9 16a7 7 0 0 1-11.2 1.8L4 15"></path>
+                            </svg>
+                        </div>
+
+                        <div class="maintenance-tool maintenance-tool--backup">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <ellipse cx="12" cy="6" rx="6" ry="3"></ellipse>
+                                <path d="M6 6v6c0 1.7 2.7 3 6 3s6-1.3 6-3V6"></path>
+                                <path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"></path>
+                            </svg>
+                        </div>
+
+                        <div class="maintenance-tool maintenance-tool--security">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path d="M12 3 5 6v5c0 4.5 2.8 8 7 10 4.2-2 7-5.5 7-10V6l-7-3Z"></path>
+                                <path d="m9 12 2 2 4-4"></path>
+                            </svg>
+                        </div>
+
+                        <div class="maintenance-tool maintenance-tool--speed">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path d="M4 17a8 8 0 1 1 16 0"></path>
+                                <path d="m12 17 4-6"></path>
+                                <path d="M7 17h10"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+    </div>
+</div>

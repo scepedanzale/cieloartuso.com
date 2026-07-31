@@ -1,0 +1,621 @@
+
+/* ==================================================
+   GRAFICHE HERO SERVIZI
+================================================== */
+
+.service-visual {
+    position: relative;
+    width: 100%;
+    max-width: 470px;
+    margin-left: auto;
+}
+
+.service-visual::after {
+    position: absolute;
+    z-index: -1;
+    right: -15px;
+    bottom: -15px;
+    width: 72%;
+    height: 72%;
+    content: "";
+    background-color: var(--color-soft);
+}
+
+.service-visual__window {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg-dark);
+}
+
+.service-visual__browser {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 32px;
+    padding: 0 12px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.service-visual__browser > span {
+    width: 6px;
+    height: 6px;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+}
+
+/* ==================================================
+   WEB APP
+================================================== */
+
+.service-visual__app {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    min-height: 300px;
+}
+
+.service-visual__app aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 22px 0;
+    border-right: 1px solid var(--color-border);
+}
+
+.service-visual__app aside span {
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--color-border);
+}
+
+.service-visual__app aside .is-active {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent);
+}
+
+.service-visual__app main {
+    padding: 23px;
+}
+
+.service-visual__app .app-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.service-visual__app .app-toolbar span:first-child {
+    width: 36%;
+    height: 11px;
+    background-color: var(--color-dark);
+}
+
+.service-visual__app .app-toolbar span:last-child {
+    width: 48px;
+    height: 22px;
+    background-color: var(--color-accent);
+}
+
+.service-visual__app .app-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.service-visual__app .app-summary span {
+    height: 58px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-on-dark);
+}
+
+.service-visual__app .app-table {
+    display: grid;
+    border-top: 1px solid var(--color-border);
+}
+
+.service-visual__app .app-table > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.7fr) 10px;
+    align-items: center;
+    gap: 12px;
+    min-height: 44px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.service-visual__app .app-table span:first-child {
+    width: 80%;
+    height: 6px;
+    background-color: var(--color-border);
+}
+
+.service-visual__app .app-table span:nth-child(2) {
+    width: 65%;
+    height: 6px;
+    background-color: var(--color-muted);
+}
+
+.service-visual__app .app-table i {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+}
+
+/* ==================================================
+   RIFACIMENTO
+================================================== */
+
+.service-visual__refit {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 42px minmax(0, 1fr);
+    align-items: center;
+    min-height: 300px;
+    padding: 22px;
+}
+
+.service-visual__refit .refit-page {
+    min-height: 225px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-on-dark);
+}
+
+.service-visual__refit .refit-page--before {
+    opacity: 0.52;
+    transform: rotate(-2deg);
+}
+
+.service-visual__refit .refit-page--after {
+    box-shadow: 7px 7px 0 rgba(137, 79, 48, 0.12);
+    transform: rotate(2deg);
+}
+
+.service-visual__refit .refit-page__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 31px;
+    padding: 0 9px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.service-visual__refit .refit-page__header span:first-child {
+    width: 30px;
+    height: 7px;
+    background-color: var(--color-dark);
+}
+
+.service-visual__refit .refit-page__header span:last-child {
+    width: 38px;
+    height: 4px;
+    background-color: var(--color-border);
+}
+
+.service-visual__refit .refit-page__content {
+    padding: 20px 13px;
+}
+
+.service-visual__refit .refit-line {
+    display: block;
+    width: 100%;
+    height: 5px;
+    margin-bottom: 7px;
+    background-color: var(--color-border);
+}
+
+.service-visual__refit .refit-line--large {
+    width: 80%;
+    height: 11px;
+    margin-bottom: 12px;
+    background-color: var(--color-dark);
+}
+
+.service-visual__refit .refit-line--short {
+    width: 58%;
+}
+
+.service-visual__refit .refit-page__old-columns {
+    display: grid;
+    grid-template-columns: 1fr 0.65fr;
+    gap: 6px;
+    margin-top: 22px;
+}
+
+.service-visual__refit .refit-page__old-columns span {
+    height: 75px;
+    border: 1px solid var(--color-border);
+}
+
+.service-visual__refit .refit-change {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+}
+
+.service-visual__refit .refit-change svg {
+    width: 28px;
+}
+
+.service-visual__refit .refit-page__hero {
+    padding: 23px 13px;
+    background-color: var(--color-section-dark);
+}
+
+.service-visual__refit .refit-page__hero .refit-line--large {
+    background-color: var(--color-on-dark);
+}
+
+.service-visual__refit .refit-page__hero .refit-line:not(.refit-line--large) {
+    background-color: var(--color-muted);
+}
+
+.service-visual__refit .refit-button {
+    display: block;
+    width: 48px;
+    height: 17px;
+    margin-top: 14px;
+    background-color: var(--color-accent);
+}
+
+.service-visual__refit .refit-page__new-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+    padding: 13px;
+}
+
+.service-visual__refit .refit-page__new-columns span {
+    height: 58px;
+    border: 1px solid var(--color-border);
+}
+
+/* ==================================================
+   SITO SU MISURA
+================================================== */
+
+.service-visual__custom {
+    min-height: 300px;
+}
+
+.service-visual__custom .custom-site__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 43px;
+    padding: 0 18px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.service-visual__custom .custom-site__logo {
+    width: 38px;
+    height: 9px;
+    background-color: var(--color-section-dark);
+}
+
+.service-visual__custom .custom-site__header > div {
+    display: flex;
+    gap: 10px;
+}
+
+.service-visual__custom .custom-site__header > div span {
+    width: 24px;
+    height: 4px;
+    background-color: var(--color-border);
+}
+
+.service-visual__custom .custom-site__hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(110px, 0.95fr);
+    align-items: center;
+    gap: 16px;
+    min-height: 190px;
+    padding: 25px 18px;
+}
+
+.service-visual__custom .custom-site__copy > span {
+    display: block;
+}
+
+.service-visual__custom .custom-site__accent {
+    width: 48px;
+    height: 5px;
+    margin-bottom: 15px;
+    background-color: var(--color-accent);
+}
+
+.service-visual__custom .custom-site__title {
+    width: 92%;
+    height: 13px;
+    margin-bottom: 8px;
+    background-color: var(--color-section-dark);
+}
+
+.service-visual__custom .custom-site__title--short {
+    width: 63%;
+}
+
+.service-visual__custom .custom-site__text {
+    width: 82%;
+    height: 5px;
+    margin-top: 17px;
+    background-color: var(--color-border);
+}
+
+.service-visual__custom .custom-site__button {
+    width: 58px;
+    height: 19px;
+    margin-top: 19px;
+    background-color: var(--color-accent);
+}
+
+.service-visual__custom .custom-site__visual {
+    position: relative;
+    min-height: 145px;
+    overflow: hidden;
+    background-color: var(--color-dark);
+}
+
+.service-visual__custom .custom-site__visual::before {
+    position: absolute;
+    right: -24px;
+    bottom: -30px;
+    width: 115px;
+    height: 115px;
+    content: "";
+    border: 1px solid var(--color-muted);
+    border-radius: 50%;
+}
+
+.service-visual__custom .custom-site__visual::after {
+    position: absolute;
+    top: 28px;
+    left: 25px;
+    width: 62px;
+    height: 62px;
+    content: "";
+    border: 1px solid var(--color-accent);
+    transform: rotate(12deg);
+}
+
+.service-visual__custom .custom-site__visual span {
+    position: absolute;
+    right: 24px;
+    bottom: 25px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--color-accent);
+}
+
+.service-visual__custom .custom-site__sections {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
+    padding: 0 18px 19px;
+}
+
+.service-visual__custom .custom-site__sections span {
+    height: 35px;
+    border: 1px solid var(--color-border);
+}
+
+/* ==================================================
+   MANUTENZIONE
+================================================== */
+
+.service-visual__maintenance {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+
+.service-visual__maintenance .maintenance-site {
+    position: relative;
+    z-index: 2;
+    width: 185px;
+    min-height: 180px;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-on-dark);
+    box-shadow: 8px 8px 0 rgba(137, 79, 48, 0.12);
+}
+
+.service-visual__maintenance .maintenance-site__top {
+    display: flex;
+    justify-content: space-between;
+    height: 33px;
+    padding: 11px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.service-visual__maintenance .maintenance-site__top span:first-child {
+    width: 35px;
+    height: 7px;
+    background-color: var(--color-dark);
+}
+
+.service-visual__maintenance .maintenance-site__top span:last-child {
+    width: 45px;
+    height: 5px;
+    background-color: var(--color-border);
+}
+
+.service-visual__maintenance .maintenance-site__body {
+    display: grid;
+    gap: 9px;
+    padding: 20px 16px;
+}
+
+.service-visual__maintenance .maintenance-site__body span {
+    height: 22px;
+    border: 1px solid var(--color-border);
+}
+
+.service-visual__maintenance .maintenance-site__status {
+    position: absolute;
+    right: -15px;
+    bottom: -15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    color: var(--color-on-dark);
+    background-color: var(--color-accent);
+    border-radius: 50%;
+}
+
+.service-visual__maintenance .maintenance-site__status svg {
+    width: 24px;
+}
+
+.service-visual__maintenance .maintenance-tools {
+    position: absolute;
+    inset: 0;
+}
+
+.service-visual__maintenance .maintenance-tool {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    color: var(--color-accent);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg-dark);
+}
+
+.service-visual__maintenance .maintenance-tool svg {
+    width: 24px;
+}
+
+.service-visual__maintenance .maintenance-tool--update {
+    top: 34px;
+    left: 43px;
+}
+
+.service-visual__maintenance .maintenance-tool--backup {
+    right: 43px;
+    top: 34px;
+}
+
+.service-visual__maintenance .maintenance-tool--security {
+    bottom: 30px;
+    left: 43px;
+}
+
+.service-visual__maintenance .maintenance-tool--speed {
+    right: 43px;
+    bottom: 30px;
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width: 900px) {
+    .service-visual {
+        max-width: 500px;
+        margin-right: auto;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 550px) {
+    .service-visual {
+        max-width: 100%;
+    }
+
+    .service-visual::after {
+        right: -10px;
+        bottom: -10px;
+    }
+
+    .service-visual__app,
+    .service-visual__custom,
+    .service-visual__maintenance {
+        min-height: 270px;
+    }
+
+    .service-visual__app {
+        grid-template-columns: 40px minmax(0, 1fr);
+    }
+
+    .service-visual__app main {
+        padding: 17px;
+    }
+
+    .service-visual__app .app-summary span {
+        height: 45px;
+    }
+
+    .service-visual__app .app-table > div {
+        grid-template-columns: minmax(0, 1fr) 8px;
+    }
+
+    .service-visual__app .app-table span:nth-child(2) {
+        display: none;
+    }
+
+    .service-visual__refit {
+        grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr);
+        min-height: 270px;
+        padding: 15px;
+    }
+
+    .service-visual__refit .refit-page {
+        min-height: 200px;
+    }
+
+    .service-visual__refit .refit-change svg {
+        width: 22px;
+    }
+
+    .service-visual__custom .custom-site__hero {
+        grid-template-columns: minmax(0, 1fr) 100px;
+        padding: 20px 14px;
+    }
+
+    .service-visual__custom .custom-site__visual {
+        min-height: 125px;
+    }
+
+    .service-visual__maintenance .maintenance-site {
+        width: 155px;
+    }
+
+    .service-visual__maintenance .maintenance-tool {
+        width: 39px;
+        height: 39px;
+    }
+
+    .service-visual__maintenance .maintenance-tool svg {
+        width: 20px;
+    }
+
+    .service-visual__maintenance .maintenance-tool--update,
+    .service-visual__maintenance .maintenance-tool--security {
+        left: 24px;
+    }
+
+    .service-visual__maintenance .maintenance-tool--backup,
+    .service-visual__maintenance .maintenance-tool--speed {
+        right: 24px;
+    }
+}
+
+
+html[data-theme="dark"] .service-visual__window {
+    background-color: #293138;
+}
+
+html[data-theme="dark"] .service-visual__app .app-summary span,
+html[data-theme="dark"] .service-visual__refit .refit-page,
+html[data-theme="dark"] .service-visual__custom .custom-page,
+html[data-theme="dark"] .service-visual__maintenance .maintenance-card {
+    background-color: #353d44;
+}

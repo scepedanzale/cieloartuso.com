@@ -1,0 +1,20 @@
+---
+import RepairIcon from "./icons/RepairIcon.astro";
+import PageIcon from "./icons/PageIcon.astro";
+import ResponsiveIcon from "./icons/ResponsiveIcon.astro";
+import SitemapIcon from "./icons/SitemapIcon.astro";
+
+const { name } = Astro.props;
+---
+
+{
+  name === "repair" ? (
+    <RepairIcon />
+  ) : name === "page" ? (
+    <PageIcon />
+  ) : name === "responsive" ? (
+    <ResponsiveIcon />
+  ) : name === "sitemap" ? (
+    <SitemapIcon />
+  ) : null
+}

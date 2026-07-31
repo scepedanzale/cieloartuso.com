@@ -1,0 +1,486 @@
+/* ==================================================
+   PAGINA: WEB APP E GESTIONALI
+================================================== */
+
+/* ==================================================
+   01. HERO
+================================================== */
+
+.service-page--webapp .webapp-hero__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+    align-items: center;
+    gap: clamp(60px, 9vw, 140px);
+}
+
+.service-page--webapp .webapp-hero__content {
+    max-width: 800px;
+}
+
+.service-page--webapp .webapp-hero__content .page-intro {
+    max-width: 720px;
+}
+
+
+
+
+
+/* ==================================================
+   04. POSSIBILI PROGETTI
+================================================== */
+
+
+
+.service-page--webapp .webapp-examples__heading {
+    max-width: 750px;
+    text-align: center;
+    margin: 0 auto 50px;
+}
+
+.service-page--webapp .webapp-examples__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+}
+
+.service-page--webapp .webapp-examples__list article {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+    gap: 25px;
+    min-height: 210px;
+    padding: 32px;
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.service-page--webapp .webapp-examples__list .icon {
+    width: 48px;
+    flex-shrink: 0;
+    color: var(--color-accent);
+}
+
+.service-page--webapp .webapp-examples__list h3 {
+    margin-bottom: 10px;
+}
+
+.service-page--webapp .webapp-examples__list p {
+    margin-bottom: 0;
+    color: var(--color-muted);
+}
+
+/* ==================================================
+   06. PROCESSO
+================================================== */
+
+.service-page--webapp .webapp-process{
+    background-color: var(--color-bg-dark);
+}
+.service-page--webapp .webapp-process__heading {
+    max-width: 760px;
+    margin-bottom: 55px;
+}
+
+.service-page--webapp .webapp-process__steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+}
+
+.service-page--webapp .webapp-process__steps li {
+    display: flex;
+    min-height: 310px;
+    flex-direction: column;
+    padding: 30px;
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.service-page--webapp .webapp-process__steps li>span {
+    display: block;
+    margin-bottom: auto;
+    color: var(--color-accent);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.service-page--webapp .webapp-process__steps h3 {
+    margin: 65px 0 10px;
+}
+
+.service-page--webapp .webapp-process__steps p {
+    margin-bottom: 0;
+    color: var(--color-muted);
+}
+
+/* ==================================================
+   PERCHÉ È UTILE
+================================================== */
+
+.service-page--webapp .webapp-benefits {
+    background-color: var(--color-bg-dark);
+}
+
+.service-page--webapp .webapp-benefits__intro {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    column-gap: clamp(50px, 8vw, 120px);
+    margin-bottom: 55px;
+}
+
+.service-page--webapp .webapp-benefits__intro>.eyebrow {
+    grid-column: 1 / -1;
+}
+
+.service-page--webapp .webapp-benefits__intro h2 {
+    max-width: 680px;
+    margin-bottom: 0;
+}
+
+.service-page--webapp .webapp-benefits__text {
+    max-width: 700px;
+}
+
+.service-page--webapp .webapp-benefits__text p {
+    margin-bottom: 18px;
+}
+
+.service-page--webapp .webapp-benefits__text p:last-child {
+    margin-bottom: 0;
+}
+
+/* CONFRONTO */
+
+.service-page--webapp .webapp-comparison {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.service-page--webapp .webapp-comparison__card {
+    border: 1px solid var(--color-border);
+}
+
+.service-page--webapp .webapp-comparison__card--after {
+    color: var(--color-on-dark);
+    border-color: var(--color-text);
+    background-color: var(--color-section-dark);
+}
+
+.service-page--webapp .webapp-comparison__header {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 20px;
+    padding: 28px 30px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.service-page--webapp .webapp-comparison__card--after .webapp-comparison__header {
+    border-color: rgba(244, 243, 243, 0.2);
+}
+
+.service-page--webapp .webapp-comparison__header>.icon {
+    width: 46px;
+    color: var(--color-muted);
+}
+
+.service-page--webapp .webapp-comparison__card--after .webapp-comparison__header>.icon {
+    color: var(--color-accent);
+}
+
+.service-page--webapp .webapp-comparison__header .eyebrow {
+    margin-bottom: 5px;
+}
+
+.service-page--webapp .webapp-comparison__card--after .webapp-comparison__header .eyebrow {
+    color: var(--color-accent);
+}
+
+.service-page--webapp .webapp-comparison__header h3 {
+    margin-bottom: 0;
+}
+
+.service-page--webapp .webapp-comparison__card ul {
+    padding: 10px 30px;
+}
+
+.service-page--webapp .webapp-comparison__card li {
+    display: grid;
+    grid-template-columns: 22px minmax(0, 1fr);
+    align-items: start;
+    gap: 14px;
+    padding: 19px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.service-page--webapp .webapp-comparison__card li:last-child {
+    border-bottom: 0;
+}
+
+.service-page--webapp .webapp-comparison__card--after li {
+    border-color: rgba(244, 243, 243, 0.2);
+}
+
+.service-page--webapp .webapp-comparison__card li svg {
+    width: 20px;
+    margin-top: 2px;
+    color: var(--color-muted);
+}
+
+.service-page--webapp .webapp-comparison__card--after li svg {
+    color: var(--color-accent);
+}
+
+
+/* ==================================================
+   FOTO + SVILUPPO DEL PROGETTO
+================================================== */
+
+.service-page--webapp .webapp-development {
+    color: var(--color-on-dark);
+    background-color: var(--color-section-dark);
+}
+
+.service-page--webapp .webapp-development .container {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: start;
+    gap: clamp(50px, 8vw, 120px);
+}
+
+.service-page--webapp .webapp-development__image {
+    position: sticky;
+    top: 120px;
+    margin: 0;
+    order: 0;
+}
+
+.service-page--webapp .webapp-development__image img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.service-page--webapp .webapp-development__image figcaption {
+    max-width: 500px;
+    margin-top: 14px;
+    color: var(--color-on-dark);
+    opacity: 0.7;
+}
+
+.service-page--webapp .webapp-development__content {
+    max-width: 720px;
+    order: 1;
+}
+
+.service-page--webapp .webapp-development__content .eyebrow {
+    color: var(--color-accent);
+}
+
+.service-page--webapp .webapp-development__content>p:not(.eyebrow) {
+    color: var(--color-on-dark);
+}
+
+.service-page--webapp .webapp-development__list {
+    display: grid;
+    margin: 35px 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.service-page--webapp .webapp-development__list li {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    align-items: start;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.service-page--webapp .webapp-development__list .icon {
+    width: 38px;
+    color: var(--color-accent);
+}
+
+.service-page--webapp .webapp-development__list li>div {
+    display: grid;
+    gap: 7px;
+}
+
+.service-page--webapp .webapp-development__list span {
+    color: var(--color-on-dark);
+    opacity: 0.75;
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width: 900px) {
+
+    .service-page--webapp .webapp-benefits__intro,
+    .service-page--webapp .webapp-development .container {
+        grid-template-columns: 1fr;
+    }
+
+    .service-page--webapp .webapp-benefits__intro>.eyebrow {
+        grid-column: auto;
+    }
+
+    .service-page--webapp .webapp-benefits__intro h2 {
+        margin-bottom: 25px;
+    }
+
+    .service-page--webapp .webapp-development__image {
+        position: static;
+        max-width: 700px;
+        order: 1;
+    }
+    .service-page--webapp .webapp-development__content{
+        order: 0;
+    }
+
+    .service-page--webapp .webapp-development__image img {
+        aspect-ratio: 16 / 10;
+    }
+}
+
+@media (max-width: 700px) {
+    .service-page--webapp .webapp-comparison {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .service-page--webapp .webapp-comparison__header {
+        grid-template-columns: 38px minmax(0, 1fr);
+        gap: 15px;
+        padding: 24px 20px;
+    }
+
+    .service-page--webapp .webapp-comparison__header>.icon {
+        width: 36px;
+    }
+
+    .service-page--webapp .webapp-comparison__card ul {
+        padding: 8px 20px;
+    }
+
+    .service-page--webapp .webapp-comparison__card li {
+        gap: 11px;
+        padding: 17px 0;
+    }
+
+    .service-page--webapp .webapp-development__image img {
+        aspect-ratio: 1 / 1;
+    }
+
+    .service-page--webapp .webapp-development__list li {
+        grid-template-columns: 40px minmax(0, 1fr);
+        gap: 15px;
+    }
+
+    .service-page--webapp .webapp-development__list .icon {
+        width: 32px;
+    }
+}
+
+
+
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width: 1000px) {
+
+    .service-page--webapp .webapp-hero__grid,
+    .service-page--webapp .webapp-intro .container,
+    .service-page--webapp .webapp-context .container,
+    .service-page--webapp .webapp-evolution .container,
+    .service-page--webapp .webapp-foundations .container {
+        grid-template-columns: 1fr;
+    }
+
+    .service-page--webapp .webapp-hero__grid {
+        gap: 60px;
+    }
+
+    .service-page--webapp .webapp-intro__content,
+    .service-page--webapp .webapp-context__heading,
+    .service-page--webapp .webapp-foundations__intro {
+        max-width: 720px;
+    }
+
+    .service-page--webapp .webapp-process__steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .service-page--webapp .webapp-cta .container {
+        grid-template-columns: 1fr;
+        align-items: start;
+        gap: 35px;
+    }
+}
+
+@media (max-width: 750px) {
+    .service-page--webapp .webapp-examples__list {
+        grid-template-columns: 1fr;
+    }
+
+    .service-page--webapp .webapp-process__steps {
+        grid-template-columns: 1fr;
+    }
+
+    .service-page--webapp .webapp-process__steps li {
+        min-height: auto;
+    }
+
+    .service-page--webapp .webapp-process__steps li>span {
+        margin-bottom: 40px;
+    }
+
+    .service-page--webapp .webapp-process__steps h3 {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .service-page--webapp .webapp-intro__image img {
+        aspect-ratio: 1 / 1;
+    }
+
+    .service-page--webapp .webapp-context__content li {
+        gap: 11px;
+    }
+
+    .service-page--webapp .webapp-examples__list article {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        gap: 20px;
+        padding: 26px 22px;
+    }
+
+    .service-page--webapp .webapp-examples__list .icon {
+        width: 42px;
+    }
+
+    .service-page--webapp .webapp-process__steps li {
+        padding: 26px 22px;
+    }
+
+    .service-page--webapp .webapp-foundations__list article {
+        grid-template-columns: 44px minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .service-page--webapp .webapp-foundations__list .icon {
+        width: 36px;
+    }
+}

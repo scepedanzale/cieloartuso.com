@@ -1,0 +1,596 @@
+.chi-sono-page header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.chi-sono-page header .intro {
+  max-width: 500px;
+}
+
+.chi-sono-page header .intro p:first-child {
+  font-size: 20px;
+}
+
+
+/* FORMAZIONE */
+
+.training {
+    background-color: var(--color-bg-dark);
+}
+.training .section-heading {
+  text-align: center;
+  width: 100%;
+}
+
+.training__list {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid var(--color-border);
+}
+
+.training__list li {
+  padding: 20px;
+}
+
+.training__list li:not(:last-of-type) {
+  border-right: 1px solid var(--color-border);
+}
+
+.training__list li p {
+  color: var(--color-muted);
+  font-size: 16px;
+}
+
+.training__list li .icon {
+  color: var(--color-accent);
+  width: 50px;
+}
+
+
+/* SOSTENIBILITÀ */
+
+.chi-sono-page .sustainable {
+  position: relative;
+  overflow: hidden;
+  padding: 70px 50px;
+
+  background-image: url("/images/site/cielo-artuso-sustainable.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  color: var(--color-on-dark);
+}
+
+.chi-sono-page .sustainable::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(32, 39, 45, 0.78);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.chi-sono-page .sustainable__content {
+  position: relative;
+  z-index: 2;
+}
+
+.chi-sono-page .sustainable .eyebrow {
+  color: var(--color-soft);
+}
+
+.chi-sono-page .sustainable__intro {
+  margin-bottom: 35px;
+}
+
+.chi-sono-page .sustainable__text {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 70px;
+}
+
+.chi-sono-page .sustainable__text>div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chi-sono-page .sustainable__text p {
+  margin: 0;
+}
+
+
+.chi-sono-page .sustainable__box {
+  padding: 24px 26px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.chi-sono-page .sustainable__box h3 {
+  margin-bottom: 12px;
+}
+
+.chi-sono-page .sustainable__box p {
+  margin: 0;
+}
+
+
+.chi-sono-page .sustainable__cta {
+  margin: auto;
+}
+.chi-sono-page .sustainable__cta p {
+  max-width: 380px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  .chi-sono-page .sustainable {
+    padding: 55px 30px;
+  }
+
+  .chi-sono-page .sustainable__text{
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .chi-sono-page .sustainable__cta {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .chi-sono-page .sustainable {
+    padding: 45px 20px;
+  }
+}
+
+/* APPROCCIO */
+
+.approach__steps {
+  position: relative;
+  display: grid;
+  gap: clamp(40px, 3vw, 80px);
+  margin: auto;
+  width: max-content;
+}
+
+.approach-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: start;
+}
+
+.approach__steps::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 32px;
+  width: 1px;
+  background: color-mix(in srgb, var(--color-text) 16%, transparent);
+}
+
+/* .approach-step:nth-child(even) {
+  margin-left: clamp(0px, 8vw, 120px);
+} */
+
+.approach-step__number {
+  position: sticky;
+  top: 120px;
+  z-index: 1;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--background-color);
+  border: 1px solid color-mix(in srgb, var(--text-color) 18%, transparent);
+  color: var(--accent-color);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.approach-step__content {
+  max-width: 720px;
+  padding-bottom: clamp(12px, 2vw, 24px);
+}
+
+.approach-step__label {
+  margin: 0 0 12px;
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.approach-step h3 {
+  margin: 0;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.approach-step__content p:not(.approach-step__label) {
+  margin-top: 18px;
+  max-width: 620px;
+  color: var(--color-muted);
+  font-size: 16px;
+}
+
+@media (max-width: 760px) {
+  .approach__steps::before {
+    left: 24px;
+  }
+
+  .approach-step,
+  .approach-step:nth-child(even) {
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+    margin-left: 0;
+  }
+
+  .approach-step__number {
+    width: 48px;
+    height: 48px;
+    top: 88px;
+    font-size: 0.75rem;
+  }
+
+}
+
+/* ALTRO */
+
+.about-more .container {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 20px;
+}
+
+.about-more img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.about-more__content {
+  padding: 58px;
+}
+
+.about-more li {
+  margin-bottom: 20px;
+  max-width: 500px;
+  display: flex;
+  align-items: start;
+  gap: 20px;
+}
+
+.about-more li span {
+  color: var(--color-accent);
+}
+
+
+/* =========================
+   RESPONSIVE - CHI SONO
+   ========================= */
+
+
+/* TABLET */
+@media (max-width: 992px) {
+
+  /* HERO */
+
+  .chi-sono-page header {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .chi-sono-page header .intro {
+    max-width: 100%;
+  }
+
+  .chi-sono-page header > img {
+    width: 100%;
+    height: 100%;
+    max-height: 520px;
+    object-fit: cover;
+  }
+
+
+  /* FORMAZIONE */
+
+  .training__list {
+    grid-template-columns: 1fr;
+    max-width: 700px;
+  }
+
+  .training__list li {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 20px;
+  }
+
+  .training__list li:not(:last-of-type) {
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+
+  /* SOSTENIBILITÀ */
+
+  .chi-sono-page .sustainable {
+    padding: 60px 40px;
+  }
+
+  .chi-sono-page .sustainable__text {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .chi-sono-page .sustainable__box {
+    margin-bottom: 25px;
+  }
+
+
+  /* APPROCCIO */
+
+  .approach__steps {
+    width: 100%;
+    max-width: 800px;
+  }
+
+
+  /* ALTRO SU DI ME */
+
+  .about-more .container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-more__content {
+    padding: 40px;
+  }
+
+  .about-more img {
+    height: 100%;
+    max-height: none;
+  }
+}
+
+
+/* MOBILE / TABLET PICCOLO */
+@media (max-width: 768px) {
+
+  /* HERO */
+
+  .chi-sono-page header {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .chi-sono-page header > img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .chi-sono-page header .intro p:first-child {
+    font-size: 18px;
+  }
+
+
+  /* FORMAZIONE */
+
+  .training .section-heading {
+    text-align: left;
+  }
+
+  .training__list {
+    width: 100%;
+  }
+
+  .training__list li {
+    padding: 25px 20px;
+  }
+
+  .training__list li .icon {
+    width: 42px;
+  }
+
+
+  /* SOSTENIBILITÀ */
+
+  .chi-sono-page .sustainable {
+    padding: 50px 30px;
+    background-position: center;
+  }
+
+  .chi-sono-page .sustainable::before {
+    background: rgba(32, 39, 45, 0.86);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+
+  .chi-sono-page .sustainable__intro {
+    margin-bottom: 30px;
+  }
+
+  .chi-sono-page .sustainable__text {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .chi-sono-page .sustainable__box {
+    padding: 22px;
+  }
+
+  .chi-sono-page .sustainable__cta {
+    margin: 0;
+  }
+
+  .chi-sono-page .sustainable__cta p {
+    max-width: 100%;
+  }
+
+
+  /* APPROCCIO */
+
+  .approach__steps {
+    gap: 45px;
+  }
+
+  .approach__steps::before {
+    left: 24px;
+  }
+
+  .approach-step {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .approach-step__number {
+    width: 48px;
+    height: 48px;
+    top: 90px;
+    font-size: 0.75rem;
+  }
+
+  .approach-step__content {
+    max-width: 100%;
+  }
+
+  .approach-step__content p:not(.approach-step__label) {
+    max-width: 100%;
+  }
+
+
+  /* ALTRO */
+
+  .about-more .container {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .about-more img {
+    height: 400px;
+    max-height: none;
+    object-position: center;
+  }
+
+  .about-more__content {
+    padding: 40px 0 0;
+  }
+
+  .about-more li {
+    max-width: 100%;
+  }
+}
+
+
+/* MOBILE */
+@media (max-width: 576px) {
+
+  /* HERO */
+
+  .chi-sono-page header {
+    gap: 25px;
+  }
+
+  .chi-sono-page header > img {
+    height: 340px;
+  }
+
+
+  /* FORMAZIONE */
+
+  .training__list li {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 22px 18px;
+  }
+
+  .training__list li .icon {
+    width: 40px;
+  }
+
+
+  /* SOSTENIBILITÀ */
+
+  .chi-sono-page .sustainable {
+    padding: 40px 20px;
+  }
+
+  .chi-sono-page .sustainable__intro h2 br {
+    display: none;
+  }
+
+  .chi-sono-page .sustainable__text {
+    gap: 25px;
+  }
+
+  .chi-sono-page .sustainable__box {
+    padding: 20px;
+  }
+
+  .chi-sono-page .sustainable__cta .button {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+
+  /* APPROCCIO */
+
+  .approach__steps {
+    gap: 35px;
+  }
+
+  .approach-step {
+    grid-template-columns: 40px 1fr;
+    gap: 16px;
+  }
+
+  .approach__steps::before {
+    left: 20px;
+  }
+
+  .approach-step__number {
+    width: 40px;
+    height: 40px;
+    top: 85px;
+    font-size: 0.65rem;
+  }
+
+  .approach-step__label {
+    margin-bottom: 8px;
+  }
+
+  .approach-step__content p:not(.approach-step__label) {
+    margin-top: 12px;
+    font-size: 15px;
+  }
+
+
+  /* ALTRO */
+
+  .about-more img {
+    height: 320px;
+  }
+
+  .about-more__content {
+    padding-top: 30px;
+  }
+
+  .about-more li {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+}

@@ -1,0 +1,295 @@
+---
+import ImageIcon from "../components/icons/ImageIcon.astro";
+import PcIcon from "../components/icons/PcIcon.astro";
+import LockIcon from "../components/icons/LockIcon.astro";
+import Separator from "../components/Separator.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ArrowIcon from "../components/icons/ArrowIcon.astro";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  url: Astro.url.href,
+  name: "Chi sono | Cielo Artuso",
+  mainEntity: {
+    "@type": "Person",
+    "@id": "https://www.cieloartuso.com/#person",
+    name: "Cielo Artuso",
+    jobTitle: "Web Developer",
+    url: "https://www.cieloartuso.com/",
+  },
+};
+---
+
+<BaseLayout
+  title="Chi sono | Cielo Artuso"
+  description="Mi chiamo Cielo e creo siti web curati per chi vuole presentarsi meglio online"
+  structuredData={structuredData}
+>
+  <div class="chi-sono-page">
+    <section class="page-hero">
+      <header class="container">
+        <div>
+          <p class="eyebrow">Web developer</p>
+          <h1>Chi sono</h1>
+          <Separator />
+          <div class="intro reveal">
+            <p>
+              <strong>Ciao, sono Cielo</strong>, web developer con sede a Milano
+              e, da remoto, ovunque.
+            </p>
+            <br />
+            <p><b>Cosa vuol dire web developer?</b></p>
+            <p>
+              Nel mio caso, sviluppo siti web e web application, gestionali e
+              dashboard.
+              <br />Quindi aiuto brand locali, attività e professionisti a
+              rappresentarsi online in modo chiaro e <a
+                href="#sostenibile"
+                class="link">sostenibile</a
+              > e a gestire il proprio lavoro nella maniera più semplice possibile.
+            </p>
+          </div>
+        </div>
+        <img src="/images/site/cielo-artuso.webp" alt="Cielo Artuso" class="reveal"/>
+      </header>
+    </section>
+
+    <!-- FORMAZIONE -->
+    <section class="training">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Formazione</p>
+          <h2>Tra creatività e sviluppo</h2>
+          <p>
+            Il mio percorso nasce dall’incontro tra sensibilità visiva e
+            competenze tecniche.
+          </p>
+        </div>
+
+        <div class="training__content">
+          <ul class="training__list">
+            <li class="reveal">
+              <ImageIcon />
+              <div>
+                <h3>Una base artistica</h3>
+                <p>
+                  Ho sempre disegnato fin da piccolo e ho poi approfondito
+                  questa inclinazione attraverso il liceo artistico. <br /> Questo
+                  percorso mi ha aiutato a sviluppare attenzione per l’equilibrio
+                  visivo, i colori, la composizione e i dettagli: aspetti che oggi
+                  porto anche nella progettazione di siti web.
+                </p>
+              </div>
+            </li>
+
+            <li class="reveal d1">
+              <PcIcon />
+              <div>
+                <h3>Corsi e attestati in ambito tech</h3>
+                <p>
+                  Dopo la base artistica, ho scelto di formarmi in modo più
+                  tecnico attraverso corsi dedicati allo sviluppo web e
+                  software, ottenendo attestati che hanno consolidato le mie
+                  competenze in ambito full stack development.
+                </p>
+              </div>
+            </li>
+
+            <li class="reveal d2">
+              <LockIcon />
+              <div>
+                <h3>Competenze più ampie</h3>
+                <p>
+                  Nel tempo ho ampliato il mio percorso anche verso temi come
+                  networking, sicurezza, infrastruttura e gestione dei sistemi.
+                  <br /> Questo mi permette di guardare un sito non solo dal punto
+                  di vista estetico, ma anche da quello tecnico, pratico e manutentivo.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Il mio approccio</p>
+          <h2>Ti guido io, senza complicare il processo</h2>
+          <p>
+            Non serve arrivare con un’idea perfetta, una mappa del sito già
+            pronta o parole tecniche da usare. <br /> Il mio lavoro parte proprio
+            da qui: fare le domande giuste, mettere ordine e trasformare le idee in
+            qualcosa di chiaro, utile e concreto.
+          </p>
+        </div>
+
+        <div class="approach__steps">
+          <article class="approach-step reveal">
+            <span class="approach-step__number">01</span>
+            <div class="approach-step__content">
+              <p class="approach-step__label">Prima call</p>
+              <h3>Non devi preparare un discorso perfetto</h3>
+              <p>
+                Ti faccio io le domande utili per capire chi sei, cosa fai, cosa
+                vuoi comunicare e cosa deve ottenere il sito. Anche se hai solo
+                idee confuse, va benissimo: partiamo da quelle.
+              </p>
+            </div>
+          </article>
+
+          <article class="approach-step reveal">
+            <span class="approach-step__number">02</span>
+            <div class="approach-step__content">
+              <p class="approach-step__label">Direzione</p>
+              <h3>Mettiamo ordine nelle cose</h3>
+              <p>
+                Insieme capiamo cosa serve davvero, cosa si può semplificare e
+                quale struttura ha più senso. L’obiettivo è evitare confusione,
+                pagine inutili e funzionalità messe solo “perché si fa così”.
+              </p>
+            </div>
+          </article>
+
+          <article class="approach-step reveal">
+            <span class="approach-step__number">03</span>
+            <div class="approach-step__content">
+              <p class="approach-step__label">Sviluppo</p>
+              <h3>Vedi il sito prendere forma, passo dopo passo</h3>
+              <p>
+                Durante il lavoro ti tengo aggiornato con avanzamenti chiari e
+                frequenti. Non sparisco fino alla consegna: ti mostro cosa sto
+                facendo, ti spiego le scelte importanti e mantengo il processo
+                comprensibile.
+              </p>
+            </div>
+          </article>
+
+          <article class="approach-step reveal">
+            <span class="approach-step__number">04</span>
+            <div class="approach-step__content">
+              <p class="approach-step__label">Consegna</p>
+              <h3>Alla fine sai cosa hai in mano</h3>
+              <p>
+                Il sito non viene solo pubblicato: viene consegnato in modo
+                ordinato. Ti spiego cosa è stato fatto, come funziona e come
+                gestirlo nel tempo, senza lasciarti con qualcosa di tecnico e
+                incomprensibile.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sostenibile" class="sustainable container">
+      <div class="sustainable__content reveal">
+        <div class="sustainable__intro">
+          <p class="eyebrow">Siti più leggeri, più duraturi</p>
+
+          <h2>
+            Un sito sostenibile non è solo una scelta “green”. <br /> È una scelta
+            di buon senso.
+          </h2>
+        </div>
+
+        <div class="sustainable__text">
+          <div>
+            <p>
+              Per me lavorare in modo sostenibile significa costruire siti con <strong>codice pulito, leggero e pensato per durare</strong>. Ogni
+              sezione, ogni animazione e ogni funzionalità deve avere un motivo
+              per esserci.
+            </p>
+
+            <p>
+              Evito strutture inutilmente pesanti, plugin superflui e soluzioni
+              che sembrano comode all’inizio, ma che con il tempo rendono il
+              sito più lento, fragile e difficile da mantenere.
+            </p>
+            <p>
+              Un sito fatto bene dovrebbe caricare velocemente, <strong>consumare meno risorse</strong>, essere semplice da
+              aggiornare e rimanere comprensibile anche dopo mesi o anni.
+            </p>
+
+            <p>
+              Per questo preferisco lavorare con strumenti più controllati e su
+              misura, scrivendo solo ciò che serve davvero.
+            </p>
+          </div>
+
+          <div>
+            <div class="sustainable__box">
+              <h3>Perché non parto quasi mai da WordPress?</h3>
+
+              <p>
+                WordPress può essere utile quando serve un CMS completo, ma per
+                molti siti vetrina <b>introduce più struttura del necessario</b
+                >: temi, plugin, aggiornamenti, codice extra e maggiore
+                manutenzione.
+              </p>
+            </div>
+
+            <div class="sustainable__cta">
+              <p>
+                Hai già un sito WordPress e vuoi tenerlo aggiornato, protetto e
+                in ordine?
+              </p>
+
+              <a
+                href="/servizi/manutenzione-siti-web"
+                class="button button--primary"
+              >
+                Scopri il servizio di manutenzione
+                <ArrowIcon />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-more">
+      <div class="container">
+        <div>
+          <img src="/images/site/cielo-artuso-bici.webp" alt="Visione dall'alto di una bicicletta" />
+        </div>
+        <div class="about-more__content reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Curiosità</p>
+            <h2>Altro su di me</h2>
+          </div>
+          <ul class="free-time__tags">
+            <li>
+              <ArrowIcon />
+              Natura e montagna come filosofia di vita
+            </li>
+            <li>
+              <ArrowIcon />
+              Faccio volontariato in gattile, e mi ricorda sempre quanto è importante
+              far conoscere le piccole realtà
+            </li>
+            <li>
+              <ArrowIcon />
+              Guardo film horror come non ci fosse un domani
+            </li>
+            <li>
+              <ArrowIcon />
+              Amo leggere, la musica e andare in bici
+            </li>
+            <li>
+              <ArrowIcon />
+              Costruire ma anche smontare le cose e capire come funzionano mi da un
+              sacco di soddisfazione
+            </li>
+            <li>
+              <ArrowIcon />
+              Ho un'esagerata conoscenza di dinosauri e Pokémon
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

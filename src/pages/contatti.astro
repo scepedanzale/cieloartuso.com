@@ -1,0 +1,482 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ArrowIcon from "../components/icons/ArrowIcon.astro";
+
+import "../css/contatti.css";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Contatti | Cielo Artuso",
+  description:
+    "Contatta Cielo Artuso per parlare del tuo sito web o progetto digitale.",
+  url: Astro.url.href,
+
+  about: {
+    "@id": "https://www.cieloartuso.com/#person",
+  },
+};
+---
+
+<BaseLayout
+  title="Contatti | Cielo Artuso"
+  description="Raccontami cosa ti serve: posso aiutarti a capire come migliorare il tuo sito o crearne uno più adatto alla tua attività."
+  structuredData={structuredData}
+>
+  <div class="contact-page">
+    <!-- HERO -->
+
+    <section class="page-hero contact-hero">
+      <div class="container">
+        <p class="eyebrow">Parliamo del tuo sito</p>
+
+        <h1>Contatti</h1>
+
+        <p class="page-intro">
+          Raccontami cosa ti serve: posso aiutarti a capire come migliorare il
+          tuo sito o crearne uno più adatto alla tua attività.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container contact-section__grid">
+        <img
+          src="/images/site/cielo-artuso-setup.webp"
+          alt="Setup di lavoro con due schermi, mouse e tastiera e una lampada da scrivania accesa"
+        />
+
+        <div class="contact-info">
+          <div class="section-heading contact-info__intro reveal">
+            <p class="eyebrow">Un primo confronto</p>
+
+            <h2>Partiamo da quello che ti serve</h2>
+
+            <p>
+              Non serve che arrivi con struttura, testi o aspetti tecnici già
+              definiti. <br />Tu mi racconti la situazione attuale e l’obiettivo
+              che vorresti raggiungere e io trovo la soluzione adatta a te.
+            </p>
+          </div>
+          <ul class="contact-list">
+            <li class="reveal">
+              <div class="contact-list__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                  <path d="m4 7 8 6 8-6"></path>
+                </svg>
+              </div>
+
+              <div class="contact-list__content">
+                <span>Email</span>
+
+                <a href="mailto:info@cieloartuso.com"> info@cieloartuso.com </a>
+              </div>
+            </li>
+
+            <li class="reveal">
+              <div class="contact-list__icon">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 256 256"
+                  xmlns="http://www.w3.org/2000/svg"
+                  ><path
+                    d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"
+                  ></path></svg
+                >
+              </div>
+
+              <div class="contact-list__content">
+                <span>Whatsapp</span>
+
+                <a href="https://wa.me/393488785699?text=Ciao%2C%20vorrei%20ricevere%20informazioni%20sui%20tuoi%20servizi."> 348 878 5699 </a>
+              </div>
+            </li>
+
+            <li class="reveal">
+              <div class="contact-list__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"
+                  ></path>
+                  <circle cx="12" cy="10" r="2.5"></circle>
+                </svg>
+              </div>
+
+              <div class="contact-list__content">
+                <span>Dove</span>
+
+                <p>Milano e da remoto ovunque</p>
+              </div>
+            </li>
+
+            <li class="reveal">
+              <div class="contact-list__icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <path d="M12 7v5l3 2"></path>
+                </svg>
+              </div>
+
+              <div class="contact-list__content">
+                <span>Disponibilità</span>
+
+                <p>Dal lunedì al venerdì</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="contact-info__note reveal">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M21 11.5a8.4 8.4 0 0 1-9 8.5 9.5 9.5 0 0 1-4-.9L3 21l1.8-4.6A8.5 8.5 0 1 1 21 11.5Z"
+              ></path>
+            </svg>
+
+            <p>Prima call conoscitiva gratuita di 30 minuti e senza impegno.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="social-section">
+      <div class="container social-section__grid">
+        <div class="social-section__heading">
+          <h2>Seguimi online</h2>
+
+          <p>
+            Puoi trovarmi anche sui miei canali social e vedere i miei progetti.
+          </p>
+        </div>
+
+        <div class="social-list reveal">
+          <a
+            href="https://www.instagram.com/cieloartuso"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-item"
+          >
+            <span class="social-item__name">
+              <svg
+                class="icon"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 256 256"
+                xmlns="http://www.w3.org/2000/svg"
+                ><path
+                  d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"
+                ></path></svg
+              >
+              Instagram
+            </span>
+
+            <span class="social-item__link">
+              @cieloartuso
+              <ArrowIcon />
+            </span>
+          </a>
+
+          <a
+            href="https://github.com/scepedanzale"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-item"
+          >
+            <span class="social-item__name">
+              <svg
+                class="icon"
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 256 256"
+                xmlns="http://www.w3.org/2000/svg"
+                ><path
+                  d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"
+                ></path></svg
+              >
+              GitHub
+            </span>
+
+            <span class="social-item__link">
+              Guarda i progetti
+              <ArrowIcon />
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="form-section">
+      <div class="container">
+        <!-- FORM -->
+
+        <div class="contact-form-wrapper reveal">
+          <div class="section-heading contact-form__heading">
+            <p class="eyebrow">Raccontami il progetto</p>
+
+            <h2>Come posso aiutarti?</h2>
+
+            <p>
+              Raccontami pure la tua idea, anche se è ancora tutta da definire.
+              Bastano poche informazioni per iniziare a capire insieme la
+              direzione giusta!
+            </p>
+          </div>
+
+          <form
+            action="https://formspree.io/f/xzzdlbkq"
+            method="POST"
+            class="contact-form"
+            id="contact-form"
+          >
+            <div class="contact-form__row">
+              <div class="form-field">
+                <label for="name">Nome e cognome</label>
+
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  placeholder="Come ti chiami?"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="email">Email</label>
+
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="nome@email.it"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="contact-form__row">
+              <div class="form-field">
+                <label for="business"> Attività o azienda </label>
+
+                <input
+                  id="business"
+                  name="business"
+                  type="text"
+                  autocomplete="organization"
+                  placeholder="Nome dell’attività"
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="service"> Di cosa hai bisogno? </label>
+
+                <select id="service" name="service" required>
+                  <option value="" selected disabled>
+                    Di cosa hai bisogno?
+                  </option>
+
+                  <option value="landing-page">
+                    Una landing page per promuovere un servizio o un progetto
+                  </option>
+
+                  <option value="nuovo-sito">
+                    Un nuovo sito web con più pagine
+                  </option>
+
+                  <option value="rifacimento-sito">
+                    Rifare o migliorare un sito già esistente
+                  </option>
+
+                  <option value="web-app">
+                    Uno strumento su misura per gestire la mia attività
+                  </option>
+
+                  <option value="manutenzione">
+                    Assistenza o modifiche su un sito esistente
+                  </option>
+
+                  <option value="intervento-singolo">
+                    Intervento singolo su un sito esistente
+                  </option>
+
+                  <option value="consulenza">
+                    Un confronto per capire quale soluzione scegliere
+                  </option>
+
+                  <option value="altro"> Altro </option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="website">
+                Sito attuale
+                <span>facoltativo</span>
+              </label>
+
+              <input
+                id="website"
+                name="website"
+                type="url"
+                autocomplete="url"
+                placeholder="https://..."
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="message"> Parlami del progetto </label>
+
+              <textarea
+                id="message"
+                name="message"
+                rows="7"
+                placeholder="Cosa vorresti realizzare o migliorare? Qual è il problema principale del sito attuale?"
+                required></textarea>
+            </div>
+
+            <label class="form-checkbox">
+              <input type="checkbox" name="privacy" required />
+
+              <span>
+                Ho letto e accetto la
+                <a class="link" href="/privacy-policy"> privacy policy </a>.
+              </span>
+            </label>
+
+            <div class="contact-form__footer">
+              <button type="submit" class="button button--primary">
+                Invia la richiesta
+                <ArrowIcon />
+              </button>
+
+              <p>Riceverai risposta entro 24 ore</p>
+            </div>
+            <p class="contact-form__status" aria-live="polite" role="status">
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<script>
+  const form = document.querySelector("#contact-form");
+  const params = new URLSearchParams(window.location.search);
+  const serviceParam = params.get("service");
+
+  if (form instanceof HTMLFormElement && serviceParam) {
+    const serviceSelect = form.querySelector("#service");
+
+    if (serviceSelect instanceof HTMLSelectElement) {
+      serviceSelect.value = serviceParam;
+    }
+  }
+
+  if (form instanceof HTMLFormElement) {
+    const status = form.querySelector(".contact-form__status");
+    const submitButton = form.querySelector('button[type="submit"]');
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      if (!(submitButton instanceof HTMLButtonElement)) return;
+
+      const originalButtonContent = submitButton.innerHTML;
+
+      submitButton.disabled = true;
+      submitButton.innerHTML = "<span>Invio in corso...</span>";
+
+      if (status instanceof HTMLElement) {
+        status.textContent = "";
+        status.classList.remove(
+          "contact-form__status--success",
+          "contact-form__status--error",
+        );
+      }
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: new FormData(form),
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          const errorMessage = data.errors
+            ?.map((error: { message?: string }) => error.message)
+            .filter(Boolean)
+            .join(" ");
+
+          throw new Error(
+            errorMessage || "Non è stato possibile inviare il messaggio.",
+          );
+        }
+
+        form.reset();
+
+        if (status instanceof HTMLElement) {
+          status.textContent =
+            "Messaggio inviato! Grazie, ti risponderò entro 24 ore.";
+          status.classList.add("contact-form__status--success");
+        }
+
+        submitButton.innerHTML = "<span>Messaggio inviato</span>";
+      } catch (error) {
+        if (status instanceof HTMLElement) {
+          status.textContent =
+            error instanceof Error
+              ? error.message
+              : "Si è verificato un errore. Riprova tra poco.";
+
+          status.classList.add("contact-form__status--error");
+        }
+
+        submitButton.innerHTML = originalButtonContent;
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+  }
+</script>

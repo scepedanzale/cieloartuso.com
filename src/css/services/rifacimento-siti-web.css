@@ -1,0 +1,260 @@
+/* ==================================================
+   PAGINA: RIFACIMENTO SITI WEB
+================================================== */
+
+/* ==================================================
+   A CHI È RIVOLTO
+================================================== */
+
+.service-page--refit .per-chi .container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    align-items: stretch;
+}
+
+.service-page--refit .per-chi img {
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    object-fit: cover;
+    order: 0;
+}
+
+.service-page--refit .per-chi .container > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(40px, 6vw, 80px);
+    color: var(--color-on-dark);
+    background-color: var(--color-section-dark);
+    order: 1;
+}
+
+.service-page--refit .per-chi .eyebrow {
+    color: var(--color-accent);
+}
+
+.service-page--refit .per-chi .button {
+    align-self: flex-start;
+    margin-top: 12px;
+}
+
+/* ==================================================
+   PROBLEMI DEL SITO ATTUALE
+================================================== */
+
+
+
+.service-page--refit .perchè .container {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    align-items: start;
+    gap: clamp(50px, 8vw, 120px);
+}
+
+
+.service-page--refit .perchè ul {
+    display: grid;
+    margin: 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.service-page--refit .perchè ul li {
+    display: grid;
+    grid-template-columns: 45px minmax(0, 1fr);
+    align-items: start;
+    gap: 18px;
+    margin: 0;
+    padding: 24px 0;
+    border: 0;
+    border-bottom: 1px solid var(--color-border);
+    border-radius: 0;
+}
+
+.service-page--refit .perchè ul li span {
+    color: var(--color-accent);
+    max-width: 38px;
+}
+
+.service-page--refit .perchè ul li p {
+    margin: 0;
+}
+
+/* ==================================================
+   COSA COMPRENDE
+================================================== */
+
+
+.service-page--refit .cosa-include .container {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+    align-items: start;
+    gap: clamp(50px, 8vw, 100px);
+}
+
+.service-page--refit .cosa-include .section-heading {
+    max-width: 760px;
+}
+
+.service-page--refit .cosa-include ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    margin: 30px 0 0;
+    border-top: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+}
+
+.service-page--refit .cosa-include li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 85px;
+    margin: 0;
+    padding: 20px;
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.service-page--refit .cosa-include li .icon,
+.service-page--refit .cosa-include li svg {
+    width: 24px;
+    max-width: 24px;
+    flex-shrink: 0;
+    color: var(--color-accent);
+}
+
+.service-page--refit .cosa-include__box {
+    position: sticky;
+    top: 120px;
+    height: max-content;
+    padding: 32px;
+    border: 1px solid var(--color-accent);
+    background-color: var(--color-surface);
+}
+
+.service-page--refit .cosa-include__box p {
+    margin-bottom: 24px;
+}
+
+/* ==================================================
+   PROCESSO
+================================================== */
+
+.service-page--refit .refit-process {
+    background-color: var(--color-bg-dark);
+}
+
+.service-page--refit .refit-process__heading {
+    max-width: 760px;
+    margin: auto;
+    margin-bottom: 55px;
+    text-align: center;
+}
+
+
+
+.service-page--refit .refit-process__steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--color-border);
+    border-left: 1px solid var(--color-border);
+}
+
+.service-page--refit .refit-process__steps li {
+    display: flex;
+    min-height: 310px;
+    flex-direction: column;
+    padding: 30px;
+    border-right: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.service-page--refit .refit-process__steps li > span {
+    display: block;
+    margin-bottom: auto;
+    color: var(--color-accent);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.service-page--refit .refit-process__steps h3 {
+    margin: 65px 0 10px;
+}
+
+.service-page--refit .refit-process__steps p {
+    margin-bottom: 0;
+    color: var(--color-muted);
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width: 900px) {
+    .service-page--refit .refit-hero__grid,
+    .service-page--refit .per-chi .container,
+    .service-page--refit .perchè .container,
+    .service-page--refit .cosa-include .container {
+        grid-template-columns: 1fr;
+    }
+
+    .service-page--refit .per-chi .container >div {
+        order: 0;
+    }
+    .service-page--refit .per-chi img {
+        min-height: 380px;
+        order: 1;
+    }
+
+    .service-page--refit .perchè ul {
+        margin-top: 30px;
+    }
+
+    .service-page--refit .cosa-include__box {
+        display: none;
+    }
+
+    .service-page--refit .refit-process__steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .service-page--refit .per-chi img {
+        min-height: 280px;
+    }
+
+    .service-page--refit .per-chi .container > div {
+        padding: 35px 25px;
+    }
+
+    .service-page--refit .cosa-include ul {
+        grid-template-columns: 1fr;
+    }
+
+    .service-page--refit .cosa-include__box {
+        padding: 25px;
+    }
+
+    .service-page--refit .refit-process__steps {
+        grid-template-columns: 1fr;
+    }
+
+    .service-page--refit .refit-process__steps li {
+        min-height: auto;
+        padding: 26px 22px;
+    }
+
+    .service-page--refit .refit-process__steps li > span {
+        margin-bottom: 40px;
+    }
+
+    .service-page--refit .refit-process__steps h3 {
+        margin-top: 0;
+    }
+}

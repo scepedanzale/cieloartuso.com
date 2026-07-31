@@ -1,0 +1,702 @@
+---
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import ArrowIcon from "../../components/icons/ArrowIcon.astro";
+import CheckIcon from "../../components/icons/CheckIcon.astro";
+import EcoIcon from "../../components/icons/EcoIcon.astro";
+import Separator from "../../components/Separator.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import "../../css/service-page.css";
+import "../../css/services/siti-web-su-misura.css";
+import ServiceHeroVisual from "../../components/ServiceHeroVisual.astro";
+
+const faqs = [
+    {
+        question:
+            "Qual è la differenza tra landing page e sito multipagina?",
+        answer:
+            "Una landing page concentra tutte le informazioni in un’unica pagina e viene normalmente progettata intorno a un obiettivo specifico. Un sito multipagina permette invece di suddividere servizi, informazioni e contenuti in sezioni più approfondite.",
+    },
+    {
+        question: "Come faccio a sapere quale soluzione mi serve?",
+        answer:
+            "Durante la prima call analizziamo insieme obiettivi, servizi, pubblico e quantità di contenuti. In base a questi elementi ti consiglierò la struttura più adatta, senza aggiungere pagine o funzionalità inutili.",
+    },
+    {
+        question: "I prezzi di 700€ e 1.800€ sono definitivi?",
+        answer:
+            "Sono prezzi di partenza. Il costo finale dipende dal numero di pagine, dalla complessità del design, dai contenuti e dalle funzionalità richieste. Prima dell’inizio riceverai un preventivo dettagliato e chiaro.",
+    },
+    {
+        question: "Devo fornire io testi e immagini?",
+        answer:
+            "Puoi fornirmi testi e immagini già pronti, ma non è necessario avere tutto definito prima del primo confronto. Posso aiutarti a organizzare i contenuti e indicarti ciò che serve per completare il sito.",
+    },
+    {
+        question: "Potrò aggiungere nuove pagine in futuro?",
+        answer:
+            "Sì. La struttura può essere progettata per crescere nel tempo, permettendo di aggiungere nuove pagine, servizi, progetti, articoli o funzionalità quando ne avrai bisogno.",
+    },
+    {
+        question: "Dominio e hosting sono compresi?",
+        answer:
+            "Dominio e hosting vengono valutati separatamente in base alle necessità del progetto. Posso consigliarti la soluzione più adatta e occuparmi della configurazione e della pubblicazione del sito.",
+    },
+];
+
+const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+
+    name: "Siti web su misura",
+    description:
+        "Creazione di siti web su misura, veloci, affidabili e sostenibili.",
+
+    url: Astro.url.href,
+
+    provider: {
+        "@id": "https://www.cieloartuso.com/#person",
+    },
+
+    areaServed: {
+        "@type": "Country",
+        name: "Italia",
+    },
+};
+
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+
+    mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+        },
+    })),
+};
+
+const structuredData = [serviceSchema, faqSchema];
+---
+
+<BaseLayout
+    title="Siti web su misura | Cielo Artuso"
+    description="Realizzo landing page e siti web multipagina su misura per professionisti, piccole attività e brand. Progetti chiari, veloci e facili da utilizzare."
+    structuredData={structuredData}
+>
+    <div class="service-page service-page--custom">
+        <!-- HERO -->
+
+        <section class="service-hero">
+            <div class="container">
+                <Breadcrumb />
+
+                <div class="service-hero__grid">
+                    <div class="service-hero__content">
+                        <h1>Siti web su misura</h1>
+
+                        <p class="page-intro">
+                            Progetto e sviluppo siti web su misura per
+                            professionisti, piccole attività e brand che
+                            vogliono presentarsi online in modo chiaro,
+                            riconoscibile e professionale.
+                        </p>
+
+                        <a href="/contatti" class="button button--primary">
+                            Parliamo del progetto
+                            <ArrowIcon />
+                        </a>
+                    </div>
+
+                    <ServiceHeroVisual type="custom" />
+                </div>
+            </div>
+        </section>
+
+        <!-- SOLUZIONI -->
+
+        <section id="soluzioni" class="web-solutions">
+            <div class="container">
+                <div class="section-heading web-solutions__heading">
+                    <p class="eyebrow">Due punti di partenza</p>
+
+                    <h2>Di quale sito hai bisogno?</h2>
+
+                    <p>
+                        Non tutte le attività hanno bisogno della stessa
+                        struttura. Per questo puoi partire da una pagina
+                        essenziale oppure da un sito più completo e articolato.
+                    </p>
+                </div>
+
+                <div class="web-solutions__grid">
+                    <!-- LANDING -->
+
+                    <article class="solution-card reveal">
+                        <div class="solution-card__top">
+                            <p class="solution-card__label">
+                                Una pagina, un obiettivo
+                            </p>
+                        </div>
+
+                        <h3>Landing page</h3>
+
+                        <p class="solution-card__description">
+                            Una pagina unica progettata per presentare un
+                            servizio, promuovere un prodotto, raccogliere
+                            richieste o raccontare un progetto in modo diretto.
+                        </p>
+
+                        <div class="solution-card__price">
+                            <span>A partire da</span>
+                            <strong>700€</strong>
+                        </div>
+
+                        <div class="solution-card__ideal">
+                            <h4>È adatta se vuoi:</h4>
+
+                            <ul>
+                                <li>
+                                    <CheckIcon />
+                                    Presentare un singolo servizio
+                                </li>
+
+                                <li>
+                                    <CheckIcon />
+                                    Lanciare un nuovo progetto
+                                </li>
+
+                                <li>
+                                    <CheckIcon />
+                                    Raccogliere contatti o prenotazioni
+                                </li>
+
+                                <li>
+                                    <CheckIcon />
+                                    Avere una presenza online essenziale
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a
+                            href="/contatti?service=landing-page#form-section"
+                            class="button button--secondary"
+                        >
+                            Richiedi una landing page
+                            <ArrowIcon />
+                        </a>
+                    </article>
+
+                    <!-- MULTIPAGINA -->
+
+                    <article class="solution-card solution-card--featured reveal d1">
+                        <div class="solution-card__badge">
+                            Soluzione più completa
+                        </div>
+
+                        <div class="solution-card__top">
+                            <p class="solution-card__label">
+                                Più spazio per raccontarti
+                            </p>
+                        </div>
+
+                        <h3>Sito web multipagina</h3>
+
+                        <p class="solution-card__description">
+                            Un sito strutturato con più pagine, pensato per
+                            raccontare l’attività, presentare diversi servizi e
+                            costruire una presenza online più solida.
+                        </p>
+
+                        <div class="solution-card__price">
+                            <span>A partire da</span>
+                            <strong>1.800€</strong>
+                        </div>
+
+                        <div class="solution-card__ideal">
+                            <h4>È adatto se vuoi:</h4>
+
+                            <ul>
+                                <li>
+                                    <CheckIcon />
+                                    Presentare più servizi
+                                </li>
+
+                                <li>
+                                    <CheckIcon />
+                                    Raccontare attività, metodo e valori
+                                </li>
+
+                                <li>
+                                    <CheckIcon />
+                                    Lavorare sul posizionamento Google
+                                </li>
+
+                                <li>
+                                    <CheckIcon />
+                                    Aggiungere progetti, articoli o contenuti
+                                </li>
+                            </ul>
+                        </div>
+
+                        <a
+                            href="/contatti?service=nuovo-sito#form-section"
+                            class="button button--primary"
+                        >
+                            Richiedi un sito completo
+                            <ArrowIcon />
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- COME SCEGLIERE -->
+
+        <section class="solution-choice">
+            <div class="container">
+                <div class="section-heading solution-choice__intro">
+                    <p class="eyebrow">Landing o sito completo?</p>
+
+                    <h2>La soluzione giusta dipende dal tuo obiettivo</h2>
+
+                    <p>
+                        Non è sempre necessario partire da un sito grande.
+                        Durante il primo confronto capiamo quali contenuti hai,
+                        cosa vuoi ottenere e quale struttura può esserti davvero
+                        utile.
+                    </p>
+
+                    <img
+                        src="/images/site/siti-web-su-misura.webp"
+                        alt="Mani su tastiera di un computer"
+                    />
+                </div>
+
+                <div class="solution-choice__list">
+                    <div class="solution-choice__item reveal">
+                        <span>01</span>
+
+                        <div>
+                            <h3>Hai un solo servizio principale?</h3>
+
+                            <p>
+                                Una landing page può essere sufficiente per
+                                presentarlo con chiarezza e portare il
+                                visitatore verso una richiesta di contatto.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="solution-choice__item reveal">
+                        <span>02</span>
+
+                        <div>
+                            <h3>Hai più servizi o diversi pubblici?</h3>
+
+                            <p>
+                                Un sito multipagina permette di organizzare
+                                meglio le informazioni e dedicare il giusto
+                                spazio a ogni area dell’attività.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="solution-choice__item reveal">
+                        <span>03</span>
+
+                        <div>
+                            <h3>Vuoi crescere nel tempo?</h3>
+
+                            <p>
+                                Possiamo progettare una struttura espandibile,
+                                così da aggiungere successivamente nuove pagine,
+                                progetti, articoli o funzionalità.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOSTENIBILITÀ -->
+
+        <section class="sustainability-preview">
+            <div class="container reveal">
+                <div class="sustainability-preview__icon">
+                    <EcoIcon />
+                </div>
+
+                <div class="sustainability-preview__content">
+                    <p class="eyebrow">Un web più essenziale</p>
+
+                    <h2>
+                        Progettare meglio significa anche evitare ciò che non
+                        serve
+                    </h2>
+
+                    <p>
+                        Sviluppo siti leggeri, veloci e costruiti con codice
+                        pulito, limitando componenti, dipendenze e funzionalità
+                        inutili. Una scelta che migliora prestazioni, durata del
+                        progetto e consumo di risorse.
+                    </p>
+                </div>
+
+                <div class="sustainability-preview__action">
+                    <a
+                        href="/chi-sono#sostenibile"
+                        class="button button--secondary"
+                    >
+                        Scopri il mio approccio
+                        <ArrowIcon />
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <Separator position="center" />
+
+        <!-- COSA COMPRENDE -->
+
+        <section class="project-includes">
+            <div class="container">
+                <div class="section-heading project-includes__header">
+                    <p class="eyebrow">Una base completa</p>
+
+                    <h2>Cosa comprende il progetto</h2>
+
+                    <p>
+                        Ogni sito viene progettato sulle tue esigenze, ma ci
+                        sono alcuni aspetti fondamentali che fanno sempre parte
+                        del mio lavoro.
+                    </p>
+                </div>
+
+                <div class="project-includes__grid">
+                    <article class="reveal">
+                        <svg
+                            class="icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <rect x="3" y="4" width="6" height="5" rx="1">
+                            </rect>
+
+                            <rect x="15" y="4" width="6" height="5" rx="1">
+                            </rect>
+
+                            <rect x="9" y="15" width="6" height="5" rx="1">
+                            </rect>
+
+                            <path d="M6 9v3h12V9"></path>
+                            <path d="M12 12v3"></path>
+                        </svg>
+
+                        <h3>Strategia e struttura</h3>
+
+                        <p>
+                            Definiamo obiettivi, pubblico e contenuti prima di
+                            iniziare a progettare le pagine.
+                        </p>
+                    </article>
+
+                    <article class="reveal d1">
+                        <svg
+                            class="icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <path d="M4 15.5V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8">
+                            </path>
+
+                            <path d="M4 9h16"></path>
+                            <path d="M8 6h.01"></path>
+                            <path d="M11 6h.01"></path>
+                            <path d="m14 17 4-4 3 3-4 4h-3v-3Z"></path>
+                        </svg>
+
+                        <h3>Design personalizzato</h3>
+
+                        <p>
+                            Creo un’interfaccia coerente con la tua identità,
+                            evitando temi preconfezionati e soluzioni tutte
+                            uguali.
+                        </p>
+                    </article>
+
+                    <article class="reveal d2">
+                        <svg
+                            class="icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <rect x="3" y="4" width="13" height="10" rx="2">
+                            </rect>
+
+                            <path d="M7 19h5"></path>
+                            <path d="M9.5 14v5"></path>
+
+                            <rect x="17" y="8" width="4" height="10" rx="1">
+                            </rect>
+                        </svg>
+
+                        <h3>Sviluppo responsive</h3>
+
+                        <p>
+                            Il sito viene sviluppato per essere semplice da
+                            utilizzare da computer, tablet e smartphone.
+                        </p>
+                    </article>
+
+                    <article class="reveal">
+                        <svg
+                            class="icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <circle cx="10.5" cy="10.5" r="5.5"></circle>
+
+                            <path d="m15 15 4 4"></path>
+                            <path d="M8 10.5h5"></path>
+                            <path d="M10.5 8v5"></path>
+                        </svg>
+
+                        <h3>SEO tecnica di base</h3>
+
+                        <p>
+                            Imposto struttura, titoli, descrizioni e aspetti
+                            tecnici fondamentali per i motori di ricerca.
+                        </p>
+                    </article>
+
+                    <article class="reveal d1">
+                        <svg
+                            class="icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <path d="M4 17a8 8 0 1 1 16 0"></path>
+                            <path d="M12 17 17 9"></path>
+                            <path d="M7 17h10"></path>
+                            <path d="M6.5 12.5 5 11"></path>
+                            <path d="m17.5 12.5 1.5-1.5"></path>
+                        </svg>
+
+                        <h3>Prestazioni e accessibilità</h3>
+
+                        <p>
+                            Presto attenzione alla velocità, alla leggibilità e
+                            alla facilità di navigazione.
+                        </p>
+                    </article>
+
+                    <article class="reveal d2">
+                        <svg
+                            class="icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M5 4h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"
+                            >
+                            </path>
+
+                            <path d="M8 21h8"></path>
+                            <path d="M12 17v4"></path>
+                            <path d="m9 10 2 2 4-4"></path>
+                        </svg>
+
+                        <h3>Pubblicazione e consegna</h3>
+
+                        <p>
+                            Mi occupo della messa online e ti spiego in modo
+                            comprensibile come funziona il sito.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESSO -->
+
+        <section class="custom-process">
+            <div class="container">
+                <div class="section-heading custom-process__heading">
+                    <p class="eyebrow">Dall’idea al sito online</p>
+
+                    <h2>Come lavoreremo insieme</h2>
+
+                    <p>
+                        Non devi arrivare alla prima call con tutto già deciso.
+                        Ti guiderò attraverso le scelte necessarie, senza
+                        complicare il progetto con termini tecnici.
+                    </p>
+                </div>
+
+                <ol class="custom-process__steps">
+                    <li class="reveal">
+                        <span>01</span>
+
+                        <div>
+                            <h3>Ci confrontiamo</h3>
+
+                            <p>
+                                Ti faccio alcune domande per capire cosa fai,
+                                chi vuoi raggiungere e quali risultati cerchi.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="reveal">
+                        <span>02</span>
+
+                        <div>
+                            <h3>Definiamo la direzione</h3>
+
+                            <p>
+                                Stabiliamo struttura, contenuti, stile,
+                                funzionalità, tempi e preventivo.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="reveal">
+                        <span>03</span>
+
+                        <div>
+                            <h3>Progetto e sviluppo</h3>
+
+                            <p>
+                                Realizzo il sito mantenendoti aggiornato e
+                                condividendo con te le decisioni più importanti.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="reveal">
+                        <span>04</span>
+
+                        <div>
+                            <h3>Test e pubblicazione</h3>
+
+                            <p>
+                                Controlliamo insieme il risultato, faccio gli
+                                ultimi test e pubblico il sito online.
+                            </p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- CTA -->
+
+        <section class="project-cta">
+            <div class="container reveal">
+                <p class="eyebrow">Partiamo dalla tua idea</p>
+
+                <h2>Raccontami il sito che vorresti realizzare</h2>
+
+                <p>
+                    Non serve avere già testi, struttura e grafica pronti.
+                    <br />
+                    Possiamo partire da ciò che hai e capire insieme quale
+                    soluzione può funzionare meglio.
+                </p>
+
+                <a href="/contatti#form-section" class="button button--dark">
+                    Richiedi un primo confronto
+                    <ArrowIcon />
+                </a>
+
+                <p>Prima call gratuita di 30 minuti e senza impegno</p>
+            </div>
+        </section>
+
+        <!-- SERVIZIO ALTERNATIVO -->
+
+        <section class="service-alternative">
+            <div class="container reveal">
+                <h2>Forse non devi ripartire da zero</h2>
+
+                <p>
+                    Se hai già un sito ma è vecchio, lento o non ti rappresenta
+                    più, posso analizzare ciò che esiste e capire cosa
+                    recuperare attraverso un progetto di rifacimento.
+                </p>
+
+                <a
+                    href="/servizi/rifacimento-siti-web"
+                    class="button button--primary"
+                >
+                    Scopri il servizio di rifacimento
+                    <ArrowIcon />
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+
+        <section class="faq">
+            <div class="container">
+                <div class="faq__header">
+                    <p class="eyebrow">Prima di iniziare</p>
+
+                    <h2>Domande frequenti</h2>
+
+                    <Separator position="center" />
+                </div>
+
+                <ul class="faq__list">
+                    {
+                        faqs.map((faq) => (
+                            <li class="faq__item reveal">
+                                <details>
+                                    <summary>{faq.question}</summary>
+
+                                    <div class="faq__answer">
+                                        <p>{faq.answer}</p>
+                                    </div>
+                                </details>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </section>
+    </div>
+</BaseLayout>

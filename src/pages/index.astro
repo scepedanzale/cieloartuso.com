@@ -1,69 +1,333 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { projects } from "../data/projects";
-import '../styles/home.css'
+import ServiceIcon from "../components/ServiceIcon.astro";
+import { works } from "../data/works";
+import { services } from "../data/services";
+import { posts } from "../data/posts";
+import { steps } from "../data/steps";
+import Separator from "../components/Separator.astro";
+import ArrowIcon from "../components/icons/ArrowIcon.astro";
+import EcoIcon from "../components/icons/EcoIcon.astro";
+import PhoneIcon from "../components/icons/PhoneIcon.astro";
+import ShieldIcon from "../components/icons/ShieldIcon.astro";
+
+const structuredData = [
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"@id": "https://www.cieloartuso.com/#person",
+		name: "Cielo Artuso",
+		url: "https://www.cieloartuso.com/",
+		jobTitle: "Web Developer",
+		description:
+			"Web developer specializzato nella realizzazione e nel rifacimento di siti web su misura.",
+		sameAs: [
+			"https://github.com/scepedanzale",
+			"https://www.instagram.com/cieloartuso",
+		],
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		"@id": "https://www.cieloartuso.com/#website",
+		url: "https://www.cieloartuso.com/",
+		name: "Cielo Artuso",
+		author: {
+			"@id": "https://www.cieloartuso.com/#person",
+		},
+	},
+];
 ---
 
-<BaseLayout>
-	<!-- ABOVE FOLD -->
-	<div class="fold">
-		<!-- PROGETTI -->
-		<section class="projects" id="work">
-			{
-				projects.map((project, i) => (
-					<a href={`/works/${project.slug}`} class="project">
-						<div class="project__img project__img--1">
-							<img
-								src={project.cover}
-								alt={project.title}
-								class="project__screenshot"
-							/>
-							<span class="project__num">00{i+1}</span>
-							<span class="project__arrow">↗</span>
-						</div>
-						<div class="project__info">
-							<div class="project__name">
-								{project.title}
-							</div>
-							<div class="project__type">{project.sector} · {project.year}</div>
-						</div>
-					</a>
-				))
-			}
-		</section>
+<BaseLayout
+	title="Cielo Artuso | Sviluppatore web a Milano"
+	description="Creo e rifaccio siti web chiari, veloci e curati per piccole attività, professionisti e brand locali."
+	structuredData={structuredData}
+>
+	<section class="hero">
+		<div class="hero__background">
+			<img
+				src="/images/site/cielo-artuso-hero.webp"
+				alt="Immagine di una casa in montagna"
+			/>
+		</div>
 
-		<!-- HERO -->
-		<section class="hero">
-			<div class="hero__name-cell">
-				<h1 class="hero__name"><em>Celeste</em><br />Artuso</h1>
-				<p class="hero__role">web developer</p>
+		<div class="hero__overlay"></div>
+
+		<div class="container hero__inner">
+			<div class="hero__content reveal">
+				<p class="eyebrow">Sviluppo siti web su misura</p>
+
+				<h1>Cielo Artuso</h1>
+
+				<Separator />
+
+				<p>
+					Creo e rifaccio siti web chiari, veloci e curati nei
+					dettagli per piccole attività, professionisti, artigiani e
+					brand locali.
+				</p>
+
+				<div class="hero__actions">
+					<a class="button button--dark" href="/servizi">
+						Scopri i servizi
+						<ArrowIcon />
+					</a>
+
+					<a class="button button--secondary" href="/contatti">
+						Contattami
+						<ArrowIcon />
+					</a>
+				</div>
+
+				<div class="hero__features">
+					<div class="hero__feature reveal">
+						<span>
+							<ShieldIcon />
+						</span>
+						<p>Siti veloci<br />e sicuri</p>
+					</div>
+
+					<div class="hero__feature reveal d1">
+						<span><PhoneIcon /></span>
+						<p>Mobile first<br />e accessibili</p>
+					</div>
+
+					<div class="hero__feature reveal d2">
+						<span>
+							<EcoIcon />
+						</span>
+						<p>Codice pulito<br />e sostenibile</p>
+					</div>
+				</div>
 			</div>
-			<div class="hero__side">
-				<p class="hero__desc">
-					Realizzo <em>siti web su misura</em>,
-					<em>web app</em> e <em>gestionali</em> —<br />
-					da zero o ridisegnando quello che hai già
+		</div>
+	</section>
+
+	<section class="section--intro">
+		<div class="container reveal">
+			<div>
+				<p class="question">
+					Vorresti portare la tua attività online, ma non sai bene
+					quale sentiero prendere?
+				</p>
+
+				<p>
+					Ti accompagno nella creazione o nel rifacimento del tuo sito
+					web con un percorso chiaro, semplice e costruito intorno
+					alla tua attività.
 				</p>
 			</div>
-		</section>
-	</div>
-
-	<!-- BELOW FOLD -->
-	<div class="info">
-		<div class="about" id="about">
-			<span class="label">about</span>
-			<p class="about__text">
-				Informatico di formazione, sviluppatore per scelta.
-				<br />
-				Con <em>attenzione al codice</em> e alla <em>semplicità</em>.
-			</p>
-		</div>
-		<div class="contact" id="contact">
-			<span class="label">contact</span>
-			<a href="mailto:info@cieloartuso.com" class="contact__email"
-				>info@cieloartuso.com</a
+			<svg
+				class="icon"
+				xmlns="http://www.w3.org/2000/svg"
+				version="1.0"
+				viewBox="0 0 1200.000000 700.000000"
+				preserveAspectRatio="xMidYMid meet"
 			>
-			<p class="contact__loc">Milano, IT</p>
+				<g
+					transform="translate(0.000000,700.000000) scale(0.100000,-0.100000)"
+					fill="currentColor"
+					stroke="none"
+				>
+					<path
+						d="M6740 5748 c-43 -13 -531 -498 -777 -773 -386 -430 -878 -1054 -1128 -1431 -112 -168 -197 -232 -292 -221 -104 11 -174 95 -317 381 -137 275 -219 376 -317 392 l-35 6 -119 -159 c-234 -309 -683 -865 -1050 -1299 l-177 -209 -152 -37 c-83 -20 -227 -51 -321 -69 -110 -21 -179 -39 -194 -51 -69 -53 -470 -405 -641 -564 -427 -397 -1224 -1233 -1205 -1264 10 -16 81 -11 133 8 26 10 77 38 113 62 80 55 261 234 364 363 59 74 82 96 94 91 26 -12 99 -17 138 -9 26 5 59 29 125 92 249 235 521 231 903 -13 161 -103 199 -124 217 -124 42 0 3 112 -76 214 -52 67 -213 231 -338 343 l-57 51 14 49 c17 56 54 99 101 119 82 34 246 5 420 -76 48 -22 88 -40 88 -40 1 0 20 27 41 60 63 97 147 141 228 119 32 -9 46 -23 108 -115 204 -305 483 -588 731 -742 192 -120 334 -177 765 -311 235 -74 367 -155 448 -276 20 -30 40 -55 46 -55 5 0 14 12 20 27 15 40 -12 148 -63 246 -44 86 -68 112 -313 347 -297 285 -594 659 -885 1115 -109 171 -122 236 -59 290 124 103 527 -40 875 -310 117 -92 260 -247 323 -351 l53 -89 -6 60 c-30 276 -206 775 -439 1240 -75 150 -79 162 -73 208 6 56 20 77 49 77 102 0 338 -237 829 -835 389 -473 469 -569 593 -710 209 -236 327 -343 397 -360 24 -6 28 -4 33 22 16 68 39 127 68 170 97 144 290 150 560 19 196 -94 514 -320 796 -564 95 -82 407 -370 441 -407 14 -15 51 -50 84 -78 l59 -51 -23 44 c-13 25 -80 151 -150 280 -455 841 -728 1409 -733 1522 -4 80 19 65 221 -139 147 -149 209 -204 287 -256 125 -82 282 -158 400 -192 93 -27 259 -59 276 -53 5 2 -32 48 -82 103 -338 369 -680 836 -945 1291 -57 97 -63 103 -143 155 -107 69 -246 203 -306 297 -59 92 -102 210 -111 299 -3 37 -15 131 -26 208 -25 177 -29 358 -8 400 26 52 60 46 131 -22 73 -69 125 -136 329 -424 238 -334 345 -460 430 -504 l33 -17 -6 128 c-10 213 -70 458 -181 743 -88 226 -116 274 -242 425 -148 176 -200 255 -226 340 -26 85 -21 161 15 240 23 50 29 56 56 56 109 0 372 -365 791 -1095 329 -574 452 -717 594 -691 19 4 75 33 125 66 106 70 159 86 224 66 65 -19 124 -64 217 -163 l82 -88 -6 -100 c-7 -100 4 -246 24 -343 10 -44 30 -73 150 -218 77 -91 209 -244 293 -338 177 -196 510 -536 526 -536 72 0 -84 369 -347 819 l-26 44 115 -7 c128 -9 240 -27 344 -58 141 -41 139 -40 227 -172 684 -1021 1221 -1614 1561 -1721 72 -23 137 -32 137 -20 0 9 -166 261 -303 460 -455 661 -923 1287 -1334 1783 l-94 112 -82 0 c-95 0 -734 37 -787 45 -30 5 -46 19 -101 88 -36 45 -109 143 -161 217 -121 171 -144 199 -229 286 -80 82 -139 117 -232 139 -133 31 -298 100 -392 165 -131 90 -159 122 -266 302 -367 623 -653 1026 -928 1308 -145 149 -222 183 -341 148z"
+					></path>
+				</g>
+			</svg>
 		</div>
-	</div>
+	</section>
+
+	<!-- SERVIZI -->
+
+	<section class="section--services">
+		<div class="container">
+			<div class="section-heading">
+				<p class="eyebrow">i miei servizi</p>
+				<h2>Come posso aiutarti</h2>
+				<p>
+					In base alle tue necessità, possiamo trovare insieme il modo
+					per sviluppare il tuo progetto.
+				</p>
+			</div>
+			<div class="services-grid reveal">
+				{
+					services.map((service, index) => (
+						<a
+							class:list={[
+								"service-card",
+								index === 0 && "service-card--featured"
+							]}
+							href={service.href}
+						>
+							<span class="service-card__icon">
+								<ServiceIcon name={service.icon} />
+							</span>
+
+							<h3>{service.title}</h3>
+							<p>{service.text}</p>
+							<span class="card-arrow">
+								<ArrowIcon />
+							</span>
+						</a>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<!-- PORTFOLIO -->
+	<section class="section--portfolio">
+		<div class="container">
+			<div class="section-heading">
+				<p class="eyebrow">portfolio</p>
+				<h2>Alcuni lavori</h2>
+			</div>
+
+			<div class="projects__grid">
+				{
+					works.map((work, i) => (
+						<a
+							href={`/portfolio/${work.slug}`}
+							class={`project reveal ${i > 0 && "d" + i}`}
+						>
+							<div class="project__image">
+								<img
+									src={work.image}
+									alt={`Anteprima del progetto ${work.title}`}
+								/>
+							</div>
+
+							<div class="project__content">
+								<div>
+									<span>{work.tipo}</span>
+									<span>{work.anno}</span>
+								</div>
+
+								<h3>{work.title}</h3>
+							</div>
+						</a>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<!-- COME LAVORO -->
+
+	<section class="section--process">
+		<div class="container reveal">
+			<div class="section-heading">
+				<h2>Come lavoro</h2>
+			</div>
+
+			<div class="process-grid">
+				{
+					steps.map((step) => (
+						<div class="process-step">
+							<span class="process-step__number">
+								{step.number}
+							</span>
+
+							<div>
+								<h3>{step.title}</h3>
+								<p>{step.text}</p>
+							</div>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+	<!-- ABOUT -->
+
+	<section class="section--about">
+		<div class="container about__grid">
+			<div class="about__image reveal">
+				<img src="/images/site/cielo-artuso.webp" alt="Cielo Artuso" />
+			</div>
+
+			<div class="about__content reveal d1">
+				<p class="eyebrow">Chi sono</p>
+
+				<h2>
+					Ciao, sono Cielo.<br />
+					Sviluppatore web.
+				</h2>
+
+				<p>
+					Aiuto piccole attività, professionisti e brand locali a
+					creare siti web veloci, chiari e costruiti su misura.
+				</p>
+
+				<p>
+					Lavoro in modo diretto e trasparente, con attenzione al
+					design, alla performance e alla semplicità d’uso.
+				</p>
+
+				<a href="/chi-sono">Scopri di più su di me <ArrowIcon /></a>
+			</div>
+		</div>
+	</section>
+	<!-- BLOG ULTIMI ARTICOLI -->
+
+	<section class="section--blog">
+		<div class="container">
+			<div class="section-heading">
+				<div>
+					<p class="eyebrow">dal blog</p>
+					<h2>Ultimi articoli</h2>
+					<p>
+						Puoi trovare piccole spiegazioni semplici sul mondo web
+						e risposte alle domande più frequenti.
+					</p>
+				</div>
+				<a href="/blog">Vai al blog <ArrowIcon /></a>
+			</div>
+
+			<div class="blog-grid">
+				{
+					posts.map((post, i) => (
+						<a
+							class={`blog-card reveal ${i > 0 && "d" + i}`}
+							href={post.slug}
+						>
+							<img src={post.cover} alt={post.title} />
+
+							<div class="blog-card__content">
+								<h3>{post.title}</h3>
+								<p>{post.tag}</p>
+								<span>{post.readingTime} min</span>
+							</div>
+						</a>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA -->
+
+	<section class="final-cta">
+		<div class="container">
+			<div class="final-cta__box reveal">
+				<div class="final-cta__icon">↗</div>
+
+				<h2>
+					Hai un sito da rifare<br />
+					o un progetto da lanciare?
+				</h2>
+
+				<p>
+					Parliamone: raccontami la tua idea,<br />
+					ti rispondo personalmente.
+				</p>
+
+				<a class="button button--primary" href="/contatti#form-section">
+					Scrivimi
+					<ArrowIcon />
+				</a>
+			</div>
+		</div>
+	</section>
 </BaseLayout>

@@ -1,0 +1,93 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { services } from "../../data/services";
+import ServiceIcon from "../../components/ServiceIcon.astro";
+import ArrowIcon from "../../components/icons/ArrowIcon.astro";
+
+const posts = await getCollection("blog", ({ data }) => {
+  return data.draft !== true;
+});
+
+const sortedPosts = posts.sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Servizi web | Cielo Artuso",
+  description:
+    "Servizi di sviluppo, rifacimento e manutenzione di siti web e applicazioni web.",
+  url: Astro.url.href,
+
+  author: {
+    "@id": "https://www.cieloartuso.com/#person"
+  }
+};
+---
+
+<BaseLayout
+  title="Servizi | Cielo Artuso"
+  description="Siti web, restyling e supporto per far funzionare meglio la tua presenza online"
+  structuredData={structuredData}
+>
+  <div class="services-page">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Cosa posso fare per te</p>
+        <h1>Servizi</h1>
+        <p>
+          Ti aiuto a creare, migliorare o sistemare il tuo sito web, con un
+          approccio pratico, chiaro e su misura per la tua attività.
+        </p>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="services-grid reveal">
+        {
+          services.map((service, index) => (
+            <a
+              class:list={[
+                "service-card",
+                index === 0 && "service-card--featured"
+              ]}
+              href={service.href}
+            >
+              <span class="service-card__icon">
+                <ServiceIcon name={service.icon} />
+              </span>
+
+              <h2>{service.title}</h2>
+              <p>{service.text}</p>
+              <span class="card-arrow"><ArrowIcon/></span>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container">
+        <div class="final-cta__box reveal">
+          <div class="final-cta__icon">↗</div>
+
+          <h2>
+            Hai un progetto in mente?<br />
+            Parliamone.
+          </h2>
+
+          <p>
+            Se sei indeciso su cosa potrebbe esserti utile, <br>facciamo una videochiamata e ci pensiamo insieme
+          </p>
+
+          <a class="button button--primary" href="/contatti">
+            Scrivimi
+            <ArrowIcon/>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

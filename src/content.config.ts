@@ -11,16 +11,34 @@ const blog = defineCollection({
   }),
   schema: z.object({
     title: z.string(),
-    displayTitle: z.string(),
     description: z.string(),
     date: z.coerce.date(),
     cover: z.string(),
     readingTime: z.number(),
-    tag: z.string().optional(),
-    draft: z.boolean().optional(),
+    tag: z.string(),
+    draft: z.boolean(),
   }),
 });
 
+const works = defineCollection({
+  loader: glob({
+    pattern: "**/*.md",
+    base: "./src/content/works",
+  }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    settore: z.string(),
+    tipo: z.string(),
+    year: z.number(),
+    cover: z.string(),
+    href: z.string(),
+    cosaHoFatto: z.array(z.string()), 
+  }),
+});
+
+
 export const collections = {
   blog,
+  works
 };

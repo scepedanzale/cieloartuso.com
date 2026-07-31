@@ -1,0 +1,244 @@
+@import "./services/service-hero-visual.css";
+
+/* Hero condivisa */
+.service-page > section:first-child .page-intro {
+    max-width: 760px;
+}
+/* ==================================================
+   HERO
+================================================== */
+
+.service-page .service-hero__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+    align-items: center;
+    gap: clamp(60px, 9vw, 140px);
+}
+
+.service-page .service-hero__content {
+    max-width: 800px;
+}
+
+
+/* CTA condivisa */
+.project-cta {
+    text-align: center;
+    background-color: var(--color-dark);
+    color: var(--color-on-dark);
+}
+
+.project-cta .eyebrow{
+    color: var(--color-text);
+}
+.project-cta p:nth-of-type(2) {
+    margin: 30px 0;
+}
+
+.project-cta p:last-of-type {
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+/* Servizio alternativo condiviso */
+.service-page .service-alternative {
+    padding: 32px 0 28px;
+}
+
+.service-page .service-alternative .container {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 34px;
+    min-height: 140px;
+    padding: 34px 54px;
+    color: var(--color-on-dark);
+    background:
+        linear-gradient(
+            90deg,
+            rgba(43, 51, 60, 0.96),
+            rgba(43, 51, 60, 0.9)
+        ),
+        url("/images/site/texture-mountains.webp");
+    background-position: center;
+    background-size: cover;
+}
+
+.service-page .service-alternative h2,
+.service-page .service-alternative p {
+    margin: 0;
+}
+
+.service-page .service-alternative p {
+    color: var(--color-on-dark-muted);
+}
+
+@media (max-width: 900px) {
+    .service-page .service-alternative .container {
+        grid-template-columns: 1fr;
+        align-items: start;
+    }
+}
+
+@media (max-width: 600px) {
+    .service-page .service-alternative .container {
+        padding: 30px 24px;
+    }
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+/* TABLET */
+@media (max-width: 1000px) {
+
+    .service-page .service-hero__grid {
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 0.8fr);
+        gap: 50px;
+    }
+
+    .service-page .service-hero__content {
+        max-width: 700px;
+    }
+
+    .service-page .service-alternative .container {
+        grid-template-columns: 1fr auto;
+        gap: 28px;
+    }
+
+    .service-page .service-alternative p {
+        grid-column: 1;
+    }
+
+    .service-page .service-alternative .button {
+        grid-column: 2;
+        grid-row: 1 / 3;
+    }
+}
+
+
+/* TABLET PICCOLO */
+@media (max-width: 800px) {
+
+    /* HERO */
+
+    .service-page .service-hero__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .service-page .service-hero__content {
+        max-width: 720px;
+    }
+
+    .service-page > section:first-child .page-intro {
+        max-width: 650px;
+    }
+
+
+    /* CTA */
+
+    .project-cta p:nth-of-type(2) {
+        margin: 25px 0;
+    }
+
+
+    /* SERVIZIO ALTERNATIVO */
+
+    .service-page .service-alternative {
+        padding: 28px 0;
+    }
+
+    .service-page .service-alternative .container {
+        grid-template-columns: 1fr;
+        align-items: start;
+        gap: 22px;
+        min-height: auto;
+        padding: 32px 36px;
+    }
+
+    .service-page .service-alternative p,
+    .service-page .service-alternative .button {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .service-page .service-alternative .button {
+        width: fit-content;
+    }
+}
+
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+    /* HERO */
+
+    .service-page .service-hero__grid {
+        gap: 30px;
+    }
+
+    .service-page > section:first-child .page-intro {
+        max-width: 100%;
+        font-size: 17px;
+    }
+
+
+    /* CTA */
+
+    .project-cta {
+        text-align: left;
+    }
+
+    .project-cta p:nth-of-type(2) {
+        margin: 20px 0;
+    }
+
+    .project-cta p:last-of-type {
+        margin-top: 22px;
+        font-size: 13px;
+    }
+
+    .project-cta .button {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    /* SERVIZIO ALTERNATIVO */
+
+    .service-page .service-alternative {
+        padding: 22px 0;
+    }
+
+    .service-page .service-alternative .container {
+        gap: 18px;
+        padding: 28px 22px;
+    }
+
+    .service-page .service-alternative h2 {
+        font-size: 1.6rem;
+    }
+
+    .service-page .service-alternative .button {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+/* MOBILE PICCOLI */
+@media (max-width: 400px) {
+
+    .service-page .service-hero__grid {
+        gap: 25px;
+    }
+
+    .service-page .service-alternative .container {
+        padding: 24px 18px;
+    }
+
+    .service-page .service-alternative h2 {
+        font-size: 1.45rem;
+    }
+}

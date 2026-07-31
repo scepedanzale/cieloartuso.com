@@ -1,0 +1,608 @@
+---
+import Breadcrumb from "../../components/Breadcrumb.astro";
+import ArrowIcon from "../../components/icons/ArrowIcon.astro";
+import CheckIcon from "../../components/icons/CheckIcon.astro";
+import Separator from "../../components/Separator.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import "../../css/service-page.css";
+import "../../css/services/manutenzione-siti-web.css";
+import ServiceHeroVisual from "../../components/ServiceHeroVisual.astro";
+
+const faqs = [
+    {
+        question: "Su quali siti puoi effettuare la manutenzione?",
+        answer: "Posso intervenire sia su siti realizzati su misura sia su siti basati su CMS come WordPress. Prima di confermare il servizio verifico la tecnologia utilizzata, lo stato del progetto e la possibilità di accedere correttamente ai file e alla gestione del sito.",
+    },
+    {
+        question: "Posso richiedere soltanto un intervento?",
+        answer: "Sì. Non è necessario sottoscrivere un piano continuativo. Puoi contattarmi per una modifica specifica, un errore o un controllo occasionale. Dopo aver analizzato la richiesta ti comunicherò costi e tempistiche.",
+    },
+    {
+        question: "Cosa comprende un piano mensile?",
+        answer: "Il contenuto del piano dipende dal sito e dalle tue necessità. Può comprendere aggiornamenti tecnici, controlli, backup, assistenza e un tempo concordato per piccole modifiche. Tutte le attività incluse vengono definite prima dell’inizio del servizio.",
+    },
+    {
+        question: "Le modifiche mensili sono illimitate?",
+        answer: "No. Ogni piano comprende un numero di attività o un tempo mensile concordato. In questo modo il servizio rimane chiaro e sostenibile. Gli interventi più grandi vengono valutati separatamente prima di essere avviati.",
+    },
+    {
+        question: "Puoi intervenire in caso di urgenza?",
+        answer: "Posso gestire anche richieste urgenti in base alla disponibilità e alla gravità del problema. I clienti con un piano di assistenza continuativa hanno priorità rispetto agli interventi occasionali.",
+    },
+    {
+        question: "Quanto costa la manutenzione di un sito?",
+        answer: "Il costo dipende dalla tecnologia, dalla complessità del sito e dalla frequenza degli interventi. Dopo un primo controllo posso proporti un singolo intervento oppure un piano periodico costruito sulle necessità effettive del progetto.",
+    },
+];
+
+const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+
+    name: "Manutenzione e assistenza siti web",
+    description:
+        "Servizio di manutenzione o singola assistenza siti web, aggiornamenti, modifiche e risoluzione di problemi tecnici.",
+
+    url: Astro.url.href,
+
+    provider: {
+        "@id": "https://www.cieloartuso.com/#person",
+    },
+
+    areaServed: {
+        "@type": "Country",
+        name: "Italia",
+    },
+};
+
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+
+    mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+        },
+    })),
+};
+
+const structuredData = [serviceSchema, faqSchema];
+---
+
+<BaseLayout
+    title="Manutenzione e assistenza siti web | Cielo Artuso"
+    description="Mi occupo della manutenzione del tuo sito web, degli aggiornamenti, delle modifiche ai contenuti e della risoluzione dei problemi tecnici."
+    structuredData={structuredData}
+>
+    <div class="service-page service-page--maintenance">
+        <!-- HERO -->
+
+        <section class="maintenance-hero">
+            <div class="container">
+                <Breadcrumb />
+
+                <div class="service-hero__grid">
+                    <div class="service-hero__content">
+                        <h1>Manutenzione e assistenza siti web</h1>
+
+                        <p class="page-intro">
+                            Mi occupo di aggiornamenti, modifiche e problemi
+                            tecnici per mantenere il tuo sito stabile, sicuro e
+                            sempre curato.
+                        </p>
+
+                        <a
+                            href="#modalita-assistenza"
+                            class="button button--primary"
+                        >
+                            Scopri come funziona
+                            <ArrowIcon />
+                        </a>
+                    </div>
+
+                    <ServiceHeroVisual type="maintenance" />
+                </div>
+            </div>
+        </section>
+
+        <!-- A CHI È RIVOLTO -->
+
+        <section class="maintenance-audience">
+            <div class="container">
+                <div class="maintenance-audience__image">
+                    <img
+                        src="/images/site/manutenzione-siti-web.webp"
+                        alt="Dettaglio del computer con il mouse"
+                    />
+                </div>
+
+                <div class="maintenance-audience__content reveal">
+                    <p class="eyebrow">A chi è rivolto</p>
+
+                    <h2>Hai già un sito, ma non sai come gestirlo?</h2>
+
+                    <p>
+                        Questo servizio è pensato per professionisti, attività e
+                        piccoli brand che hanno già un sito online, ma non hanno
+                        una persona interna che possa occuparsi della parte
+                        tecnica.
+                    </p>
+
+                    <p>
+                        Può esserti utile quando devi aggiornare un contenuto,
+                        correggere un errore o semplicemente vuoi sapere di
+                        poter contare su qualcuno quando qualcosa non funziona.
+                    </p>
+
+                    <ul>
+                        <li class="reveal">
+                            <CheckIcon />
+                            Non vuoi occuparti personalmente degli aggiornamenti
+                        </li>
+
+                        <li class="reveal">
+                            <CheckIcon />
+                            Hai bisogno di modifiche periodiche
+                        </li>
+
+                        <li class="reveal">
+                            <CheckIcon />
+                            Vuoi evitare che piccoli problemi vengano ignorati
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROBLEMI -->
+
+        <section class="maintenance-problems">
+            <div class="container">
+                <div class="section-heading maintenance-problems__heading">
+                    <p class="eyebrow">possibili problemi</p>
+
+                    <h2>
+                        Cosa succede quando viene lasciato senza manutenzione?
+                    </h2>
+
+                    <p>
+                        Anche un sito ben realizzato può avere bisogno di
+                        controlli, aggiornamenti e modifiche. Ignorare questi
+                        aspetti può causare malfunzionamenti, rallentamenti e
+                        problemi difficili da risolvere in seguito.
+                    </p>
+                </div>
+
+                <ol class="maintenance-problems__list">
+                    <li class="reveal">
+                        <span class="maintenance-problems__number">01</span>
+
+                        <div>
+                            <h3>Contenuti non aggiornati</h3>
+
+                            <p>
+                                Orari, servizi, immagini e informazioni non sono
+                                più corretti, ma non sai dove intervenire.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="reveal">
+                        <span class="maintenance-problems__number">02</span>
+
+                        <div>
+                            <h3>Errori e malfunzionamenti</h3>
+
+                            <p>
+                                Un modulo non invia più le richieste, una pagina
+                                si vede male o compare un errore improvviso.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="reveal">
+                        <span class="maintenance-problems__number">03</span>
+
+                        <div>
+                            <h3>Aggiornamenti trascurati</h3>
+
+                            <p>
+                                CMS, plugin e componenti non aggiornati possono
+                                creare incompatibilità e problemi di sicurezza.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="reveal">
+                        <span class="maintenance-problems__number">04</span>
+
+                        <div>
+                            <h3>Nessun riferimento tecnico</h3>
+
+                            <p>
+                                Quando c’è un problema devi cercare ogni volta
+                                una nuova persona e spiegare da capo come è
+                                fatto il sito.
+                            </p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- MODALITÀ DI ASSISTENZA -->
+
+        <section id="modalita-assistenza" class="maintenance-options">
+            <div class="container">
+                <div class="section-heading maintenance-options__heading">
+                    <p class="eyebrow">Come posso aiutarti</p>
+
+                    <h2>Assistenza occasionale o continuativa</h2>
+
+                    <p>
+                        Puoi contattarmi per risolvere un problema specifico
+                        oppure scegliere un piano periodico per affidarmi la
+                        gestione tecnica del sito.
+                    </p>
+                </div>
+
+                <div class="maintenance-options__grid">
+                    <article class="maintenance-option reveal">
+                        <div class="maintenance-option__top">
+                            <span class="maintenance-option__label">
+                                Quando serve
+                            </span>
+
+                            <h3>Intervento singolo</h3>
+
+                            <p>
+                                Per correggere un problema, aggiornare una
+                                pagina o realizzare una modifica occasionale.
+                            </p>
+                        </div>
+
+                        <ul>
+                            <li>
+                                <CheckIcon />
+                                Correzione di errori tecnici
+                            </li>
+
+                            <li>
+                                <CheckIcon />
+                                Modifica di testi e immagini
+                            </li>
+
+                            <li>
+                                <CheckIcon />
+                                Sistemazione grafica di pagine
+                            </li>
+
+                            <li>
+                                <CheckIcon />
+                                Controllo di moduli e funzionalità
+                            </li>
+
+                            <li>
+                                <CheckIcon />
+                                Piccoli interventi evolutivi
+                            </li>
+                        </ul>
+
+                        <div class="maintenance-option__footer">
+                            <p>
+                                Il costo viene definito in base al tipo e alla
+                                durata dell’intervento.
+                            </p>
+
+                            <a
+                                href="/contatti?service=intervento-singolo#form-section"
+                                class="button button--secondary"
+                            >
+                                Richiedi un intervento
+                                <ArrowIcon />
+                            </a>
+                        </div>
+                    </article>
+
+                    <article
+                        class="maintenance-option maintenance-option--featured reveal d1"
+                    >
+                        <div class="maintenance-option__top">
+                            <span class="maintenance-option__label">
+                                Supporto nel tempo
+                            </span>
+
+                            <h3>Manutenzione continuativa</h3>
+
+                            <p>
+                                Per affidarmi il controllo periodico del sito e
+                                avere un riferimento tecnico sempre disponibile.
+                            </p>
+                        </div>
+
+                        <ul>
+                            <li>
+                                <CheckIcon />
+                                Controlli periodici del sito
+                            </li>
+
+                            <li>
+                                <CheckIcon />
+                                Aggiornamenti tecnici
+                            </li>
+
+                            <li>
+                                <CheckIcon />
+                                Backup e verifiche di funzionamento
+                            </li>
+
+                            <li>
+                                <CheckIcon />
+                                Tempo mensile per piccole modifiche
+                            </li>
+
+                            <li>
+                                <CheckIcon />
+                                Priorità nelle richieste di assistenza
+                            </li>
+                        </ul>
+
+                        <div class="maintenance-option__footer">
+                            <p>
+                                Il piano viene costruito in base alla tecnologia
+                                e alle necessità del sito.
+                            </p>
+
+                            <a
+                                href="/contatti?service=manutenzione#form-section"
+                                class="button button--primary"
+                            >
+                                Parliamo del tuo sito
+                                <ArrowIcon />
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <p class="maintenance-options__note">
+                    Ogni piano prevede attività e tempi concordati in modo
+                    chiaro. Le modifiche più grandi o lo sviluppo di nuove
+                    funzionalità vengono valutati separatamente.
+                </p>
+            </div>
+        </section>
+
+        <!-- COSA INCLUDE -->
+
+        <section class="maintenance-includes">
+            <div class="container">
+                <div class="section-heading maintenance-includes__intro">
+                    <p class="eyebrow">Cosa posso gestire</p>
+
+                    <h2>Una manutenzione adatta al tuo sito</h2>
+
+                    <p>
+                        Non tutti i siti richiedono gli stessi interventi:
+                        l’obiettivo è creare un servizio sostenibile, senza
+                        aggiungere attività inutili.
+                    </p>
+                </div>
+
+                <div class="maintenance-includes__content">
+                    <h3>Il servizio può comprendere</h3>
+
+                    <ul>
+                        <li class="reveal">
+                            <CheckIcon />
+
+                            <div>
+                                <strong>Aggiornamenti tecnici</strong>
+                                <span>
+                                    Aggiornamento di CMS, plugin, librerie e
+                                    componenti.
+                                </span>
+                            </div>
+                        </li>
+
+                        <li class="reveal d1">
+                            <CheckIcon />
+
+                            <div>
+                                <strong>Modifiche ai contenuti</strong>
+                                <span>
+                                    Inserimento o sostituzione di testi,
+                                    immagini e informazioni.
+                                </span>
+                            </div>
+                        </li>
+
+                        <li class="reveal d2">
+                            <CheckIcon />
+
+                            <div>
+                                <strong>Controlli periodici</strong>
+                                <span>
+                                    Verifica delle pagine, dei collegamenti e
+                                    delle funzionalità principali.
+                                </span>
+                            </div>
+                        </li>
+
+                        <li class="reveal">
+                            <CheckIcon />
+
+                            <div>
+                                <strong>Backup</strong>
+                                <span>
+                                    Copie periodiche del sito e dei dati, quando
+                                    previste dalla struttura tecnica.
+                                </span>
+                            </div>
+                        </li>
+
+                        <li class="reveal d1">
+                            <CheckIcon />
+
+                            <div>
+                                <strong>Correzione di errori</strong>
+                                <span>
+                                    Analisi e risoluzione di problemi grafici o
+                                    tecnici.
+                                </span>
+                            </div>
+                        </li>
+
+                        <li class="reveal d2">
+                            <CheckIcon />
+
+                            <div>
+                                <strong>Piccoli miglioramenti</strong>
+                                <span>
+                                    Ottimizzazioni delle prestazioni e
+                                    miglioramenti dell’esperienza utente.
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- APPROCCIO -->
+
+        <section class="maintenance-support">
+            <div class="container">
+                <div class="section-heading maintenance-support__content">
+                    <p class="eyebrow">Supporto comprensibile</p>
+
+                    <h2>Non devi sapere come è fatto il sito</h2>
+
+                    <p>
+                        Quando riscontro un problema, ti spiego cosa sta
+                        succedendo e quale intervento è necessario con parole
+                        semplici, senza riempirti di tecnicismi.
+                    </p>
+
+                    <p>
+                        Saprai sempre quali attività sono state svolte, quali
+                        sono prioritarie e quali possono essere rimandate.
+                    </p>
+                </div>
+
+                <div class="maintenance-support__box">
+                    <ol>
+                        <li class="reveal">
+                            <span>01</span>
+
+                            <h3>Mi racconti il problema</h3>
+
+                            <p>
+                                Mi spieghi cosa non funziona o quali modifiche
+                                ti servono.
+                            </p>
+                        </li>
+                        <li class="reveal">
+                            <span>02</span>
+
+                            <h3>Controllo il sito</h3>
+
+                            <p>
+                                Verifico la situazione e ti propongo il tipo di
+                                intervento più adatto.
+                            </p>
+                        </li>
+                        <li class="reveal">
+                            <span>03</span>
+
+                            <h3>Ti aggiorno sul lavoro</h3>
+
+                            <p>
+                                Eseguo le attività concordate e ti spiego cosa è
+                                stato fatto.
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+
+        <section class="project-cta">
+            <div class="container reveal">
+                <p class="eyebrow">Partiamo da un controllo</p>
+
+                <h2>Hai un sito che richiede assistenza?</h2>
+
+                <p>
+                    Raccontami quali problemi stai riscontrando o che tipo di
+                    modifiche devi effettuare.
+                    <br />
+                    Valuterò il sito e ti proporrò una modalità di intervento chiara.
+                </p>
+
+                <a href="/contatti#form-section" class="button button--dark">
+                    Richiedi assistenza
+                    <ArrowIcon />
+                </a>
+
+                <p>Prima call gratuita di 30 minuti e senza impegno</p>
+            </div>
+        </section>
+
+        <!-- SERVIZIO ALTERNATIVO -->
+
+        <section class="service-alternative">
+            <div class="container reveal">
+                <h2>Il sito ha bisogno di più di una manutenzione?</h2>
+
+                <p>
+                    Se la struttura è ormai vecchia, difficile da aggiornare o
+                    presenta troppi problemi, potrebbe essere più utile
+                    ripensarlo completamente.
+                </p>
+
+                <a
+                    class="button button--primary"
+                    href="/servizi/rifacimento-siti-web"
+                >
+                    Scopri il rifacimento siti
+                    <ArrowIcon />
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+
+        <section class="faq">
+            <div class="container">
+                <div class="faq__header">
+                    <p class="eyebrow">Dubbi sull’assistenza?</p>
+                    <h2>Domande frequenti</h2>
+                    <Separator position="center" />
+                </div>
+
+                <ul class="faq__list">
+                    {
+                        faqs.map((faq) => (
+                            <li class="faq__item reveal">
+                                <details>
+                                    <summary>{faq.question}</summary>
+
+                                    <div class="faq__answer">
+                                        <p>{faq.answer}</p>
+                                    </div>
+                                </details>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </section>
+    </div>
+</BaseLayout>

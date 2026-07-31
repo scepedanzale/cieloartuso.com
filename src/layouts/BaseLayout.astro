@@ -1,15 +1,21 @@
 ---
-// src/layouts/BaseLayout.astro
-import "../styles/style.css";
+import "../css/global.css";
+import StructuredData from "../components/StructuredData.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 const {
-  title = "Cielo Artuso",
-  description = "Siti web su misura, portfolio e appunti di web design e sviluppo.",
-  pageClass = "",
-  logoVariant = "dark",
+  title = "Cielo Artuso | Web developer",
+  description = "Realizzo e rifaccio siti web per piccole attività, professionisti e brand locali.",
+  structuredData,
 } = Astro.props;
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Cielo Artuso",
+  url: "https://www.cieloartuso.com",
+};
 ---
 
 <!doctype html>
@@ -17,14 +23,87 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
+    <meta name="robots" content="index,follow" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+
+    <meta name="author" content="Cielo Artuso" />
     <meta name="description" content={description} />
-    <link rel="icon" type="image/png" href="/images/logo-icon.png">
+    <meta name="keywords" content="sviluppatore web, " />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+
+    <title>{title}</title>
+
+    <StructuredData data={websiteSchema} />
+
+    {
+      structuredData &&
+        (Array.isArray(structuredData) ? (
+          structuredData.map((data) => (
+            <script
+              type="application/ld+json"
+              set:html={JSON.stringify(data)}
+            />
+          ))
+        ) : (
+          <script
+            type="application/ld+json"
+            set:html={JSON.stringify(structuredData)}
+          />
+        ))
+    }
+
+    <script is:inline>
+      const savedTheme = localStorage.getItem("theme");
+
+      const theme =
+        savedTheme === "light" || savedTheme === "dark"
+          ? savedTheme
+          : "light";
+
+      document.documentElement.dataset.theme = theme;
+    </script>
   </head>
 
-  <body class={pageClass}>
-    <Header logoVariant={logoVariant} />
-    <slot />
-    <Footer/>
+  <body>
+    <Header />
+
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
+    <script>
+      const revealElements = document.querySelectorAll(".reveal");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          console.log("Observer chiamato:", entries);
+
+          entries.forEach((entry) => {
+            console.log(
+              "Elemento:",
+              entry.target,
+              "isIntersecting:",
+              entry.isIntersecting,
+            );
+
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0,
+          rootMargin: "0px 0px -50px 0px",
+        },
+      );
+
+      revealElements.forEach((element) => {
+        observer.observe(element);
+      });
+    </script>
   </body>
 </html>

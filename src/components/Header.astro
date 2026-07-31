@@ -1,138 +1,342 @@
 ---
-const { logoVariant = "dark" } = Astro.props;
+import ArrowIcon from "./icons/ArrowIcon.astro";
 
-const logoSrc =
-  logoVariant === "light"
-    ? "/images/logo-light.png"
-    : "/images/logo.png";
+const pathname = Astro.url.pathname;
+
+const services = [
+  {
+    label: "Rifacimento siti web",
+    href: "/servizi/rifacimento-siti-web",
+  },
+  {
+    label: "Siti web su misura",
+    href: "/servizi/siti-web-su-misura",
+  },
+  {
+    label: "Web app e gestionali",
+    href: "/servizi/web-app-gestionali",
+  },
+  {
+    label: "Manutenzione siti web",
+    href: "/servizi/manutenzione-siti-web",
+  },
+];
+
+const navItems = [
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Blog", href: "/blog" },
+  { label: "Chi sono", href: "/chi-sono" },
+  { label: "Contatti", href: "/contatti" },
+];
+
+const isActive = (href: string) => {
+  if (href === "/") {
+    return pathname === "/";
+  }
+
+  return pathname.startsWith(href);
+};
 ---
 
-  <!-- MOBILE MENU -->
-  <div class="nav__mobile" id="mobile-menu">
-    <a href="/#work" class="nav__mobile-link">work</a>
-    <a href="/blog" class="nav__mobile-link">blog</a>
-    <a href="/#contact" class="nav__mobile-link">contact</a>
-  </div>
+<header class="site-header">
+  <a class="site-logo" href="/">
+    <img src="/logo.svg" alt="Cielo Artuso" />
 
-  <!-- NAV -->
-  <nav class="nav">
-    <a href="/" class="nav__logo" aria-label="Cielo Artuso home">
-      <img src={logoSrc} alt="Cielo Artuso">
-    </a>
+    <div class="site-logo__text">
+      <span class="site-logo__name">
+        Cielo<br />
+        Artuso
+      </span>
 
-    <div class="nav__links">
-      <a href="/#work" class="nav__link">work</a>
-      <a href="/blog" class="nav__link">blog</a>
-      <a href="/#contact" class="nav__link">contact</a>
-
-      <a
-        href="https://instagram.com/cieloartuso"
-        target="_blank"
-        rel="noopener"
-        class="icon__ig"
-        aria-label="Instagram"
-      >
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-          stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-          <circle cx="12" cy="12" r="4" />
-          <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
-        </svg>
-      </a>
+      <p class="eyebrow">Web Developer</p>
     </div>
+  </a>
 
-    <div class="nav__right">
+  <!-- DESKTOP NAV -->
+
+  <nav class="site-nav" aria-label="Navigazione principale">
+    <!-- SERVIZI DROPDOWN -->
+
+    <div class="nav-dropdown">
       <a
-        href="https://instagram.com/cieloartuso"
-        target="_blank"
-        rel="noopener"
-        class="icon__ig icon__ig--mobile"
-        aria-label="Instagram"
+        href="/servizi"
+        class:list={[
+          "nav__link",
+          "nav-dropdown__trigger",
+          { "nav__link--active": isActive("/servizi") },
+        ]}
       >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-          stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-          <circle cx="12" cy="12" r="4" />
-          <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
+        Servizi
+
+        <svg
+          class="nav-dropdown__arrow"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m7 10 5 5 5-5"></path>
         </svg>
       </a>
 
-      <button
-        class="nav__hamburger"
-        id="hamburger"
-        type="button"
-        aria-label="Apri menu"
-        aria-expanded="false"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="nav-dropdown__menu">
+        <a href="/servizi" class="nav-dropdown__all">
+          Tutti i servizi
+          <ArrowIcon />
+        </a>
+
+        <div class="nav-dropdown__separator"></div>
+
+        {
+          services.map((service) => (
+            <a
+              href={service.href}
+              class:list={[
+                "nav-dropdown__link",
+                {
+                  "nav-dropdown__link--active": isActive(service.href),
+                },
+              ]}
+            >
+              {service.label}
+            </a>
+          ))
+        }
+      </div>
     </div>
+
+    {
+      navItems.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            "nav__link",
+            { "nav__link--active": isActive(item.href) },
+          ]}
+        >
+          {item.label}
+        </a>
+      ))
+    }
   </nav>
 
+  <div class="site-header__actions">
+    <button
+      class="theme-toggle"
+      type="button"
+      aria-label="Attiva modalità scura"
+      title="Cambia tema"
+    >
+      <svg
+        class="theme-toggle__icon theme-toggle__icon--sun"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="4"></circle>
+        <path d="M12 2v2"></path>
+        <path d="M12 20v2"></path>
+        <path d="m4.93 4.93 1.42 1.42"></path>
+        <path d="m17.66 17.66 1.41 1.41"></path>
+        <path d="M2 12h2"></path>
+        <path d="M20 12h2"></path>
+        <path d="m6.34 17.66-1.41 1.41"></path>
+        <path d="m19.07 4.93-1.41 1.42"></path>
+      </svg>
+
+      <svg
+        class="theme-toggle__icon theme-toggle__icon--moon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path>
+      </svg>
+    </button>
+
+    <a class="button button--primary" href="/contatti">
+      Parlami del tuo progetto
+      <ArrowIcon />
+    </a>
+  </div>
+
+  <button
+    class="menu-toggle"
+    type="button"
+    aria-label="Apri menu"
+    aria-expanded="false"
+    aria-controls="mobile-menu"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>
+
+<!-- MOBILE MENU -->
+
+<nav id="mobile-menu" class="mobile-menu" aria-label="Navigazione mobile">
+  <div class="mobile-dropdown">
+    <button
+      class:list={[
+        "mobile-dropdown__trigger",
+        { "mobile-menu__link--active": isActive("/servizi") },
+      ]}
+      type="button"
+      aria-expanded="false"
+    >
+      <span>Servizi</span>
+
+      <svg
+        class="mobile-dropdown__arrow"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="m7 10 5 5 5-5"></path>
+      </svg>
+    </button>
+
+    <div class="mobile-dropdown__menu">
+      <a
+        href="/servizi"
+        class="mobile-dropdown__link mobile-dropdown__link--all"
+      >
+        Tutti i servizi
+      </a>
+
+      {
+        services.map((service) => (
+          <a
+            href={service.href}
+            class:list={[
+              "mobile-dropdown__link",
+              {
+                "mobile-dropdown__link--active": isActive(service.href),
+              },
+            ]}
+          >
+            {service.label}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+
+  {
+    navItems.map((item) => (
+      <a
+        href={item.href}
+        class:list={[
+          "mobile-menu__link",
+          { "mobile-menu__link--active": isActive(item.href) },
+        ]}
+      >
+        {item.label}
+      </a>
+    ))
+  }
+
+  <a class="button button--primary" href="/contatti">
+    Parlami del tuo progetto
+    <ArrowIcon />
+  </a>
+</nav>
+
 <script>
-  const menu = document.getElementById("mobile-menu");
-  const hamburger = document.getElementById("hamburger");
-  const mobileLinks = document.querySelectorAll(".nav__mobile-link");
+  const toggle = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".mobile-menu");
 
-  const MENU_READY_CLASS = "nav__mobile--ready";
-  const MENU_OPEN_CLASS = "nav__mobile--open";
-  const HAMBURGER_OPEN_CLASS = "nav__hamburger--open";
+  const servicesToggle = document.querySelector(".mobile-dropdown__trigger");
 
-  function isMobileMenuOpen() {
-    return hamburger?.classList.contains(HAMBURGER_OPEN_CLASS);
-  }
+  const servicesMenu = document.querySelector(".mobile-dropdown__menu");
 
-  function hideMenuAfterTransition() {
-    if (!menu) return;
+  if (toggle instanceof HTMLButtonElement && menu instanceof HTMLElement) {
+    toggle.addEventListener("click", () => {
+      const isOpen = menu.classList.toggle("is-open");
 
-    menu.addEventListener(
-      "transitionend",
-      () => {
-        if (!menu.classList.contains(MENU_OPEN_CLASS)) {
-          menu.classList.remove(MENU_READY_CLASS);
-        }
-      },
-      { once: true }
-    );
-  }
+      toggle.classList.toggle("is-open", isOpen);
 
-  function openMobileMenu() {
-    if (!menu || !hamburger) return;
+      toggle.setAttribute("aria-expanded", String(isOpen));
+    });
 
-    menu.classList.add(MENU_READY_CLASS);
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("is-open");
 
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        menu.classList.add(MENU_OPEN_CLASS);
-        hamburger.classList.add(HAMBURGER_OPEN_CLASS);
-        hamburger.setAttribute("aria-expanded", "true");
+        toggle.classList.remove("is-open");
+
+        toggle.setAttribute("aria-expanded", "false");
       });
     });
   }
 
-  function closeMobileMenu() {
-    if (!menu || !hamburger) return;
+  if (
+    servicesToggle instanceof HTMLButtonElement &&
+    servicesMenu instanceof HTMLElement
+  ) {
+    servicesToggle.addEventListener("click", () => {
+      const isOpen = servicesMenu.classList.toggle("is-open");
 
-    menu.classList.remove(MENU_OPEN_CLASS);
-    hamburger.classList.remove(HAMBURGER_OPEN_CLASS);
-    hamburger.setAttribute("aria-expanded", "false");
+      servicesToggle.classList.toggle("is-open", isOpen);
 
-    hideMenuAfterTransition();
+      servicesToggle.setAttribute("aria-expanded", String(isOpen));
+    });
   }
 
-  function toggleMobileMenu() {
-    if (isMobileMenuOpen()) {
-      closeMobileMenu();
-    } else {
-      openMobileMenu();
+  const themeToggle = document.querySelector(".theme-toggle");
+
+  const getPreferredTheme = () => {
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "light" || savedTheme === "dark") {
+      return savedTheme;
     }
+
+    return "light";
+  };
+
+  const setTheme = (theme: string) => {
+    document.documentElement.dataset.theme = theme;
+
+    if (themeToggle instanceof HTMLButtonElement) {
+      const isDark = theme === "dark";
+
+      themeToggle.setAttribute(
+        "aria-label",
+        isDark ? "Attiva modalità chiara" : "Attiva modalità scura",
+      );
+
+      themeToggle.setAttribute("aria-pressed", String(isDark));
+    }
+  };
+
+  setTheme(getPreferredTheme());
+
+  if (themeToggle instanceof HTMLButtonElement) {
+    themeToggle.addEventListener("click", () => {
+      const currentTheme =
+        document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+
+      const nextTheme = currentTheme === "dark" ? "light" : "dark";
+
+      localStorage.setItem("theme", nextTheme);
+      setTheme(nextTheme);
+    });
   }
-
-  hamburger?.addEventListener("click", toggleMobileMenu);
-
-  mobileLinks.forEach((link) => {
-    link.addEventListener("click", closeMobileMenu);
-  });
 </script>

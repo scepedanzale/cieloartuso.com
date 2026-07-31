@@ -1,119 +1,93 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ArticleCard from "../../components/ArticleCard.astro";
 import { getCollection } from "astro:content";
-import "../../styles/blog.css";
+import { capitalizeFirstLetter } from "../../utils/text";
+import ArrowIcon from "../../components/icons/ArrowIcon.astro";
+import { formatItalianDate } from "../../utils/date";
 
-type BlogPost = CollectionEntry<"blog">;
-
-const posts = await getCollection("blog", (post: BlogPost) => {
-  return post.data.draft !== true;
+const posts = await getCollection("blog", ({ data }) => {
+  console.log(data);
+  return data.draft !== true;
 });
 
-const sortedPosts = posts.sort((a: BlogPost, b: BlogPost) => {
-  return b.data.date.getTime() - a.data.date.getTime();
-});
+const sortedPosts = posts.sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
 
-const featuredPost = sortedPosts[0] ?? null;
-const otherPosts = sortedPosts.slice(1);
-
-const formattedFeaturedPostDate = featuredPost
-  ? featuredPost.data.date
-      .toLocaleDateString("it-IT", {
-        month: "short",
-        year: "numeric",
-      })
-      .replace(".", "")
-  : "";
-
-const articlesCountLabel =
-  sortedPosts.length === 1
-    ? "01 articolo"
-    : `${String(sortedPosts.length).padStart(2, "0")} articoli`;
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  name: "Blog | Cielo Artuso",
+  description:
+    "Guide e appunti pratici su siti web, restyling, SEO e manutenzione.",
+  url: "https://www.cieloartuso.com/blog/",
+  author: {
+    "@type": "Person",
+    name: "Cielo Artuso",
+    url: "https://www.cieloartuso.com",
+  },
+  blogPost: sortedPosts.map((post) => ({
+    "@type": "BlogPosting",
+    headline: post.data.title,
+    description: post.data.description,
+    datePublished: post.data.date.toISOString(),
+    url: `https://www.cieloartuso.com/blog/${post.id}/`,
+    ...(post.data.cover && {
+      image: new URL(post.data.cover, "https://www.cieloartuso.com").href,
+    }),
+  })),
+};
 ---
 
 <BaseLayout
-  title="Blog — Cielo Artuso"
-  description="Appunti su web design, sviluppo, portfolio, processi creativi e progetti digitali."
-  pageClass="blog-page"
-  logoVariant="light"
+  title="Blog | Cielo Artuso"
+  description="Guide e appunti pratici su siti web, restyling, SEO e manutenzione."
+   structuredData={blogSchema}
 >
-  <header class="list-header">
-    <div class="list-header-grid">
-      <div class="list-header-info">
-        <h1><em>Blog</em></h1>
-
-        <p class="list-intro">
-          Appunti, riflessioni e spiegazioni semplici su sviluppo web.
-        </p>
-
-        <span class="count">{articlesCountLabel}</span>
-
-        <div class="filters">
-          <button class="filter active" data-cat="tutti">tutti</button>
-          <button class="filter" data-cat="progetti">progetti</button>
-        </div>
+  <div class="blog-index">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Guide e FAQ</p>
+        <h1>Blog sul mondo web</h1>
       </div>
+    </section>
 
-      {featuredPost && (
-        <a
-          href={`/blog/${featuredPost.id}`}
-          class="featured-article"
-          data-cat={featuredPost.data.tag}
-        >
-          {featuredPost.data.cover && (
-            <div class="featured-img">
-              <img
-                src={featuredPost.data.cover}
-                alt={featuredPost.data.title}
-              />
-            </div>
-          )}
+    <section class="container blog-index__list">
+      {
+        sortedPosts.map((post) => (
+          <a href={`/blog/${post.id}/`} class="blog-post-card-link reveal">
+            <article class="blog-post-card">
+              {post.data.cover && (
+                <img
+                  class="blog-post-card__image"
+                  src={post.data.cover}
+                  alt=""
+                />
+              )}
 
-          <div class="featured-content">
-            <div class="featured-meta">
-              <span>{formattedFeaturedPostDate}</span>
-              {featuredPost.data.tag && <span>{featuredPost.data.tag}</span>}
-            </div>
+              <div class="blog-post-card__content">
+                <div>
+                  <p class="eyebrow">{capitalizeFirstLetter(post.data.tag)}</p>
+                  <h2 class="blog-post-card__title">{post.data.title}</h2>
+                </div>
 
-            <h2
-              set:html={featuredPost.data.displayTitle ?? featuredPost.data.title}
-            ></h2>
-          </div>
-        </a>
-      )}
-    </div>
-  </header>
+                <p class="blog-post-card__description">
+                  {post.data.description}
+                </p>
 
-  <main class="articles">
-    {otherPosts.map((post: BlogPost) => (
-      <ArticleCard post={post} />
-    ))}
-  </main>
+                <div class="blog-post-card__meta">
+                  <span>{formatItalianDate(post.data.date)}</span>
+                  <span>{post.data.readingTime} min</span>
+                </div>
+              </div>
+
+              <div class="blog-post-card__icon">
+                <ArrowIcon />
+              </div>
+            </article>
+          </a>
+        ))
+      }
+    </section>
+  </div>
 </BaseLayout>
-
-<script>
-  const filters = document.querySelectorAll<HTMLButtonElement>(".filter");
-  const articles = document.querySelectorAll<HTMLElement>(
-    ".article-row, .featured-article"
-  );
-
-  filters.forEach((button) => {
-    button.addEventListener("click", () => {
-      filters.forEach((filter) => filter.classList.remove("active"));
-      button.classList.add("active");
-
-      const selectedCategory = button.dataset.cat;
-
-      articles.forEach((article) => {
-        const articleCategory = article.dataset.cat;
-
-        const shouldShow =
-          selectedCategory === "tutti" || articleCategory === selectedCategory;
-
-        article.style.display = shouldShow ? "" : "none";
-      });
-    });
-  });
-</script>
