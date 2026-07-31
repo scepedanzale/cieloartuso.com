@@ -26,7 +26,7 @@ export const works = [
     settore: "Ristorazione",
     anno: "2025",
     image: "/images/works/sito-osteria-dellacquabella.jpg",
-    slug: "acquabella",
+    slug: "osteria-acquabella",
     href: "https://www.acquabella.it/",
   }
 ]

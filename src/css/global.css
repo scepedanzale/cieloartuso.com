@@ -26,7 +26,7 @@
     --color-on-dark: #f4f3f3;
     --color-on-dark-muted: #d2d3d4;
     --color-card: #f4f3f3;
-    --color-header: rgba(244, 243, 243, 0.86);
+    --color-header: rgba(244, 243, 243, 0.72);
     --color-menu: rgba(244, 243, 243, 0.97);
 
     --container: 1300px;
@@ -59,7 +59,7 @@ html[data-theme="dark"] {
     --color-on-dark: #f4f3f3;
     --color-on-dark-muted: #c9ccce;
     --color-card: #353d44;
-    --color-header: rgba(43, 51, 60, 0.9);
+     --color-header: rgba(43, 51, 60, 0.76);
     --color-menu: rgba(43, 51, 60, 0.98);
 }
 
@@ -366,15 +366,18 @@ h2{
 
     width: 100%;
     height: 88px;
-
     padding: 20px 40px;
 
-    background: var(--color-header);
+    background-color: var(--color-header);
 
-    border-bottom: 1px solid color-mix(in srgb, var(--color-border) 55%, transparent);
+    border-bottom: 1px solid
+        color-mix(in srgb, var(--color-border) 55%, transparent);
 
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+
+    /* aiuta Chrome Android con il compositing */
+    transform: translateZ(0);
 }
 
 
