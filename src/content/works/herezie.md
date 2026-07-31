@@ -2,7 +2,7 @@
 title: "Herezie"
 description: "Rifacimento del sito web di Herezie Milano, con un’identità visiva essenziale e chiara e una nuova organizzazione dei progetti."
 year: 2025 
-cover: "/images/works/sito-herezie.jpg"
+cover: "/images/works/sito-herezie.webp"
 tipo: "Sito onepage"
 settore: "Comunicazione"
 href: "https://herezie.it/"

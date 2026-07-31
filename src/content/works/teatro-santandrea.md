@@ -2,7 +2,7 @@
 title: "Teatro Sant'Andrea"
 description: "Restyling e sviluppo del sito web del Teatro Sant’Andrea, con una struttura più chiara, responsive e semplice da consultare su ogni dispositivo."
 year: 2026
-cover: "/images/works/sito-teatro-santandrea.jpg"
+cover: "/images/works/sito-teatro-santandrea.webp"
 tipo: "Sito Wordpress"
 settore: "Cultura"
 href: "https://teatrosantanadrea.com/"

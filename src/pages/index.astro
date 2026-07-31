@@ -49,6 +49,8 @@ const structuredData = [
 			<img
 				src="/images/site/cielo-artuso-hero.webp"
 				alt="Immagine di una casa in montagna"
+				fetchpriority="high"
+				loading="eager"
 			/>
 		</div>
 
@@ -156,7 +158,7 @@ const structuredData = [
 						<a
 							class:list={[
 								"service-card",
-								index === 0 && "service-card--featured"
+								index === 0 && "service-card--featured",
 							]}
 							href={service.href}
 						>
