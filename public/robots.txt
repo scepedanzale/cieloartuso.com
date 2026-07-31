@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cieloartuso.com/sitemap-index.xml
