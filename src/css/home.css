@@ -247,6 +247,9 @@
     display: block;
     text-align: center;
 }
+.section--portfolio .section-heading .eyebrow{
+    color: var(--color-on-dark);
+}
 
 
 
