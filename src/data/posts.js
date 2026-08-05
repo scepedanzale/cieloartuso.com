@@ -11,8 +11,8 @@ export const posts = [
     slug: "/blog/quanto-costa-un-sito-web"
   },
   {
-    title: "Cos’è un dominio e perché non è il sito",
-    description: "Cos’è un dominio, a cosa servono hosting e DNS e come lavorano insieme per permettere al browser di raggiungere e mostrare un sito web.",
+    title: "Cos’è un dominio web? Differenza tra dominio, hosting e sito",
+    description: "Scopri cos’è un dominio web, a cosa serve e qual è la differenza tra dominio, hosting, DNS e sito internet, con un esempio semplice.",
     date: "2026-06-10",
     cover: "/images/blog/cos-e-un-dominio/cover.webp",
     readingTime: 8,
