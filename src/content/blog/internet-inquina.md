@@ -14,7 +14,7 @@ draft: false
 Quando pensiamo all'inquinamento ci vengono in mente fabbriche, auto, aerei, plastica e altre cose fisiche.
 
 Internet invece sembra quasi non esistere veramente.
-Apriamo un sito, mandiamo un'email, guardiamo video e salviamo foto nel cloud, tutte azioni che si concludono in pochi secondi senza che davanti a noi si muovi nulla.
+Apriamo un sito, mandiamo un'email, guardiamo video e salviamo foto nel cloud, tutte azioni che si concludono in pochi secondi senza che davanti a noi si muova nulla.
 
 Eppure dietro ogni cosa che facciamo online ci sono computer, cavi, router, server, data center, antenne e molti altri dispositivi che devono essere in qualche modo costruiti, alimentati, mantenuti in funzione.
 
@@ -25,10 +25,14 @@ Quindi sì, **internet inquina**.
 
 
 È facile pensare a Internet coma a una specie di spazio invisibile in cui vivono siti, foto, file e applicazioni.
+
 In realtà tutto quello che vediamo risiede da qualche parte fisicamente.
 
 Prendiamo come esempio un'azione semplicissima: aprire una pagina web.
-Come ho spiegato anche in [questo articolo](/blog/cos-e-un-dominio), quando digitiamo un indirizzo nel browser, il nostro dispositivo invia una richiesta attraverso la rete. La richiesta arriva a computer, chiamato server, che contiene le informazioni necessarie a mostrarci quella pagina.
+
+Come ho spiegato anche in [questo articolo](/blog/cos-e-un-dominio), quando digitiamo un indirizzo nel browser, il nostro dispositivo invia una richiesta attraverso la rete. 
+
+La richiesta arriva a computer, chiamato server, che contiene le informazioni necessarie a mostrarci quella pagina.
 
 Il server risponde mandandoci testi, foto e file che compongono il sito web cercato.
 
@@ -38,6 +42,7 @@ In mezzo ci sono fibra ottica, route, infrastrutture di rete e altri dispositivi
 ## I server non stanno in una nuvola
 
 Una delle parole del web che crea più confusione è sicuramente **cloud**.
+
 Noi salviamo foto "nel cloud", usiamo software "in cloud" e facciamo backup "sul cloud", come se fosse un posto astratto.
 
 Nella realtà i nostri dati vengono salvati su computer reali. Molti di questi computer si trovano nei **data center**, strutture create appositamente per ospitare server e sistemi informatici.
@@ -60,7 +65,7 @@ Quindi l'energia non viene usata soltanto dai server, ma anche da tutto ciò che
 
 In un modo o nell'altro, i dati devono arrivare fino al nostro dispositivo, che il server sia dietro casa o dall'altra parte del mondo.
 
-Per farlo attraversano reti di telecomunicazione composte da molte infrastrutture diverse.
+Per farlo, attraversano reti di telecomunicazione composte da molte infrastrutture diverse.
 
 * guardando un video, il dispositivo continua a ricevere dati durante la riproduzione
 * quando scarichiamo un file, la rete deve trasferirlo

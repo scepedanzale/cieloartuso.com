@@ -5,21 +5,19 @@ import { capitalizeFirstLetter } from "../../utils/text";
 import ArrowIcon from "../../components/icons/ArrowIcon.astro";
 import { formatItalianDate } from "../../utils/date";
 
-const posts = await getCollection("blog", ({ data }) => {
-  console.log(data);
-  return data.draft !== true;
-});
+const posts = await getCollection("blog", ({ data }) => data.draft !== true);
 
 const sortedPosts = posts.sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 
+const categories = [...new Set(sortedPosts.map((post) => post.data.tag))].sort();
+
 const blogSchema = {
   "@context": "https://schema.org",
   "@type": "Blog",
   name: "Blog | Cielo Artuso",
-  description:
-    "Guide e appunti pratici su siti web, restyling, SEO e manutenzione.",
+  description: "Guide e appunti pratici su siti web, restyling, SEO e manutenzione.",
   url: "https://www.cieloartuso.com/blog/",
   author: {
     "@type": "Person",
@@ -42,7 +40,7 @@ const blogSchema = {
 <BaseLayout
   title="Blog | Cielo Artuso"
   description="Guide e appunti pratici su siti web, restyling, SEO e manutenzione."
-   structuredData={blogSchema}
+  structuredData={blogSchema}
 >
   <div class="blog-index">
     <section class="page-hero">
@@ -52,10 +50,34 @@ const blogSchema = {
       </div>
     </section>
 
+    <div class="container blog-filters">
+      <ul>
+        <li>
+          <button type="button" class="blog-filter active button button--secondary" data-category="all">
+            Tutti
+          </button>
+        </li>
+
+        {
+          categories.map((category) => (
+            <li>
+              <button type="button" class="blog-filter button button--secondary" data-category={category}>
+                {capitalizeFirstLetter(category)}
+              </button>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
     <section class="container blog-index__list">
       {
         sortedPosts.map((post) => (
-          <a href={`/blog/${post.id}/`} class="blog-post-card-link reveal">
+          <a
+            href={`/blog/${post.id}/`}
+            class="blog-post-card-link reveal"
+            data-category={post.data.tag}
+          >
             <article class="blog-post-card">
               {post.data.cover && (
                 <img
@@ -67,8 +89,13 @@ const blogSchema = {
 
               <div class="blog-post-card__content">
                 <div>
-                  <p class="eyebrow">{capitalizeFirstLetter(post.data.tag)}</p>
-                  <h2 class="blog-post-card__title">{post.data.title}</h2>
+                  <p class="eyebrow">
+                    {capitalizeFirstLetter(post.data.tag)}
+                  </p>
+
+                  <h2 class="blog-post-card__title">
+                    {post.data.title}
+                  </h2>
                 </div>
 
                 <p class="blog-post-card__description">
@@ -90,4 +117,23 @@ const blogSchema = {
       }
     </section>
   </div>
+
+  <script>
+    const filters = document.querySelectorAll(".blog-filter");
+    const posts = document.querySelectorAll(".blog-post-card-link");
+
+    filters.forEach((filter) => {
+      filter.addEventListener("click", () => {
+        const category = filter.dataset.category;
+
+        filters.forEach((button) => button.classList.remove("active"));
+        filter.classList.add("active");
+
+        posts.forEach((post) => {
+          const postCategory = post.dataset.category;
+          post.hidden = category !== "all" && postCategory !== category;
+        });
+      });
+    });
+  </script>
 </BaseLayout>

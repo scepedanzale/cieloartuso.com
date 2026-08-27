@@ -302,6 +302,7 @@ h2{
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
 
     gap: 32px;
 

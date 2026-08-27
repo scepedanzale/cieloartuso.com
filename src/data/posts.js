@@ -7,7 +7,7 @@ export const posts = [
     date: "2026-08-26",
     cover: "/images/blog/internet-inquina.webp",
     readingTime: 6,
-    tag: "siti web",
+    tag: "sostenibilità",
     slug: "/blog/internet-inquina"
   },
   {
