@@ -2,6 +2,15 @@
 /* homepage preview */
 export const posts = [
   {
+    title: "Internet inquina?",
+    description: "Internet sembra immateriale, ma server, reti e dispositivi consumano energia e risorse. Scopri da dove nasce l'impatto ambientale del digitale.",
+    date: "2026-08-26",
+    cover: "/images/blog/internet-inquina.webp",
+    readingTime: 6,
+    tag: "siti web",
+    slug: "/blog/internet-inquina"
+  },
+  {
     title: "Quanto costa un sito web?",
     description: "In questo articolo cerco di dare una risposta completa alla domanda più gettonata sui siti web.",
     date: "2026-07-28",
@@ -19,14 +28,4 @@ export const posts = [
     tag: "web notes",
     slug: "/blog/cos-e-un-dominio"
   },
-  {
-    title: "Perché ho rifatto il mio sito",
-    description: "Una riflessione sul redesign del mio sito personale, tra identità visiva, portfolio e blog.",
-    date: "2026-05-12",
-    cover: "/images/blog/perche-ho-rifatto-il-mio-sito.webp",
-    readingTime: 5,
-    tag: "siti web",
-    slug: "/blog/perche-ho-rifatto-il-mio-sito"
-  },
-
 ];
