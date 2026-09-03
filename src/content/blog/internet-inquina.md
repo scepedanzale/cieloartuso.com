@@ -9,7 +9,6 @@ draft: false
 ---
 
 
-# Internet inquina?
 
 Quando pensiamo all'inquinamento ci vengono in mente fabbriche, auto, aerei, plastica e altre cose fisiche.
 
