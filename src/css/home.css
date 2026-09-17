@@ -79,7 +79,7 @@
 
 .hero__content > p:not(.eyebrow) {
     max-width: 500px;
-    margin-bottom: 18px;
+    margin: 50px 0;
     color: var(--color-text);
     font-size: 1rem;
     line-height: 1.75;

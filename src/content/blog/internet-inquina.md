@@ -94,11 +94,11 @@ Qui è importante non andare nell'estremo opposto, sapere che internet ha un imp
 
 Il punto non è smettere di usarlo, ma capire che **anche il digitale utilizza risorse reali** ed essere consapevoli dei propri consumi.
 
-Leggere una pagina composta principalmente da testo non è la stessa cosa che guardare per ore video ad alta qualità.
+Non tutte le attività digitali richiedono le stesse risorse. Una pagina di testo, una videochiamata, lo streaming in alta definizione o l'utilizzo di un modello di intelligenza artificiale hanno caratteristiche e consumi molto diversi.
 
-Inviare un messaggio non è la stessa cosa che generare decine di immagini con l'intelligenza artificiale.
+Anche all'interno dell'AI cambia molto a seconda del modello utilizzato e del compito richiesto.
 
-Aprire un sito molto leggero non è la stessa cosa che aprirne uno pieno di video, animazioni, tracker e file enormi.
+Per questo non ha molto senso classificare una tecnologia come sostenibile o insostenibile in assoluto: bisogna valutare come viene utilizzata, con quali risorse e quale problema permette di risolvere.
 
 Quando parliamo di "Internet" stiamo quindi mettendo insieme attività molto diverse, perciò frasi come "una ricerca inquina Y" o "una mail produce Y" possono essere fuorvianti.
 
