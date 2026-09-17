@@ -60,7 +60,7 @@ html[data-theme="dark"] {
     --color-on-dark: #f4f3f3;
     --color-on-dark-muted: #c9ccce;
     --color-card: #353d44;
-     --color-header: rgba(43, 51, 60, 0.76);
+    --color-header: rgba(43, 51, 60, 0.76);
     --color-menu: rgba(43, 51, 60, 0.98);
 }
 
@@ -137,8 +137,8 @@ html[data-theme="dark"] .theme-toggle__icon--moon {
 }
 
 ::selection {
-  background: var(--color-accent);
-  color: white;
+    background: var(--color-accent);
+    color: white;
 }
 
 html {
@@ -213,9 +213,10 @@ h3 {
 }
 
 h1,
-h2{
+h2 {
     font-family: var(--font-title);
 }
+
 .page-intro {
     max-width: 680px;
     margin-bottom: 20px;
@@ -315,7 +316,6 @@ h2{
     border: 1px solid var(--color-border);
 
     font-size: 0.9rem;
-
     transition: 0.25s ease;
 }
 
@@ -372,8 +372,7 @@ h2{
 
     background-color: var(--color-header);
 
-    border-bottom: 1px solid
-        color-mix(in srgb, var(--color-border) 55%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--color-border) 55%, transparent);
 
     -webkit-backdrop-filter: blur(18px);
     backdrop-filter: blur(18px);
@@ -809,10 +808,12 @@ h2{
 .privacy-policy {
     margin-top: 30px;
 }
-.privacy-policy section{
+
+.privacy-policy section {
     padding: 20px;
 }
-.privacy-policy ul{
+
+.privacy-policy ul {
     list-style: disc;
     margin: 0 0 20px 30px;
 }
@@ -839,7 +840,8 @@ h2{
     margin: 20px 0;
     text-align: center;
 }
-.site-footer .site-footer__copy p a{
+
+.site-footer .site-footer__copy p a {
     display: inline;
 }
 
@@ -851,7 +853,8 @@ h2{
 }
 
 .site-footer p,
-.site-footer a:not(.site-logo) {
+.site-footer a:not(.site-logo),
+.site-footer button {
     display: block;
 
     margin-bottom: 8px;
@@ -879,6 +882,20 @@ h2{
     color: var(--color-accent);
 }
 
+/* FOOTER BUTTON */
+
+.site-footer__privacy-cookie {
+    margin-top: 20px;
+}
+
+.footer__cookie-button {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+    font-family: var(--font-base);
+}
 
 /* ==================================================
    RESPONSIVE — 1080px
@@ -935,7 +952,7 @@ h2{
     }
 
 
-     .site-header__actions {
+    .site-header__actions {
         display: none;
     }
 }
@@ -979,7 +996,7 @@ h2{
         display: block;
     }
 
-   
+
 
     /* MOBILE MENU */
 

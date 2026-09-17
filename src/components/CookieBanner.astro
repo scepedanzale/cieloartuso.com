@@ -1,0 +1,229 @@
+---
+import "../css/cookie-banner.css";
+---
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+    <div class="cookie-banner__content">
+        <button
+            class="cookie-banner__close"
+            id="cookie-close"
+            type="button"
+            aria-label="Chiudi banner cookie"
+        >
+            ×
+        </button>
+
+        <h2>Questo sito utilizza cookie</h2>
+
+        <p>
+            Utilizzo cookie tecnici necessari al funzionamento del sito e, con
+            il tuo consenso, strumenti statistici come Google Analytics per
+            capire come viene utilizzato il sito.
+        </p>
+
+        <p>
+            Puoi accettare, rifiutare oppure modificare le tue preferenze.
+            Consulta la <a href="/cookie-policy">Cookie Policy</a>.
+        </p>
+
+        <div class="cookie-banner__actions">
+            <button
+                type="button"
+                id="cookie-preferences"
+                class="button button--secondary"
+            >
+                Preferenze
+            </button>
+
+            <div>
+                <button
+                    type="button"
+                    id="cookie-accept"
+                    class="button button--primary"
+                >
+                    Accetta
+                </button>
+                <br />
+                <button
+                    type="button"
+                    id="cookie-reject"
+                    class="button button--dark"
+                >
+                    Rifiuta
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Preferenze -->
+<div class="cookie-modal" id="cookie-modal" hidden>
+    <div class="cookie-modal__content">
+        <h2>Preferenze cookie</h2>
+
+        <div class="cookie-option">
+            <div>
+                <strong>Cookie necessari</strong>
+                <p>Necessari per il corretto funzionamento del sito.</p>
+            </div>
+
+            <input type="checkbox" checked disabled />
+        </div>
+
+        <div class="cookie-option">
+            <div>
+                <strong>Cookie statistici</strong>
+                <p>
+                    Mi aiutano a capire come viene utilizzato il sito tramite
+                    Google Analytics.
+                </p>
+            </div>
+
+            <input type="checkbox" id="analytics-consent" />
+        </div>
+
+        <div class="cookie-modal__actions">
+            <button
+                type="button"
+                id="cookie-save"
+                class="button button--primary"
+            >
+                Salva preferenze
+            </button>
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+    const CONSENT_KEY = "cookieConsent";
+
+    const banner = document.getElementById("cookie-banner");
+    const modal = document.getElementById("cookie-modal");
+
+    const acceptButton = document.getElementById("cookie-accept");
+    const rejectButton = document.getElementById("cookie-reject");
+    const preferencesButton = document.getElementById("cookie-preferences");
+    const closeButton = document.getElementById("cookie-close");
+    const saveButton = document.getElementById("cookie-save");
+
+    const managePreferencesButton = document.getElementById(
+        "manage-cookie-preferences",
+    );
+
+    const analyticsCheckbox = document.getElementById("analytics-consent");
+
+    function getConsent() {
+        try {
+            const saved = localStorage.getItem(CONSENT_KEY);
+
+            return saved ? JSON.parse(saved) : null;
+        } catch {
+            return null;
+        }
+    }
+
+    function deleteCookie(name) {
+        const hostname = window.location.hostname;
+        const parts = hostname.split(".");
+
+        const possibleDomains = [hostname, `.${hostname}`];
+
+        if (parts.length >= 2) {
+            const rootDomain = parts.slice(-2).join(".");
+
+            possibleDomains.push(rootDomain);
+            possibleDomains.push(`.${rootDomain}`);
+        }
+
+        document.cookie = `${name}=; Max-Age=0; path=/; SameSite=Lax`;
+
+        document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/`;
+
+        possibleDomains.forEach((domain) => {
+            document.cookie = `${name}=; Max-Age=0; path=/; domain=${domain}; SameSite=Lax`;
+
+            document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=${domain}`;
+        });
+    }
+
+    function removeAnalyticsCookies() {
+        const cookieNames = document.cookie
+            .split(";")
+            .map((cookie) => cookie.trim().split("=")[0])
+            .filter(Boolean);
+
+        cookieNames.forEach((name) => {
+            if (
+                name === "_ga" ||
+                name.startsWith("_ga_") ||
+                name === "_gid" ||
+                name.startsWith("_gat")
+            ) {
+                deleteCookie(name);
+            }
+        });
+    }
+
+    function saveConsent(analytics) {
+        const consent = {
+            necessary: true,
+            analytics,
+            updatedAt: new Date().toISOString(),
+        };
+
+        localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
+
+        if (analytics) {
+            window["ga-disable-G-8GNB16M8F9"] = false;
+
+            window.loadGoogleAnalytics?.();
+        } else {
+            window["ga-disable-G-8GNB16M8F9"] = true;
+
+            removeAnalyticsCookies();
+        }
+
+        banner.hidden = true;
+        modal.hidden = true;
+    }
+
+    function openPreferences() {
+        const consent = getConsent();
+
+        analyticsCheckbox.checked = consent?.analytics ?? false;
+
+        banner.hidden = true;
+        modal.hidden = false;
+    }
+
+    const currentConsent = getConsent();
+
+    if (!currentConsent) {
+        banner.hidden = false;
+    } else if (currentConsent.analytics) {
+        window["ga-disable-G-8GNB16M8F9"] = false;
+        window.loadGoogleAnalytics?.();
+    } else {
+        window["ga-disable-G-8GNB16M8F9"] = true;
+    }
+
+    acceptButton.addEventListener("click", () => {
+        saveConsent(true);
+    });
+
+    rejectButton.addEventListener("click", () => {
+        saveConsent(false);
+    });
+
+    closeButton.addEventListener("click", () => {
+        saveConsent(false);
+    });
+
+    preferencesButton.addEventListener("click", openPreferences);
+
+    managePreferencesButton?.addEventListener("click", openPreferences);
+
+    saveButton.addEventListener("click", () => {
+        saveConsent(analyticsCheckbox.checked);
+    });
+</script>

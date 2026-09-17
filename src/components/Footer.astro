@@ -1,3 +1,11 @@
+---
+interface Props {
+  landing?: boolean;
+}
+
+const { landing = false } = Astro.props;
+---
+
 <footer class="site-footer">
   <div class="site-footer__inner">
     <div class="site-footer__logo">
@@ -13,23 +21,39 @@
           <p class="eyebrow">Web Developer</p>
         </div>
       </a>
+
+      <div class="site-footer__privacy-cookie">
+        <a href="/privacy-policy">Privacy e Cookie Policy</a>
+      <button
+        type="button"
+        id="manage-cookie-preferences"
+        class="footer__cookie-button"
+      >
+        Preferenze cookie
+      </button>
+      </div>
+
     </div>
 
     <div class="site-footer__nav">
+      {!landing &&
       <h3>Navigazione</h3>
       <a href="/servizi">Servizi</a>
       <a href="/portfolio">Portfolio</a>
       <a href="/blog">Blog</a>
       <a href="/chi-sono">Chi sono</a>
       <a href="/contatti">Contatti</a>
+      }
     </div>
 
     <div class="site-footer__services">
+      {!landing &&
       <h3>Servizi</h3>
       <a href="/servizi/rifacimento-siti-web">Rifacimento siti web</a>
       <a href="/servizi/siti-web-su-misura">Siti web su misura</a>
       <a href="/servizi/web-app-gestionali">Web app e gestionali</a>
       <a href="/servizi/manutenzione-siti-web">Manutenzione siti web</a>
+      }
     </div>
 
     <div class="site-footer__contacts">
@@ -96,6 +120,6 @@
   </div>
 
   <div class="site-footer__copy">
-    <p>©2026 Cielo Artuso | <a href="/privacy-policy">Privacy Policy</a></p>
+    <p>©2026 Cielo Artuso</p>
   </div>
 </footer>

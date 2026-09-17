@@ -1,6 +1,12 @@
 ---
 import ArrowIcon from "./icons/ArrowIcon.astro";
 
+interface Props {
+  landing?: boolean;
+}
+
+const { landing = false } = Astro.props;
+
 const pathname = Astro.url.pathname;
 
 const services = [
@@ -29,6 +35,10 @@ const navItems = [
   { label: "Contatti", href: "/contatti" },
 ];
 
+const landingNavItems = [
+  { label: "Vai al sito", href: "/" },
+];
+
 const isActive = (href: string) => {
   if (href === "/") {
     return pathname === "/";
@@ -55,71 +65,77 @@ const isActive = (href: string) => {
   <!-- DESKTOP NAV -->
 
   <nav class="site-nav" aria-label="Navigazione principale">
-    <!-- SERVIZI DROPDOWN -->
-
-    <div class="nav-dropdown">
-      <a
-        href="/servizi"
-        class:list={[
-          "nav__link",
-          "nav-dropdown__trigger",
-          { "nav__link--active": isActive("/servizi") },
-        ]}
-      >
-        Servizi
-
-        <svg
-          class="nav-dropdown__arrow"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.7"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-        >
-          <path d="m7 10 5 5 5-5"></path>
-        </svg>
-      </a>
-
-      <div class="nav-dropdown__menu">
-        <a href="/servizi" class="nav-dropdown__all">
-          Tutti i servizi
-          <ArrowIcon />
-        </a>
-
-        <div class="nav-dropdown__separator"></div>
-
-        {
-          services.map((service) => (
+    {
+      landing ? (
+        landingNavItems.map((item) => (
+          <a href={item.href} class="nav__link">
+            {item.label}
+          </a>
+        ))
+      ) : (
+        <>
+          <div class="nav-dropdown">
             <a
-              href={service.href}
+              href="/servizi"
               class:list={[
-                "nav-dropdown__link",
-                {
-                  "nav-dropdown__link--active": isActive(service.href),
-                },
+                "nav__link",
+                "nav-dropdown__trigger",
+                { "nav__link--active": isActive("/servizi") },
               ]}
             >
-              {service.label}
-            </a>
-          ))
-        }
-      </div>
-    </div>
+              Servizi
 
-    {
-      navItems.map((item) => (
-        <a
-          href={item.href}
-          class:list={[
-            "nav__link",
-            { "nav__link--active": isActive(item.href) },
-          ]}
-        >
-          {item.label}
-        </a>
-      ))
+              <svg
+                class="nav-dropdown__arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m7 10 5 5 5-5"></path>
+              </svg>
+            </a>
+
+            <div class="nav-dropdown__menu">
+              <a href="/servizi" class="nav-dropdown__all">
+                Tutti i servizi
+                <ArrowIcon />
+              </a>
+
+              <div class="nav-dropdown__separator"></div>
+
+              {services.map((service) => (
+                <a
+                  href={service.href}
+                  class:list={[
+                    "nav-dropdown__link",
+                    {
+                      "nav-dropdown__link--active": isActive(service.href),
+                    },
+                  ]}
+                >
+                  {service.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {navItems.map((item) => (
+            <a
+              href={item.href}
+              class:list={[
+                "nav__link",
+                { "nav__link--active": isActive(item.href) },
+              ]}
+            >
+              {item.label}
+            </a>
+          ))}
+        </>
+      )
     }
   </nav>
 
@@ -165,10 +181,19 @@ const isActive = (href: string) => {
       </svg>
     </button>
 
-    <a class="button button--primary" href="/contatti">
-      Parlami del tuo progetto
-      <ArrowIcon />
-    </a>
+    {
+      landing ? (
+        <a class="button button--primary" href="#contatti">
+          Contattami
+          <ArrowIcon />
+        </a>
+      ) : (
+        <a class="button button--primary" href="/contatti">
+          Parlami del tuo progetto
+          <ArrowIcon />
+        </a>
+      )
+    }
   </div>
 
   <button
@@ -187,75 +212,90 @@ const isActive = (href: string) => {
 <!-- MOBILE MENU -->
 
 <nav id="mobile-menu" class="mobile-menu" aria-label="Navigazione mobile">
-  <div class="mobile-dropdown">
-    <button
-      class:list={[
-        "mobile-dropdown__trigger",
-        { "mobile-menu__link--active": isActive("/servizi") },
-      ]}
-      type="button"
-      aria-expanded="false"
-    >
-      <span>Servizi</span>
+  {
+    landing ? (
+      <>
+        {landingNavItems.map((item) => (
+          <a href={item.href} class="mobile-menu__link">
+            {item.label}
+          </a>
+        ))}
 
-      <svg
-        class="mobile-dropdown__arrow"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.7"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
-      >
-        <path d="m7 10 5 5 5-5"></path>
-      </svg>
-    </button>
-
-    <div class="mobile-dropdown__menu">
-      <a
-        href="/servizi"
-        class="mobile-dropdown__link mobile-dropdown__link--all"
-      >
-        Tutti i servizi
-      </a>
-
-      {
-        services.map((service) => (
-          <a
-            href={service.href}
+        <a class="button button--primary" href="#contatti">
+          Contattami
+          <ArrowIcon />
+        </a>
+      </>
+    ) : (
+      <>
+        <div class="mobile-dropdown">
+          <button
             class:list={[
-              "mobile-dropdown__link",
-              {
-                "mobile-dropdown__link--active": isActive(service.href),
-              },
+              "mobile-dropdown__trigger",
+              { "mobile-menu__link--active": isActive("/servizi") },
+            ]}
+            type="button"
+            aria-expanded="false"
+          >
+            <span>Servizi</span>
+
+            <svg
+              class="mobile-dropdown__arrow"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m7 10 5 5 5-5"></path>
+            </svg>
+          </button>
+
+          <div class="mobile-dropdown__menu">
+            <a
+              href="/servizi"
+              class="mobile-dropdown__link mobile-dropdown__link--all"
+            >
+              Tutti i servizi
+            </a>
+
+            {services.map((service) => (
+              <a
+                href={service.href}
+                class:list={[
+                  "mobile-dropdown__link",
+                  {
+                    "mobile-dropdown__link--active": isActive(service.href),
+                  },
+                ]}
+              >
+                {service.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class:list={[
+              "mobile-menu__link",
+              { "mobile-menu__link--active": isActive(item.href) },
             ]}
           >
-            {service.label}
+            {item.label}
           </a>
-        ))
-      }
-    </div>
-  </div>
+        ))}
 
-  {
-    navItems.map((item) => (
-      <a
-        href={item.href}
-        class:list={[
-          "mobile-menu__link",
-          { "mobile-menu__link--active": isActive(item.href) },
-        ]}
-      >
-        {item.label}
-      </a>
-    ))
+        <a class="button button--primary" href="/contatti">
+          Parlami del tuo progetto
+          <ArrowIcon />
+        </a>
+      </>
+    )
   }
-
-  <a class="button button--primary" href="/contatti">
-    Parlami del tuo progetto
-    <ArrowIcon />
-  </a>
 </nav>
 
 <script>
@@ -263,7 +303,6 @@ const isActive = (href: string) => {
   const menu = document.querySelector(".mobile-menu");
 
   const servicesToggle = document.querySelector(".mobile-dropdown__trigger");
-
   const servicesMenu = document.querySelector(".mobile-dropdown__menu");
 
   if (toggle instanceof HTMLButtonElement && menu instanceof HTMLElement) {
@@ -271,16 +310,13 @@ const isActive = (href: string) => {
       const isOpen = menu.classList.toggle("is-open");
 
       toggle.classList.toggle("is-open", isOpen);
-
       toggle.setAttribute("aria-expanded", String(isOpen));
     });
 
     menu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         menu.classList.remove("is-open");
-
         toggle.classList.remove("is-open");
-
         toggle.setAttribute("aria-expanded", "false");
       });
     });
@@ -294,7 +330,6 @@ const isActive = (href: string) => {
       const isOpen = servicesMenu.classList.toggle("is-open");
 
       servicesToggle.classList.toggle("is-open", isOpen);
-
       servicesToggle.setAttribute("aria-expanded", String(isOpen));
     });
   }
