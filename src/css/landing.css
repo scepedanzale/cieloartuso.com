@@ -1,0 +1,626 @@
+/* ==================================================
+   LANDING /CIAO
+================================================== */
+
+
+/* ==================================================
+   HERO
+================================================== */
+
+.landing-hero .hero__content {
+	max-width: 720px;
+}
+
+.landing-hero.hero h1 {
+	max-width: 850px;
+	font-size: clamp(3rem, 5.3vw, 5rem);
+	line-height: 1;
+}
+
+.landing-hero .hero__content > p:not(.eyebrow) {
+	max-width: 650px;
+}
+
+.landing-hero .hero__features {
+	margin-top: 42px;
+}
+
+.landing-hero .hero__feature span {
+	display: grid;
+	place-items: center;
+
+	width: 38px;
+	height: 38px;
+
+	border: 1px solid var(--color-accent);
+	border-radius: 50%;
+
+	color: var(--color-accent);
+
+	font-size: 0.9rem;
+}
+
+
+/* ==================================================
+   SITI WEB
+================================================== */
+
+.landing-websites {
+	padding-block: 70px;
+}
+
+.landing-websites .section-heading {
+	max-width: 760px;
+}
+
+.landing-websites .section-heading > p:not(.eyebrow) {
+	max-width: 680px;
+
+	color: var(--color-muted);
+
+	line-height: 1.7;
+}
+
+.landing-websites .services-grid {
+	margin-top: 40px;
+}
+
+.landing-websites .service-card {
+	cursor: default;
+}
+
+.landing-websites .service-card:hover {
+	transform: none;
+	border-color: var(--color-border);
+}
+
+.landing-websites .service-card h3 {
+	margin-bottom: 12px;
+	font-size: 1.3rem;
+}
+
+.landing-websites .service-card p {
+	max-width: none;
+	margin-bottom: 0;
+}
+
+.landing-section__footer {
+	display: flex;
+	justify-content: flex-end;
+
+	margin-top: 30px;
+}
+
+.text-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+
+	color: var(--color-accent);
+
+	font-size: 0.9rem;
+
+	transition: gap 0.25s ease;
+}
+
+.text-link:hover {
+	gap: 15px;
+}
+
+.text-link .icon {
+	width: 18px;
+}
+
+
+/* ==================================================
+   WEB APP
+================================================== */
+
+.section--web-app {
+	padding-block: 80px;
+
+	border-top: 1px solid var(--color-border);
+	border-bottom: 1px solid var(--color-border);
+
+	background:
+		linear-gradient(
+			135deg,
+			color-mix(in srgb, var(--color-soft) 10%, transparent),
+			transparent 55%
+		),
+		var(--color-surface);
+}
+
+.section--web-app .section-heading {
+	max-width: 900px;
+	margin-bottom: 50px;
+}
+
+.section--web-app .section-heading h2 {
+	max-width: 850px;
+
+	font-size: clamp(2.2rem, 4vw, 4rem);
+	line-height: 1.05;
+}
+
+.section--web-app .section-heading > p {
+	max-width: 760px;
+
+	color: var(--color-muted);
+
+	line-height: 1.75;
+}
+
+.section--web-app .section-heading__lead {
+	margin-bottom: 18px;
+
+	color: var(--color-text);
+
+	font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+	line-height: 1.65;
+}
+
+
+/* GRID */
+
+.web-app-grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 16px;
+}
+
+.web-app-card {
+	display: flex;
+	flex-direction: column;
+
+	min-height: 245px;
+
+	padding: 28px;
+
+	border: 1px solid
+		color-mix(in srgb, var(--color-border) 75%, transparent);
+
+	background:
+		color-mix(
+			in srgb,
+			var(--color-bg) 88%,
+			transparent
+		);
+
+	transition:
+		transform 0.25s ease,
+		border-color 0.25s ease,
+		background-color 0.25s ease;
+}
+
+.web-app-card:hover {
+	transform: translateY(-4px);
+
+	border-color: var(--color-accent);
+}
+
+.web-app-card__icon {
+	display: grid;
+	place-items: center;
+	width: 48px;
+	height: 48px;
+	margin-bottom: 32px;
+	color: var(--color-soft);
+	font-size: 1.45rem;
+}
+
+.web-app-card h3 {
+	margin-bottom: 12px;
+	font-size: 1.2rem;
+	line-height: 1.25;
+}
+
+.web-app-card p {
+	margin: 0;
+
+	color: var(--color-muted);
+
+	font-size: 0.9rem;
+	line-height: 1.6;
+}
+
+.web-app-card__icon svg,
+.service-card__icon svg {
+	width: 42px;
+	height: 42px;
+}
+
+
+/* BOX FINALE WEB APP */
+
+.web-app-highlight {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: center;
+	gap: 70px;
+
+	margin-top: 20px;
+	padding: 32px 36px;
+
+	border: 1px solid
+		color-mix(in srgb, var(--color-soft) 45%, transparent);
+
+	background:
+		color-mix(
+			in srgb,
+			var(--color-soft) 11%,
+			var(--color-bg)
+		);
+}
+
+.web-app-highlight > div {
+	max-width: 750px;
+}
+
+.web-app-highlight .eyebrow {
+	margin-bottom: 10px;
+}
+
+.web-app-highlight h3 {
+	margin-bottom: 8px;
+
+	font-family: var(--font-title);
+	font-size: clamp(1.35rem, 2vw, 1.8rem);
+	font-weight: 500;
+}
+
+.web-app-highlight p:last-child {
+	margin: 0;
+
+	color: var(--color-muted);
+
+	font-size: 0.95rem;
+	line-height: 1.65;
+}
+
+
+/* ==================================================
+   CONTATTI
+================================================== */
+
+.section--contact-landing {
+	padding-block: 80px;
+
+	background: var(--color-bg-dark);
+}
+
+.contact-landing__grid {
+	display: grid;
+	grid-template-columns: minmax(0, 1.2fr) minmax(330px, 0.8fr);
+	align-items: center;
+
+	gap: clamp(60px, 8vw, 120px);
+}
+
+.contact-landing__content {
+	max-width: 700px;
+}
+
+.contact-landing__content h2 {
+	max-width: 650px;
+
+	margin-bottom: 28px;
+
+	font-size: clamp(2rem, 3.5vw, 3.3rem);
+	line-height: 1.1;
+}
+
+.contact-landing__content > p:not(.eyebrow) {
+	max-width: 620px;
+
+	margin-bottom: 14px;
+
+	color: var(--color-muted);
+
+	font-size: 1rem;
+	line-height: 1.7;
+}
+
+
+/* CONTACT OPTIONS */
+
+.contact-landing__actions {
+	display: flex;
+	flex-direction: column;
+
+	border-top: 1px solid var(--color-border);
+}
+
+.contact-option {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+
+	padding: 22px 4px;
+
+	border-bottom: 1px solid var(--color-border);
+
+	transition:
+		color 0.25s ease,
+		padding-left 0.25s ease;
+}
+
+.contact-option:hover {
+	padding-left: 12px;
+
+	color: var(--color-accent);
+}
+
+.contact-option > div {
+	display: flex;
+	flex-direction: column;
+
+	gap: 3px;
+}
+
+.contact-option__label {
+	color: var(--color-muted);
+
+	font-size: 0.68rem;
+	font-weight: 600;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+.contact-option strong {
+	font-size: 1rem;
+	font-weight: 500;
+}
+
+.contact-option .icon {
+	width: 22px;
+
+	color: var(--color-accent);
+}
+
+.contact-landing__note {
+	margin: 18px 0 0;
+
+	color: var(--color-muted);
+
+	font-size: 0.8rem;
+}
+
+
+/* ==================================================
+   FAQ
+================================================== */
+
+/*
+   QUI NON DUPLICO LE REGOLE DEL TUO faq.css.
+
+   Nella landing usa direttamente le classi:
+
+   .faq
+   .faq__header
+   .faq__list
+   .faq__item
+   .faq__answer
+
+   così erediti automaticamente il componente che hai già.
+*/
+
+.landing-faq {
+	padding-bottom: 70px;
+}
+
+.landing-faq .faq__header {
+	max-width: 620px;
+
+	margin-inline: auto;
+}
+
+
+/* ==================================================
+   DARK MODE
+================================================== */
+
+html[data-theme="dark"] .section--web-app {
+	background:
+		linear-gradient(
+			135deg,
+			color-mix(in srgb, var(--color-soft) 12%, transparent),
+			transparent 55%
+		),
+		var(--color-surface);
+}
+
+html[data-theme="dark"] .web-app-card {
+	background:
+		color-mix(
+			in srgb,
+			var(--color-bg) 82%,
+			var(--color-surface)
+		);
+
+	border-color: var(--color-border);
+}
+
+html[data-theme="dark"] .web-app-highlight {
+	background:
+		color-mix(
+			in srgb,
+			var(--color-soft) 12%,
+			var(--color-bg)
+		);
+}
+
+
+/* ==================================================
+   RESPONSIVE — 1080px
+================================================== */
+
+@media (max-width: 1080px) {
+
+	.web-app-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.web-app-card {
+		min-height: 220px;
+	}
+
+	.contact-landing__grid {
+		gap: 60px;
+	}
+}
+
+
+/* ==================================================
+   RESPONSIVE — 800px
+================================================== */
+
+@media (max-width: 800px) {
+
+	.landing-websites,
+	.section--web-app,
+	.section--contact-landing {
+		padding-block: 65px;
+	}
+
+	.landing-hero .hero__content {
+		max-width: 580px;
+	}
+
+	.landing-hero h1 {
+		font-size: clamp(2.8rem, 10vw, 4.5rem);
+	}
+
+	.web-app-highlight {
+		grid-template-columns: 1fr;
+
+		gap: 24px;
+	}
+
+	.contact-landing__grid {
+		grid-template-columns: 1fr;
+
+		gap: 45px;
+	}
+
+	.contact-landing__content {
+		max-width: 650px;
+	}
+}
+
+
+/* ==================================================
+   RESPONSIVE — 600px
+================================================== */
+
+@media (max-width: 600px) {
+
+	.landing-websites,
+	.section--web-app,
+	.section--contact-landing {
+		padding-block: 50px;
+	}
+
+	/* HERO */
+
+	.landing-hero h1 {
+		font-size: clamp(2.5rem, 13vw, 3.8rem);
+	}
+
+	.landing-hero .hero__content > p:not(.eyebrow) {
+		font-size: 0.95rem;
+	}
+
+	/* SITI */
+
+	.landing-section__footer {
+		justify-content: flex-start;
+
+		margin-top: 22px;
+	}
+
+	/* WEB APP */
+
+	.section--web-app .section-heading {
+		margin-bottom: 35px;
+	}
+
+	.section--web-app .section-heading h2 {
+		font-size: 2.1rem;
+	}
+
+	.web-app-grid {
+		grid-template-columns: 1fr;
+
+		gap: 12px;
+	}
+
+	.web-app-card {
+		min-height: auto;
+
+		padding: 24px;
+	}
+
+	.web-app-card__icon {
+		margin-bottom: 24px;
+	}
+
+	.web-app-highlight {
+		margin-top: 14px;
+		padding: 26px 24px;
+	}
+
+	.web-app-highlight .button {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	/* CONTACT */
+
+	.contact-landing__content h2 {
+		font-size: 2rem;
+	}
+
+	.contact-option {
+		padding-block: 20px;
+	}
+
+	.contact-option:hover {
+		padding-left: 6px;
+	}
+}
+
+
+/* ==================================================
+   RESPONSIVE — 400px
+================================================== */
+
+@media (max-width: 400px) {
+
+	.web-app-card {
+		padding: 22px 20px;
+	}
+
+	.web-app-highlight {
+		padding: 24px 20px;
+	}
+
+	.contact-option strong {
+		font-size: 0.9rem;
+	}
+}
+
+
+/* ==================================================
+   REDUCED MOTION
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+	.web-app-card,
+	.contact-option,
+	.text-link {
+		transition: none;
+	}
+}

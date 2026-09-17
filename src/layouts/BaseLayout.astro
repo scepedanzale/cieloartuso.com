@@ -3,11 +3,13 @@ import "../css/global.css";
 import StructuredData from "../components/StructuredData.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import CookieBanner from "../components/CookieBanner.astro";
 
 const {
   title = "Cielo Artuso | Web developer",
   description = "Realizzo e rifaccio siti web per piccole attività, professionisti e brand locali.",
   structuredData,
+  landing = false,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -61,22 +63,50 @@ const websiteSchema = {
       const savedTheme = localStorage.getItem("theme");
 
       const theme =
-        savedTheme === "light" || savedTheme === "dark"
-          ? savedTheme
-          : "light";
+        savedTheme === "light" || savedTheme === "dark" ? savedTheme : "light";
 
       document.documentElement.dataset.theme = theme;
+    </script>
+
+    <script is:inline>
+      window.loadGoogleAnalytics = function () {
+        if (window.__gaLoaded) return;
+
+        window.__gaLoaded = true;
+
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-8GNB16M8F9";
+
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+          window.dataLayer.push(arguments);
+        }
+
+        window.gtag = gtag;
+
+        gtag("js", new Date());
+        gtag("config", "G-8GNB16M8F9", {
+          anonymize_ip: true,
+        });
+      };
     </script>
   </head>
 
   <body>
-    <Header />
+    <Header landing={landing} />
 
     <main>
       <slot />
     </main>
 
-    <Footer />
+    <Footer landing={landing} />
+
+    <CookieBanner />
+    
     <script>
       const revealElements = document.querySelectorAll(".reveal");
 

@@ -1,0 +1,380 @@
+---
+import "../css/landing.css";
+import ArrowIcon from "../components/icons/ArrowIcon.astro";
+import Separator from "../components/Separator.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import WebsiteIcon from "../components/icons/landing-icons/WebsiteIcon.astro";
+import LandingPageIcon from "../components/icons/landing-icons/LandingPageIcon.astro";
+import ReloadIcon from "../components/icons/landing-icons/ReloadIcon.astro";
+import MaintenanceIcon from "../components/icons/landing-icons/MaintenanceIcon.astro";
+
+import DashboardIcon from "../components/icons/landing-icons/DashboardIcon.astro";
+import CalendarIcon from "../components/icons/landing-icons/CalendarIcon.astro";
+import UserIcon from "../components/icons/landing-icons/UserIcon.astro";
+import QrcodeIcon from "../components/icons/landing-icons/QrcodeIcon.astro";
+import DocumentIcon from "../components/icons/landing-icons/DocumentIcon.astro";
+import ChartIcon from "../components/icons/landing-icons/ChartIcon.astro";
+import FormIcon from "../components/icons/landing-icons/FormIcon.astro";
+import BoltIcon from "../components/icons/landing-icons/BoltIcon.astro";
+
+const webServices = [
+  {
+    title: "Sito vetrina",
+    text: "Un sito completo per presentare la tua attività, i servizi e i contatti in modo chiaro e professionale.",
+    icon: WebsiteIcon,
+  },
+  {
+    title: "Landing page",
+    text: "Una pagina pensata per un obiettivo preciso: presentare un servizio, raccogliere contatti o promuovere un progetto.",
+    icon: LandingPageIcon,
+  },
+  {
+    title: "Rifacimento del sito",
+    text: "Rinnovo un sito esistente per renderlo più moderno, chiaro, veloce e facile da usare.",
+    icon: ReloadIcon,
+  },
+  {
+    title: "Manutenzione",
+    text: "Aggiornamenti, modifiche, sicurezza e supporto per mantenere il sito sempre funzionante.",
+    icon: MaintenanceIcon,
+  },
+];
+
+const webApps = [
+  {
+    title: "Gestionali",
+    text: "Per gestire clienti, ordini, attività, dati o qualsiasi informazione utile al tuo lavoro.",
+    icon: DashboardIcon,
+  },
+  {
+    title: "Pannelli di controllo",
+    text: "Visualizza dati, statistiche e informazioni importanti in un'unica schermata.",
+    icon: ChartIcon,
+  },
+  {
+    title: "Prenotazioni online",
+    text: "Permetti ai clienti di prenotare servizi, appuntamenti o attività direttamente online.",
+    icon: CalendarIcon,
+  },
+  {
+    title: "Aree clienti",
+    text: "Uno spazio riservato dove i tuoi clienti possono accedere a documenti, contenuti o servizi.",
+    icon: UserIcon,
+  },
+  {
+    title: "Accrediti e QR code",
+    text: "Gestisci iscrizioni, partecipanti, ingressi e accrediti per eventi tramite QR code.",
+    icon: QrcodeIcon,
+  },
+  {
+    title: "Gestione documenti",
+    text: "Organizza documenti, file e informazioni in un unico spazio semplice da consultare.",
+    icon: DocumentIcon,
+  },
+  {
+    title: "Moduli e richieste",
+    text: "Raccogli richieste, segnalazioni, informazioni o dati con moduli costruiti sulle tue esigenze.",
+    icon: FormIcon,
+  },
+  {
+    title: "Automazioni",
+    text: "Riduci attività ripetitive collegando processi e automatizzando operazioni che oggi fai a mano.",
+    icon: BoltIcon,
+  },
+];
+
+const faqs = [
+  {
+    question: "Quanto costa un sito web?",
+    answer:
+      "Dipende dal tipo di progetto, dalle pagine e dalle funzionalità necessarie. Dopo aver capito cosa ti serve posso prepararti una proposta chiara con costi e tempi.",
+  },
+  {
+    question: "Puoi rifare un sito che esiste già?",
+    answer:
+      "Sì. Posso occuparmi del rifacimento completo oppure migliorare parti specifiche del sito esistente.",
+  },
+  {
+    question: "Realizzi anche gestionali e strumenti personalizzati?",
+    answer:
+      "Sì. Posso realizzare strumenti online costruiti intorno al tuo modo di lavorare, come gestionali, aree clienti, sistemi di prenotazione, accrediti e automazioni.",
+  },
+  {
+    question: "Devo sapere già esattamente cosa mi serve?",
+    answer:
+      "No. Puoi semplicemente raccontarmi il problema, l'idea o il risultato che vuoi ottenere. Sarà poi mio compito proporti la soluzione più adatta.",
+  },
+  {
+    question: "Segui il progetto anche dopo la pubblicazione?",
+    answer:
+      "Sì. Posso continuare a seguire il progetto con manutenzione, aggiornamenti, modifiche e nuove funzionalità.",
+  },
+];
+
+const whatsappUrl =
+  "https://wa.me/393488785699?text=Ciao%2C%20vorrei%20parlarti%20di%20un%20progetto.";
+---
+
+<BaseLayout
+  title="Siti web e strumenti online | Cielo Artuso"
+  description="Realizzo e rifaccio siti web e creo gestionali, sistemi di prenotazione, aree clienti e altri strumenti online su misura per attività e professionisti."
+  landing={true}
+>
+  <!-- HERO -->
+
+  <section class="hero landing-hero">
+    <div class="hero__background">
+      <img
+        src="/images/site/cielo-artuso-landing-hero.webp"
+        alt="Paesaggio di montagna"
+        fetchpriority="high"
+        loading="eager"
+      />
+    </div>
+
+    <div class="hero__overlay"></div>
+
+    <div class="container hero__inner">
+      <div class="hero__content reveal">
+        <p class="eyebrow">Siti web · gestionali · strumenti online</p>
+
+        <h1>
+          Siti web e strumenti online
+          <br />
+          per la tua attività
+        </h1>
+
+        <Separator />
+
+        <p>
+          Creo e rifaccio siti web e realizzo strumenti online su misura per
+          semplificare il lavoro, organizzare informazioni e gestire meglio la
+          tua attività.
+        </p>
+
+        <div class="hero__actions">
+          <a class="button button--dark" href="#contatti">
+            Parliamo del tuo progetto
+            <ArrowIcon />
+          </a>
+
+          <a class="button button--secondary" href="#web-app">
+            Guarda cosa posso realizzare
+            <ArrowIcon />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITI WEB -->
+
+  <section class="section--services landing-websites">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">La tua presenza online</p>
+
+        <h2>Siti web</h2>
+
+        <p>
+          Un sito deve spiegare bene chi sei, cosa fai e perché una persona
+          dovrebbe contattarti.
+        </p>
+
+        <p>
+          Posso creare un nuovo sito oppure rifare quello che hai già,
+          migliorandone grafica, struttura, velocità e semplicità d'uso.
+        </p>
+      </div>
+
+      <div class="services-grid reveal">
+        {
+          webServices.map((service) => {
+            const Icon = service.icon;
+
+            return (
+              <article class="service-card">
+                <span class="service-card__icon">
+                  <Icon />
+                </span>
+
+                <h3>{service.title}</h3>
+                <p>{service.text}</p>
+              </article>
+            );
+          })
+        }
+      </div>
+
+      <div class="landing-section__footer">
+        <a href="/servizi" class="text-link">
+          Scopri tutti i servizi
+          <ArrowIcon />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEB APP -->
+
+  <section class="section--web-app" id="web-app">
+    <div class="container">
+      <div class="section-heading section-heading--large">
+        <p class="eyebrow">Semplifica il tuo lavoro</p>
+
+        <h2>Web app e strumenti online su misura</h2>
+
+        <p class="section-heading__lead">
+          Una web app è semplicemente uno strumento che utilizzi dal browser,
+          proprio come un sito, ma che ti permette anche di gestire dati,
+          persone, prenotazioni, documenti o attività.
+        </p>
+
+        <p>
+          Non devi sapere come si chiama tecnicamente quello che ti serve. Se
+          hai qualcosa che oggi gestisci con fogli Excel, email, messaggi o
+          procedure manuali, possiamo capire insieme se può essere trasformato
+          in uno strumento più semplice.
+        </p>
+      </div>
+
+      <div class="web-app-grid reveal">
+        {
+          webApps.map((item, index) => {
+            const Icon = item.icon;
+
+            return (
+              <article
+                class:list={[
+                  "web-app-card",
+                  index > 3 && "web-app-card--secondary",
+                ]}
+              >
+                <span class="web-app-card__icon">
+                  <Icon />
+                </span>
+
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            );
+          })
+        }
+      </div>
+
+      <div class="web-app-highlight reveal">
+        <div>
+          <p class="eyebrow">Uno strumento costruito intorno a te</p>
+
+          <h3>Non devi adattare il tuo lavoro al software.</h3>
+
+          <p>
+            Possiamo costruire lo strumento intorno al modo in cui lavori già,
+            eliminando passaggi inutili e automatizzando ciò che oggi richiede
+            tempo.
+          </p>
+        </div>
+
+        <a class="button button--primary" href="#contatti">
+          Parliamone
+          <ArrowIcon />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+
+  <section class="section--contact-landing" id="contatti">
+    <div class="container contact-landing__grid">
+      <div class="contact-landing__content reveal">
+        <p class="eyebrow">Non sai cosa ti serve?</p>
+
+        <h2>
+          Raccontami cosa vuoi fare.
+          <br />
+          Al resto pensiamo dopo.
+        </h2>
+
+        <p>
+          Non devi sapere se ti serve un sito, un gestionale, una web app o
+          qualcos'altro.
+        </p>
+
+        <p>
+          Puoi semplicemente spiegarmi il problema che vuoi risolvere o l'idea
+          che hai in mente. Ti dirò cosa può avere senso realizzare.
+        </p>
+      </div>
+
+      <div class="contact-landing__actions reveal d1">
+        <a
+          class="contact-option"
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div>
+            <span class="contact-option__label">WhatsApp</span>
+            <strong>Scrivimi un messaggio</strong>
+          </div>
+
+          <ArrowIcon />
+        </a>
+
+        <a class="contact-option" href="mailto:info@cieloartuso.com">
+          <div>
+            <span class="contact-option__label">Email</span>
+            <strong>info@cieloartuso.com</strong>
+          </div>
+
+          <ArrowIcon />
+        </a>
+
+        <a class="contact-option" href="/contatti">
+          <div>
+            <span class="contact-option__label">Contatti</span>
+            <strong>Fissiamo una chiamata</strong>
+          </div>
+
+          <ArrowIcon />
+        </a>
+
+        <p class="contact-landing__note">
+          Prima chiamata conoscitiva gratuita di 30 minuti.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+
+  <section class="faq landing-faq">
+    <div class="container">
+      <div class="faq__header">
+        <p class="eyebrow">Domande frequenti</p>
+        <h2>FAQ</h2>
+
+        <p>
+          Alcune risposte alle domande più comuni prima di iniziare un progetto.
+        </p>
+      </div>
+
+      <ul class="faq__list">
+        {
+          faqs.map((faq) => (
+            <li class="faq__item">
+              <details>
+                <summary>{faq.question}</summary>
+
+                <div class="faq__answer">
+                  <p>{faq.answer}</p>
+                </div>
+              </details>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
