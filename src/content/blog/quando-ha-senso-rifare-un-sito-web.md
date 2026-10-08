@@ -14,7 +14,7 @@ Molti siti online non sono "rotti": si aprono, hanno i contatti, mostrano qualch
 
 Capire **quando ha senso rifare un sito web** e quando invece conviene sistemare quello che c'è è la prima domanda da farsi. Rifare non è l'unica opzione, ma a volte è quella giusta. Ecco i segnali da guardare.
 
-## 1. Il sito è fermo da anni
+## Il sito è fermo da anni
 
 È il caso più comune: un sito realizzato tempo fa e poi lasciato lì.
 
@@ -24,7 +24,7 @@ Un **sito web vecchio** non è solo un problema estetico. Chi arriva si chiede s
 
 In questo caso rifare non significa buttare via tutto: significa **riallineare il sito all'attività di oggi**.
 
-## 2. Il sito non si vede bene da smartphone
+## Il sito non si vede bene da smartphone
 
 Buona parte delle persone ti cerca dal telefono, spesso di fretta.
 
@@ -34,7 +34,7 @@ Un **sito responsive**, cioè capace di adattarsi a qualsiasi schermo, oggi è i
 
 Un test veloce: apri il tuo sito dal telefono e prova a trovare orari, numero di telefono e contatti usando una mano sola.
 
-## 3. Trovare le informazioni è diventato complicato
+## Trovare le informazioni è diventato complicato
 
 Troppe voci di menu, pagine nascoste, contenuti ripetuti, collegamenti che non portano da nessuna parte.
 
@@ -42,7 +42,7 @@ Quando anche chi vuole davvero contattarti fa fatica a capire cosa offri o dove 
 
 Rifare il sito permette di ripartire da una domanda semplice: cosa cerca chi arriva qui, e come posso aiutarlo a trovarlo subito? Una navigazione ridisegnata attorno a un obiettivo chiaro fa spesso più differenza di qualsiasi ritocco grafico.
 
-## 4. I contenuti non raccontano più quello che fai
+## I contenuti non raccontano più quello che fai
 
 Un sito può avere una struttura dignitosa e contenuti ormai superati: servizi che non offri più, prezzi vecchi, lavori di anni fa, descrizioni generiche che non dicono niente di concreto.
 
@@ -50,7 +50,7 @@ Qui rifare serve soprattutto a **riorganizzare i contenuti**, non solo l'aspetto
 
 Se il tuo sito non racconta più bene quello che fai, non basta cambiare il colore di un pulsante: va rivisto il modo in cui comunichi.
 
-## 5. Il sito è lento
+## Il sito è lento
 
 La **velocità di un sito** conta più di quanto sembri. Un sito lento fa perdere la pazienza a chi lo visita, e la velocità è anche uno degli aspetti che Google considera quando valuta l'esperienza offerta dalle pagine.
 
@@ -58,7 +58,7 @@ Le cause possono essere tante: immagini troppo pesanti, codice poco efficiente, 
 
 A volte basta un'**ottimizzazione**. Altre volte il problema è nella struttura stessa del progetto e conviene ricostruirlo in modo più leggero. Per capirlo serve una valutazione del sito esistente: strumenti gratuiti come PageSpeed Insights di Google sono un buon punto di partenza.
 
-## 6. Il sito non rappresenta più la tua identità
+## Il sito non rappresenta più la tua identità
 
 Succede anche che l'attività cambi al punto che il sito non la rappresenta più: colori, tono e stile appartengono a un'altra fase.
 
