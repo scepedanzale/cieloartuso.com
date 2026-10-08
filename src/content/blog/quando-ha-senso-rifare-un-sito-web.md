@@ -1,83 +1,90 @@
 ---
 title: "Quando ha senso rifare un sito web (e quando invece no)"
-description: "Non sempre conviene rifare un sito da zero. Ecco i segnali che indicano quando vale la pena investire in un restyling e quando invece basta qualche correzione."
+description: "Rifare un sito web non è sempre la scelta giusta. I segnali che indicano quando serve un restyling completo e quando bastano piccole correzioni."
 date: 2026-10-08
 cover: "/images/blog/quando-ha-senso-rifare-un-sito-web.webp"
-readingTime: 6
+readingTime: 7
 tag: "siti web"
 draft: false
 ---
 
 Un sito che funziona non è detto che sia ancora il sito giusto.
 
-Ci sono progetti che online danno ancora il meglio di sé, e altri che col tempo si sono logorati: magari non sono rotti, ma non comunicano più come dovrebbero, non rappresentano l'attività e finiscono per allontanare i visitatori invece di convincerli.
+Molti siti online non sono "rotti": si aprono, hanno i contatti, mostrano qualche foto. Ma col tempo smettono di **comunicare bene**, non rappresentano più l'attività e finiscono per allontanare chi li visita invece di convincerlo.
 
-Capire quando vale la pena rifare un sito e quando invece conviene lasciarlo stare è la prima domanda da farsi. Perché rifare non è l'unica opzione, ma a volte è quella giusta.
+Capire **quando ha senso rifare un sito web** e quando invece conviene sistemare quello che c'è è la prima domanda da farsi. Rifare non è l'unica opzione, ma a volte è quella giusta. Ecco i segnali da guardare.
 
-## Il sito c'è, ma è fermo da anni
+## 1. Il sito è fermo da anni
 
-Un caso molto comune è quello del sito realizzato tanto tempo fa e poi lasciato lì.
+È il caso più comune: un sito realizzato tempo fa e poi lasciato lì.
 
-Magari l'attività è cresciuta, sono cambiati i servizi, il modo di lavorare e anche le persone. Ma il sito continua a raccontare una versione vecchia, con informazioni datate e una struttura che non tiene conto di quello che è cambiato.
+Nel frattempo l'attività è cresciuta, sono cambiati i servizi, il modo di lavorare, a volte anche le persone. Il sito invece racconta ancora la versione di qualche anno fa, con informazioni datate e una struttura che non tiene conto di quello che è cambiato.
 
-Quando un sito non viene aggiornato da molto tempo, non è soltanto un problema estetico. Chi arriva si chiede se dietro c'è ancora qualcuno, e una prima impressione così può costare un potenziale cliente.
+Un **sito web vecchio** non è solo un problema estetico. Chi arriva si chiede se dietro c'è ancora qualcuno, e una prima impressione così può costarti un cliente.
 
-Rifare in questo caso non significa necessariamente buttare via tutto: significa riallineare il sito all'attività di oggi.
+In questo caso rifare non significa buttare via tutto: significa **riallineare il sito all'attività di oggi**.
 
-## Il sito non si vede bene da mobile
+## 2. Il sito non si vede bene da smartphone
 
-Una buona parte dei visitatori arriva da smartphone.
+Buona parte delle persone ti cerca dal telefono, spesso di fretta.
 
-Se il sito da telefono è stretto, lento, con testi minuscoli e pulsanti difficili da premere, rischi di perdere molte delle persone che lo visitano. E non è un dettaglio minore.
+Se da mobile il sito è stretto, lento, con testi minuscoli e pulsanti difficili da premere, rischi di perdere molte delle persone che lo visitano.
 
-Oggi il cosiddetto responsive design, cioè la capacità di adattarsi a schermi diversi, è una caratteristica di base di qualsiasi sito professionale.
+Un **sito responsive**, cioè capace di adattarsi a qualsiasi schermo, oggi è il minimo per un sito professionale. Se il progetto attuale non è nato per funzionare bene da mobile, il problema è strutturale e difficilmente si risolve con qualche ritocco: serve un rifacimento, o almeno una revisione profonda della parte mobile.
 
-Se il progetto attuale non è stato pensato per funzionare bene da mobile, il problema è strutturale e non si risolve con piccoli ritocchi. In quel caso un rifacimento, o almeno una revisione profonda della parte mobile, ha molto senso.
+Un test veloce: apri il tuo sito dal telefono e prova a trovare orari, numero di telefono e contatti usando una mano sola.
 
-## La navigazione è diventata un percorso a ostacoli
+## 3. Trovare le informazioni è diventato complicato
 
-Ci sono siti dove trovare un'informazione è un percorso complicato: troppe voci di menu, pagine nascoste, contenuti ripetuti, collegamenti che non portano da nessuna parte.
+Troppe voci di menu, pagine nascoste, contenuti ripetuti, collegamenti che non portano da nessuna parte.
 
-Quando anche chi vuole davvero contattarti fa fatica a capire dove sono i contatti o cosa offri, c'è un problema di struttura.
+Quando anche chi vuole davvero contattarti fa fatica a capire cosa offri o dove sono i contatti, c'è un problema di **struttura del sito**.
 
-Rifare un sito permette di ripartire da una domanda semplice: cosa vuole trovare chi arriva qui, e come posso aiutarlo a trovarlo subito. La navigazione ridisegnata attorno a un obiettivo chiaro fa spesso più differenza di qualsiasi ritocco grafico.
+Rifare il sito permette di ripartire da una domanda semplice: cosa cerca chi arriva qui, e come posso aiutarlo a trovarlo subito? Una navigazione ridisegnata attorno a un obiettivo chiaro fa spesso più differenza di qualsiasi ritocco grafico.
 
-## Contenuti che non raccontano più quello che fai
+## 4. I contenuti non raccontano più quello che fai
 
-Un sito può avere una struttura ok e un aspetto dignitoso, ma contenuti ormai datati: servizi che non offri più, prezzi vecchi, progetti di anni fa, descrizioni generiche che non dicono nulla di concreto.
+Un sito può avere una struttura dignitosa e contenuti ormai superati: servizi che non offri più, prezzi vecchi, lavori di anni fa, descrizioni generiche che non dicono niente di concreto.
 
-In questo caso rifare serve soprattutto a riorganizzare i contenuti, non soltanto l'apparenza. Testi chiari, aggiornati e orientati a chi deve leggerli valgono più di un design nuovo.
+Qui rifare serve soprattutto a **riorganizzare i contenuti**, non solo l'aspetto. Testi chiari, aggiornati e scritti pensando a chi li deve leggere valgono più di un design nuovo.
 
-Se il tuo sito non racconta più bene quello che fai, non basta cambiare il colore di un bottone: va rivisto il modo in cui comunichi.
+Se il tuo sito non racconta più bene quello che fai, non basta cambiare il colore di un pulsante: va rivisto il modo in cui comunichi.
 
-## Il sito è lentissimo
+## 5. Il sito è lento
 
-La velocità di un sito conta più di quanto sembri.
+La **velocità di un sito** conta più di quanto sembri. Un sito lento fa perdere la pazienza a chi lo visita, e la velocità è anche uno degli aspetti che Google considera quando valuta l'esperienza offerta dalle pagine.
 
-Un sito lento fa perdere la pazienza a chi lo visita, e la velocità è anche uno degli aspetti che Google considera. Le cause possono essere tante: immagini troppo pesanti, codice inefficiente, file che si caricano senza motivo.
+Le cause possono essere tante: immagini troppo pesanti, codice poco efficiente, plugin inutili, file che si caricano senza motivo.
 
-A volte basta un'ottimizzazione. Altre volte invece il problema è nella struttura stessa del progetto, e conviene ricostruirlo in modo più leggero. Capire quale delle due strade percorrere richiede una valutazione del sito esistente.
+A volte basta un'**ottimizzazione**. Altre volte il problema è nella struttura stessa del progetto e conviene ricostruirlo in modo più leggero. Per capirlo serve una valutazione del sito esistente: strumenti gratuiti come PageSpeed Insights di Google sono un buon punto di partenza.
 
-## L'identità non è più rappresentativa
+## 6. Il sito non rappresenta più la tua identità
 
-Succede anche che l'attività sia cambiata a tal punto che il sito non la rappresenta più a livello visivo e comunicativo.
+Succede anche che l'attività cambi al punto che il sito non la rappresenta più: colori, tono e stile appartengono a un'altra fase.
 
-Se colori, tono e stile appartengono a un'altra fase, il sito può sembrare fuori luogo anche se tecnicamente funziona bene. E qui il rifacimento serve soprattutto a riallineare il sito all'identità attuale, in modo che sia riconoscibile e coerente con il resto dei tuoi canali.
+Il sito può funzionare benissimo dal punto di vista tecnico e sembrare comunque fuori luogo. In questo caso un **restyling del sito** serve a renderlo di nuovo coerente con l'identità attuale e con il resto dei tuoi canali, dai social al biglietto da visita.
 
-## Quando invece non conviene rifare
+## Quando invece non conviene rifare un sito
 
-Non sempre rifare è la risposta giusta.
+Rifare non è sempre la risposta giusta.
 
-Se il sito è recente, funziona bene, ti rappresenta e ha solo qualche dettaglio da sistemare, probabilmente bastano delle correzioni mirate. Ricostruire da zero in quel caso sarebbe uno spreco di tempo e risorse.
+Se il sito è recente, funziona bene, ti rappresenta e ha solo qualche dettaglio da sistemare, probabilmente bastano **correzioni mirate**. Ricostruirlo da zero sarebbe uno spreco di tempo e di budget.
 
-Il punto è valutare la situazione reale: cosa funziona, cosa va cambiato e cosa conviene mantenere. Rifare bene significa anche recuperare ciò che funziona, invece di buttare via tutto.
+Rifare bene significa anche recuperare ciò che funziona: testi validi, foto, pagine che portano contatti, posizioni su Google già conquistate.
 
-## Prima di decidere
+## Rifacimento, revisione o piccoli interventi: come decidere
 
 Se stai pensando di rifare il tuo sito, la cosa più utile è partire da un'analisi onesta della situazione attuale.
 
-Io guardo sempre alcune cose quando valuto un sito esistente: com'è la struttura, come si comporta da mobile, quanto è veloce, come sono organizzati i contenuti, se l'identità è ancora coerente e se il sito comunica chiaramente cosa offri.
+Quando valuto un sito esistente guardo sempre le stesse cose:
 
-Sulla base di questo capiamo se serve un rifacimento completo, una revisione profonda o qualche correzione mirata. E scegliamo la strada che ha davvero senso per il progetto, senza investire più del necessario.
+- com'è organizzata la struttura
+- come si comporta da mobile
+- quanto è veloce
+- come sono scritti i contenuti
+- se l'identità visiva è ancora coerente
+- se il sito comunica chiaramente cosa offri
 
-Se ti interessa, ti spiego anche [quanto costa rifare un sito web](/blog/quanto-costa-un-sito-web) e come si stima il lavoro necessario.
+Sulla base di questo capiamo se serve un **rifacimento completo**, una revisione profonda o qualche correzione mirata, e scegliamo la strada che ha davvero senso per il progetto, senza investire più del necessario.
+
+Se ti interessa, ho scritto anche [quanto costa un sito web](/blog/quanto-costa-un-sito-web) e da cosa dipende il prezzo.
