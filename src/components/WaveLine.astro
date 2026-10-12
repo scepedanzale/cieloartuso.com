@@ -1,0 +1,133 @@
+---
+/*
+  Linea ondulata con cerchio finale, ripresa dai post Instagram.
+
+  length: "short" (al posto del vecchio separatore) | "long" (a tutta larghezza, tra le sezioni)
+  from:   "left" | "right" → lato da cui parte la linea; il cerchio sta dalla parte opposta
+  tone:   "accent" | "light" → "light" per le sezioni scure
+  align:  "start" | "center" → solo per la versione corta
+  draw:   la linea si traccia quando entra nello schermo (attivo di default, draw={false} per spegnerlo)
+  bleed:  true → solo versione corta da sinistra: la linea parte dal bordo sinistro dello schermo
+*/
+const {
+  length = "short",
+  from = "left",
+  tone = "accent",
+  align = "start",
+  draw = true,
+  bleed = false,
+} = Astro.props;
+
+// Onda della versione corta (da x=0 al cerchio)
+const WAVE_PATH = "C 18 26, 32 20, 50 23 S 82 34, 100 31 S 124 23, 134 21";
+
+const classes = [
+  "wave-line",
+  `wave-line--${length}`,
+  from === "right" && "wave-line--from-right",
+  tone === "light" && "wave-line--light",
+  align === "center" && "wave-line--center",
+  draw && "wave-line--draw",
+  bleed && "wave-line--bleed",
+]
+  .filter(Boolean)
+  .join(" ");
+---
+
+{
+  length === "long" ? (
+    <div class={classes} aria-hidden="true">
+      <svg
+        class="wave-line__stretch"
+        viewBox="0 0 1000 80"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0 50 C 140 48, 230 18, 380 24 S 600 74, 730 66 S 900 56, 1000 56"
+          vector-effect="non-scaling-stroke"
+        />
+      </svg>
+      <svg class="wave-line__end" viewBox="0 0 70 80">
+        <path d="M0 56 C 22 56, 36 50, 41.6 35.4" pathLength="1" />
+        <circle cx="50" cy="30" r="10" pathLength="1" transform="rotate(147 50 30)" />
+        <circle class="wave-line__dot" cx="50" cy="30" r="4" />
+      </svg>
+    </div>
+  ) : (
+    <div
+      class={classes}
+      aria-hidden="true"
+      data-wave-bleed={bleed ? WAVE_PATH : undefined}
+    >
+      <svg class="wave-line__body" viewBox="0 0 160 40">
+        <path
+          d={`M0 27 ${WAVE_PATH}`}
+          pathLength="1"
+          data-wave-path
+        />
+        <circle cx="143" cy="18" r="9" pathLength="1" transform="rotate(162 143 18)" />
+        <circle class="wave-line__dot" cx="143" cy="18" r="3.5" />
+      </svg>
+    </div>
+  )
+}
+
+<script>
+  // Traccia ogni linea quando entra nello schermo
+  const drawLines = document.querySelectorAll<HTMLElement>(".wave-line--draw");
+
+  if ("IntersectionObserver" in window) {
+    const drawObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          entry.target.classList.add("is-drawn");
+          drawObserver.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.6 },
+    );
+
+    drawLines.forEach((line) => drawObserver.observe(line));
+  } else {
+    drawLines.forEach((line) => line.classList.add("is-drawn"));
+  }
+
+  // Allunga la linea fino al bordo sinistro dello schermo, in un unico tracciato:
+  // l'SVG si allarga verso sinistra e il percorso parte da lì
+  const bleedLines = document.querySelectorAll<HTMLElement>("[data-wave-bleed]");
+
+  // 160 unità del viewBox = 140px a schermo
+  const UNITS_PER_PX = 160 / 140;
+
+  const updateBleed = () => {
+    bleedLines.forEach((line) => {
+      const parent = line.parentElement;
+      const svg = line.querySelector("svg");
+      const path = line.querySelector("[data-wave-path]");
+      if (!parent || !svg || !path) return;
+
+      const bleed = Math.max(
+        0,
+        parent.getBoundingClientRect().left +
+          parseFloat(getComputedStyle(parent).paddingLeft),
+      );
+      const start = bleed * UNITS_PER_PX;
+
+      line.style.setProperty("--wave-bleed", `${bleed}px`);
+      svg.setAttribute("viewBox", `${-start} 0 ${160 + start} 40`);
+
+      // Tratto quasi piatto dal bordo, raccordato all'onda in x=0
+      path.setAttribute(
+        "d",
+        `M${-start} 31 C ${-start * 0.5} 31.5, -18 28, 0 27 ${line.dataset.waveBleed}`,
+      );
+    });
+  };
+
+  if (bleedLines.length > 0) {
+    updateBleed();
+    window.addEventListener("resize", updateBleed);
+  }
+</script>

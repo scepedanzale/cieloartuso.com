@@ -6,5 +6,10 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://www.cieloartuso.com",
   trailingSlash: "never",
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // Pagine non indicizzabili (noindex): fuori dalla sitemap
+      filter: (page) => !page.startsWith("https://www.cieloartuso.com/ciao"),
+    }),
+  ],
 });

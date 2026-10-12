@@ -2,7 +2,7 @@
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import ArrowIcon from "../../components/icons/ArrowIcon.astro";
 import CheckIcon from "../../components/icons/CheckIcon.astro";
-import Separator from "../../components/Separator.astro";
+import WaveLine from "../../components/WaveLine.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 import "../../css/service-page.css";
@@ -72,6 +72,7 @@ const structuredData = [serviceSchema, faqSchema];
     title="Rifacimento siti web | Cielo Artuso"
     description="Ridisegno e miglioro il tuo sito esistente per renderlo moderno, chiaro, veloce e affidabile."
     structuredData={structuredData}
+    image="/images/site/rifacimento-siti-web.webp"
 >
     <div class="service-page service-page--refit">
         <section class="service-hero">
@@ -116,7 +117,7 @@ const structuredData = [serviceSchema, faqSchema];
             </div>
         </section>
 
-        <Separator position="center" />
+        <WaveLine length="long" />
 
         <section class="perchè">
             <div class="container">
@@ -389,7 +390,7 @@ const structuredData = [serviceSchema, faqSchema];
                 <div class="faq__header">
                     <p class="eyebrow">Dubbi sul rifacimento?</p>
                     <h2>Domande frequenti</h2>
-                    <Separator position="center" />
+                    <WaveLine align="center" />
                 </div>
 
                 <ul class="faq__list">

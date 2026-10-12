@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cieloartuso.com/sitemap-index.xml
+Sitemap: https://www.cieloartuso.com/sitemap-index.xml

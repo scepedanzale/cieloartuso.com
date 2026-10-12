@@ -2,7 +2,7 @@
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import ArrowIcon from "../../components/icons/ArrowIcon.astro";
 import CheckIcon from "../../components/icons/CheckIcon.astro";
-import Separator from "../../components/Separator.astro";
+import WaveLine from "../../components/WaveLine.astro";
 import ServiceHeroVisual from "../../components/ServiceHeroVisual.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
@@ -84,6 +84,7 @@ const structuredData = [serviceSchema, faqSchema];
     title="Web app e gestionali su misura | Cielo Artuso"
     description="Progetto e sviluppo web app, gestionali e strumenti digitali su misura per organizzare dati, automatizzare attività e semplificare il lavoro."
     structuredData={structuredData}
+    image="/images/site/web-app-gestionali.webp"
 >
     <div class="service-page service-page--webapp">
         <!-- HERO -->
@@ -823,7 +824,7 @@ const structuredData = [serviceSchema, faqSchema];
                 <div class="faq__header">
                     <p class="eyebrow">Prima di iniziare</p>
                     <h2>Domande frequenti</h2>
-                    <Separator position="center" />
+                    <WaveLine align="center" />
                 </div>
 
                 <ul class="faq__list">

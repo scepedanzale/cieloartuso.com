@@ -3,7 +3,7 @@ import Breadcrumb from "../../components/Breadcrumb.astro";
 import ArrowIcon from "../../components/icons/ArrowIcon.astro";
 import CheckIcon from "../../components/icons/CheckIcon.astro";
 import EcoIcon from "../../components/icons/EcoIcon.astro";
-import Separator from "../../components/Separator.astro";
+import WaveLine from "../../components/WaveLine.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 import "../../css/service-page.css";
@@ -86,6 +86,7 @@ const structuredData = [serviceSchema, faqSchema];
     title="Siti web su misura | Cielo Artuso"
     description="Realizzo landing page e siti web multipagina su misura per professionisti, piccole attività e brand. Progetti chiari, veloci e facili da utilizzare."
     structuredData={structuredData}
+    image="/images/site/siti-web-su-misura.webp"
 >
     <div class="service-page service-page--custom">
         <!-- HERO -->
@@ -358,7 +359,7 @@ const structuredData = [serviceSchema, faqSchema];
             </div>
         </section>
 
-        <Separator position="center" />
+        <WaveLine length="long" from="right" />
 
         <!-- COSA COMPRENDE -->
 
@@ -678,7 +679,7 @@ const structuredData = [serviceSchema, faqSchema];
 
                     <h2>Domande frequenti</h2>
 
-                    <Separator position="center" />
+                    <WaveLine align="center" />
                 </div>
 
                 <ul class="faq__list">

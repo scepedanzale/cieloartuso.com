@@ -55,6 +55,10 @@ const articleSchema = {
   title={`${post.data.title} | Cielo Artuso`}
   description={post.data.description}
   structuredData={articleSchema}
+  image={post.data.cover}
+  imageAlt={post.data.title}
+  type="article"
+  publishedTime={post.data.date}
 >
   <article class="blog-post">
     <header class="blog-post__header">

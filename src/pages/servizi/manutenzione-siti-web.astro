@@ -2,7 +2,7 @@
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import ArrowIcon from "../../components/icons/ArrowIcon.astro";
 import CheckIcon from "../../components/icons/CheckIcon.astro";
-import Separator from "../../components/Separator.astro";
+import WaveLine from "../../components/WaveLine.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 import "../../css/service-page.css";
@@ -78,6 +78,7 @@ const structuredData = [serviceSchema, faqSchema];
     title="Manutenzione e assistenza siti web | Cielo Artuso"
     description="Mi occupo della manutenzione del tuo sito web, degli aggiornamenti, delle modifiche ai contenuti e della risoluzione dei problemi tecnici."
     structuredData={structuredData}
+    image="/images/site/manutenzione-siti-web.webp"
 >
     <div class="service-page service-page--maintenance">
         <!-- HERO -->
@@ -584,7 +585,7 @@ const structuredData = [serviceSchema, faqSchema];
                 <div class="faq__header">
                     <p class="eyebrow">Dubbi sull’assistenza?</p>
                     <h2>Domande frequenti</h2>
-                    <Separator position="center" />
+                    <WaveLine align="center" />
                 </div>
 
                 <ul class="faq__list">

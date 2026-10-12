@@ -2,7 +2,7 @@
 import ImageIcon from "../components/icons/ImageIcon.astro";
 import PcIcon from "../components/icons/PcIcon.astro";
 import LockIcon from "../components/icons/LockIcon.astro";
-import Separator from "../components/Separator.astro";
+import WaveLine from "../components/WaveLine.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ArrowIcon from "../components/icons/ArrowIcon.astro";
 import ReviewCard from "../components/ReviewCard.astro";
@@ -31,6 +31,8 @@ const structuredData = {
   title="Chi sono | Cielo Artuso"
   description="Mi chiamo Cielo e creo siti web curati per chi vuole presentarsi meglio online"
   structuredData={structuredData}
+  image="/images/site/cielo-artuso.webp"
+  imageAlt="Cielo Artuso"
 >
   <div class="chi-sono-page">
     <section class="page-hero">
@@ -38,7 +40,7 @@ const structuredData = {
         <div>
           <p class="eyebrow">Web developer</p>
           <h1>Chi sono</h1>
-          <Separator />
+          <WaveLine />
           <div class="intro reveal">
             <p>
               <strong>Ciao, sono Cielo</strong>, web developer con sede a Milano
@@ -239,6 +241,8 @@ const structuredData = {
           <p class="eyebrow">Solo ciò che serve davvero</p>
 
           <h2>Ogni tecnologia dovrebbe avere un motivo per esserci</h2>
+
+          <WaveLine tone="light" />
         </div>
 
         <div class="sustainable__text">

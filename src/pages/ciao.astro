@@ -1,7 +1,7 @@
 ---
 import "../css/landing.css";
 import ArrowIcon from "../components/icons/ArrowIcon.astro";
-import Separator from "../components/Separator.astro";
+import WaveLine from "../components/WaveLine.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import WebsiteIcon from "../components/icons/landing-icons/WebsiteIcon.astro";
 import LandingPageIcon from "../components/icons/landing-icons/LandingPageIcon.astro";
@@ -119,6 +119,8 @@ const whatsappUrl =
   title="Siti web e strumenti online | Cielo Artuso"
   description="Realizzo e rifaccio siti web e creo gestionali, sistemi di prenotazione, aree clienti e altri strumenti online su misura per attività e professionisti."
   landing={true}
+  noindex={true}
+  image="/images/site/cielo-artuso-landing-hero.webp"
 >
   <!-- HERO -->
 
@@ -144,7 +146,7 @@ const whatsappUrl =
           per la tua attività
         </h1>
 
-        <Separator />
+        <WaveLine />
 
         <p>
           Creo e rifaccio siti web e realizzo strumenti online su misura per
