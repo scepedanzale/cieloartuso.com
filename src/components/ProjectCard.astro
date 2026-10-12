@@ -1,0 +1,18 @@
+---
+const { href, cover, title, label, year, class: className = "" } = Astro.props;
+---
+
+<a href={href} class={`project ${className}`}>
+  <div class="project__image">
+    <img src={cover} alt={`Anteprima del progetto ${title}`} />
+  </div>
+
+  <div class="project__content">
+    <div>
+      <span>{label}</span>
+      <span>{year}</span>
+    </div>
+
+    <h3>{title}</h3>
+  </div>
+</a>

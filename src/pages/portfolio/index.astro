@@ -1,19 +1,50 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
 import { getCollection } from "astro:content";
 
 const works = await getCollection("works");
+const software = await getCollection("software");
 
 const sortedWorks = works.sort(
   (a, b) => b.data.year.valueOf() - a.data.year.valueOf(),
 );
+
+const sortedSoftware = software.sort(
+  (a, b) => b.data.year.valueOf() - a.data.year.valueOf(),
+);
+
+const tabs = [
+  {
+    id: "siti-web",
+    label: "Siti web",
+    projects: sortedWorks.map((work) => ({
+      id: work.id,
+      title: work.data.title,
+      label: work.data.tipo,
+      year: work.data.year,
+      cover: work.data.cover,
+    })),
+  },
+  {
+    id: "software",
+    label: "Software",
+    projects: sortedSoftware.map((item) => ({
+      id: item.id,
+      title: item.data.title,
+      label: item.data.type,
+      year: item.data.year,
+      cover: item.data.cover,
+    })),
+  },
+].filter((tab) => tab.projects.length > 0);
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: "Progetti | Cielo Artuso",
   description:
-    "Una selezione di siti web, restyling e progetti digitali realizzati da Cielo Artuso.",
+    "Una selezione di siti web, restyling e progetti software realizzati da Cielo Artuso.",
   url: Astro.url.href,
   author: {
     "@id": "https://www.cieloartuso.com/#person"
@@ -23,7 +54,7 @@ const structuredData = {
 
 <BaseLayout
   title="Portfolio | Cielo Artuso"
-  description="Alcuni siti web che ho progettato, rifatto o migliorato"
+  description="Alcuni siti web e progetti software che ho progettato, rifatto o sviluppato"
   structuredData={structuredData}
 >
   <div class="portfolio-page">
@@ -41,31 +72,91 @@ const structuredData = {
 
     <section>
       <div class="container">
-        <div class="projects__grid">
+        <div class="portfolio-tabs" role="tablist" aria-label="Tipologia di progetto">
           {
-            sortedWorks.map((work) => (
-              <a href={`/portfolio/${work.id}`} class="project reveal">
-                <div class="project__image">
-                  <img
-                    src={work.data.cover}
-                    alt={`Anteprima del progetto ${work.data.title}`}
-                  />
-                </div>
-
-                <div class="project__content">
-                  <div>
-                    <span>{work.data.tipo}</span>
-                    <span>{work.data.year}</span>
-                  </div>
-
-                  <h3>{work.data.title}</h3>
-                </div>
-              </a>
+            tabs.map((tab, i) => (
+              <button
+                type="button"
+                class="portfolio-tabs__tab"
+                id={`tab-${tab.id}`}
+                role="tab"
+                aria-selected={i === 0 ? "true" : "false"}
+                aria-controls={`panel-${tab.id}`}
+                tabindex={i === 0 ? 0 : -1}
+                data-tab={tab.id}
+              >
+                {tab.label}
+                <span>{tab.projects.length}</span>
+              </button>
             ))
           }
         </div>
+
+        {
+          tabs.map((tab, i) => (
+            <div
+              class="projects__grid"
+              id={`panel-${tab.id}`}
+              role="tabpanel"
+              aria-labelledby={`tab-${tab.id}`}
+              hidden={i !== 0}
+            >
+              {tab.projects.map((project) => (
+                <ProjectCard
+                  href={`/portfolio/${project.id}`}
+                  cover={project.cover}
+                  title={project.title}
+                  label={project.label}
+                  year={project.year}
+                  class="reveal"
+                />
+              ))}
+            </div>
+          ))
+        }
       </div>
-    
     </section>
   </div>
 </BaseLayout>
+
+<script>
+  const tabs = [
+    ...document.querySelectorAll<HTMLButtonElement>(".portfolio-tabs__tab"),
+  ];
+
+  const selectTab = (selected: HTMLButtonElement, updateHash = true) => {
+    tabs.forEach((tab) => {
+      const isSelected = tab === selected;
+      const panel = document.getElementById(`panel-${tab.dataset.tab}`);
+
+      tab.setAttribute("aria-selected", String(isSelected));
+      tab.tabIndex = isSelected ? 0 : -1;
+      if (panel) panel.hidden = !isSelected;
+    });
+
+    if (updateHash) {
+      history.replaceState(null, "", `#${selected.dataset.tab}`);
+    }
+  };
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener("click", () => selectTab(tab));
+
+    tab.addEventListener("keydown", (event) => {
+      if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+
+      const step = event.key === "ArrowRight" ? 1 : -1;
+      const next = tabs[(i + step + tabs.length) % tabs.length];
+
+      next.focus();
+      selectTab(next);
+    });
+  });
+
+  // Apre direttamente la tab indicata nell'URL (es. /portfolio#software)
+  const fromHash = tabs.find(
+    (tab) => tab.dataset.tab === location.hash.slice(1),
+  );
+
+  if (fromHash) selectTab(fromHash, false);
+</script>

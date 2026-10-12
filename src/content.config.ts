@@ -38,6 +38,23 @@ const works = defineCollection({
 });
 
 
+const software = defineCollection({
+  loader: glob({
+    pattern: "**/*.md",
+    base: "./src/content/software",
+  }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    year: z.number(),
+    type: z.string(),
+    technologies: z.array(z.string()),
+    cover: z.string(),
+    images: z.array(z.string()).default([]),
+    href: z.string().optional(),
+  }),
+});
+
 const reviews = defineCollection({
   loader: glob({
     pattern: "**/*.md",
@@ -56,5 +73,6 @@ const reviews = defineCollection({
 export const collections = {
   blog,
   works,
+  software,
   reviews
 };

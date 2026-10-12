@@ -1,0 +1,164 @@
+---
+const { images, title } = Astro.props;
+
+const slides = images.map((src, i) => ({
+  src,
+  alt: `${title}, schermata ${i + 1} di ${images.length}`,
+}));
+---
+
+<div class="project-gallery" data-gallery>
+  <div class="project-gallery__viewer">
+    <button
+      type="button"
+      class="project-gallery__main"
+      data-open
+      aria-label="Ingrandisci immagine"
+    >
+      <img src={slides[0].src} alt={slides[0].alt} data-main />
+    </button>
+
+    {
+      slides.length > 1 && (
+        <>
+          <button
+            type="button"
+            class="project-gallery__arrow project-gallery__arrow--prev"
+            data-step="-1"
+            aria-label="Immagine precedente"
+          >
+            <span>←</span>
+          </button>
+          <button
+            type="button"
+            class="project-gallery__arrow project-gallery__arrow--next"
+            data-step="1"
+            aria-label="Immagine successiva"
+          >
+            <span>→</span>
+          </button>
+          <p class="project-gallery__counter" aria-live="polite">
+            <span data-current>1</span> / {slides.length}
+          </p>
+        </>
+      )
+    }
+  </div>
+
+  {
+    slides.length > 1 && (
+      <ul class="project-gallery__thumbs">
+        {slides.map((slide, i) => (
+          <li>
+            <button
+              type="button"
+              class="project-gallery__thumb"
+              data-index={i}
+              aria-label={`Mostra immagine ${i + 1}`}
+              aria-current={i === 0 ? "true" : "false"}
+            >
+              <img src={slide.src} alt="" loading="lazy" />
+            </button>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+
+  <dialog class="project-lightbox" aria-label={`Immagini di ${title}`}>
+    <img src="" alt="" data-lightbox-image />
+
+    <button
+      type="button"
+      class="project-lightbox__close"
+      data-close
+      aria-label="Chiudi"
+    >
+      ×
+    </button>
+
+    {
+      slides.length > 1 && (
+        <>
+          <button
+            type="button"
+            class="project-lightbox__arrow project-lightbox__arrow--prev"
+            data-step="-1"
+            aria-label="Immagine precedente"
+          >
+            <span>←</span>
+          </button>
+          <button
+            type="button"
+            class="project-lightbox__arrow project-lightbox__arrow--next"
+            data-step="1"
+            aria-label="Immagine successiva"
+          >
+            <span>→</span>
+          </button>
+        </>
+      )
+    }
+  </dialog>
+
+  <script type="application/json" data-slides set:html={JSON.stringify(slides)} />
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>("[data-gallery]").forEach((gallery) => {
+    const slides: { src: string; alt: string }[] = JSON.parse(
+      gallery.querySelector("[data-slides]")?.textContent ?? "[]",
+    );
+
+    const mainImage = gallery.querySelector<HTMLImageElement>("[data-main]");
+    const counter = gallery.querySelector("[data-current]");
+    const thumbs = gallery.querySelectorAll<HTMLButtonElement>(".project-gallery__thumb");
+    const lightbox = gallery.querySelector<HTMLDialogElement>(".project-lightbox");
+    const lightboxImage = gallery.querySelector<HTMLImageElement>("[data-lightbox-image]");
+
+    if (!mainImage || !lightbox || !lightboxImage || slides.length === 0) return;
+
+    let current = 0;
+
+    const show = (index: number) => {
+      current = (index + slides.length) % slides.length;
+      const slide = slides[current];
+
+      mainImage.src = slide.src;
+      mainImage.alt = slide.alt;
+      lightboxImage.src = slide.src;
+      lightboxImage.alt = slide.alt;
+
+      if (counter) counter.textContent = String(current + 1);
+
+      thumbs.forEach((thumb, i) => {
+        thumb.setAttribute("aria-current", String(i === current));
+      });
+    };
+
+    gallery.querySelectorAll<HTMLButtonElement>("[data-step]").forEach((button) => {
+      button.addEventListener("click", () => show(current + Number(button.dataset.step)));
+    });
+
+    thumbs.forEach((thumb) => {
+      thumb.addEventListener("click", () => show(Number(thumb.dataset.index)));
+    });
+
+    gallery.querySelector("[data-open]")?.addEventListener("click", () => {
+      show(current);
+      lightbox.showModal();
+    });
+
+    gallery.querySelector("[data-close]")?.addEventListener("click", () => lightbox.close());
+
+    // Chiude cliccando sullo sfondo, fuori dall'immagine e dai pulsanti
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) lightbox.close();
+    });
+
+    lightbox.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight") show(current + 1);
+      if (event.key === "ArrowLeft") show(current - 1);
+    });
+  });
+</script>

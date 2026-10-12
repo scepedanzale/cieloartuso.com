@@ -2,13 +2,16 @@
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+import ProjectGallery from "../../components/ProjectGallery.astro";
 import ArrowIcon from "../../components/icons/ArrowIcon.astro";
 import CheckIcon from "../../components/icons/CheckIcon.astro";
 
 export async function getStaticPaths() {
-    const projects = await getCollection("works");
+    const works = await getCollection("works");
+    const software = await getCollection("software");
 
-    return projects.map((project) => ({
+    return [...works, ...software].map((project) => ({
         params: { slug: project.id },
         props: { project },
     }));
@@ -17,16 +20,41 @@ export async function getStaticPaths() {
 const { project } = Astro.props;
 const { Content } = await render(project);
 
-const allProjects = await getCollection("works");
+const isSoftware = project.collection === "software";
 
+// Dati comuni ai due tipi di progetto (siti web e software)
+const toCard = (item) => ({
+    id: item.id,
+    title: item.data.title,
+    label: item.collection === "software" ? item.data.type : item.data.tipo,
+    year: item.data.year,
+    cover: item.data.cover,
+});
+
+const allProjects = [
+    ...(await getCollection("works")),
+    ...(await getCollection("software")),
+];
+
+// Prima i progetti dello stesso tipo, poi gli altri
 const relatedProjects = allProjects
     .filter((item) => item.id !== project.id)
-    .slice(0, 3);
+    .sort(
+        (a, b) =>
+            Number(b.collection === project.collection) -
+                Number(a.collection === project.collection) ||
+            b.data.year - a.data.year,
+    )
+    .slice(0, 3)
+    .map(toCard);
 
+const projectType = isSoftware ? project.data.type : project.data.tipo;
+// La cover è la prima immagine della galleria
+const gallery = isSoftware ? [project.data.cover, ...project.data.images] : [];
 
 const structuredData = {
     "@context": "https://schema.org",
-    "@type": "CreativeWork",
+    "@type": isSoftware ? "SoftwareApplication" : "CreativeWork",
     name: project.data.title,
     description: project.data.description,
     url: Astro.url.href,
@@ -37,7 +65,9 @@ const structuredData = {
 
     dateCreated: String(project.data.year),
 
-    genre: project.data.tipo,
+    ...(isSoftware
+        ? { applicationCategory: "WebApplication", operatingSystem: "Web" }
+        : { genre: projectType }),
 
     ...(project.data.cover && {
         image: new URL(project.data.cover, Astro.site).href,
@@ -58,15 +88,19 @@ const structuredData = {
                 <div class="project-hero__heading">
                     <h1>{project.data.title}</h1>
 
-                    <a
-                        href={project.data.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="button button--primary"
-                    >
-                        Visita il sito
-                        <ArrowIcon />
-                    </a>
+                    {
+                        project.data.href && (
+                            <a
+                                href={project.data.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="button button--primary"
+                            >
+                                {isSoftware ? "Vedi il progetto" : "Visita il sito"}
+                                <ArrowIcon />
+                            </a>
+                        )
+                    }
                 </div>
 
                 <div class="project-hero__details">
@@ -78,13 +112,17 @@ const structuredData = {
                         <dl class="project-meta">
                             <div>
                                 <dt>Tipologia</dt>
-                                <dd>{project.data.tipo}</dd>
+                                <dd>{projectType}</dd>
                             </div>
 
-                            <div>
-                                <dt>Settore</dt>
-                                <dd>{project.data.settore}</dd>
-                            </div>
+                            {
+                                !isSoftware && (
+                                    <div>
+                                        <dt>Settore</dt>
+                                        <dd>{project.data.settore}</dd>
+                                    </div>
+                                )
+                            }
 
                             <div>
                                 <dt>Anno</dt>
@@ -94,20 +132,36 @@ const structuredData = {
                     </div>
 
                     <div class="project-info-card reveal d1">
-                        <p class="project-info-card__label">
-                            Il mio intervento
-                        </p>
+                        {
+                            isSoftware ? (
+                                <>
+                                    <p class="project-info-card__label">
+                                        Tecnologie
+                                    </p>
 
-                        <ul class="project-services">
-                            {
-                                project.data.cosaHoFatto.map((item) => (
-                                    <li>
-                                        <CheckIcon />
-                                        <span>{item}</span>
-                                    </li>
-                                ))
-                            }
-                        </ul>
+                                    <ul class="project-technologies">
+                                        {project.data.technologies.map((item) => (
+                                            <li>{item}</li>
+                                        ))}
+                                    </ul>
+                                </>
+                            ) : (
+                                <>
+                                    <p class="project-info-card__label">
+                                        Il mio intervento
+                                    </p>
+
+                                    <ul class="project-services">
+                                        {project.data.cosaHoFatto.map((item) => (
+                                            <li>
+                                                <CheckIcon />
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </>
+                            )
+                        }
                     </div>
                 </div>
             </div>
@@ -115,16 +169,22 @@ const structuredData = {
 
         <section class="project-overview">
             <div class="container">
-                <figure class="project-overview__cover">
-                    <img
-                        src={project.data.cover}
-                        alt={`Anteprima del progetto ${project.data.title}`}
-                    />
-                </figure>
+                {
+                    gallery.length > 1 ? (
+                        <ProjectGallery images={gallery} title={project.data.title} />
+                    ) : (
+                        <figure class="project-overview__cover">
+                            <img
+                                src={project.data.cover}
+                                alt={`Anteprima del progetto ${project.data.title}`}
+                            />
+                        </figure>
+                    )
+                }
 
                 <div class="project-overview__content reveal">
                     <p class="eyebrow">Il progetto</p>
-                    <h2>Obiettivi e intervento</h2>
+                    <h2>{isSoftware ? "Obiettivi e sviluppo" : "Obiettivi e intervento"}</h2>
                     <Content />
                 </div>
             </div>
@@ -142,23 +202,14 @@ const structuredData = {
                 <div class="projects__grid">
                     {
                         relatedProjects.map((item, i) => (
-                            <a href={`/portfolio/${item.id}`} class={`project reveal ${i>0 && "d"+i}`}>
-                                <div class="project__image">
-                                    <img
-                                        src={item.data.cover}
-                                        alt={`Anteprima del progetto ${item.data.title}`}
-                                    />
-                                </div>
-
-                                <div class="project__content">
-                                    <div>
-                                        <span>{item.data.tipo}</span>
-                                        <span>{item.data.year}</span>
-                                    </div>
-
-                                    <h3>{item.data.title}</h3>
-                                </div>
-                            </a>
+                            <ProjectCard
+                                href={`/portfolio/${item.id}`}
+                                cover={item.cover}
+                                title={item.title}
+                                label={item.label}
+                                year={item.year}
+                                class={`reveal ${i > 0 ? "d" + i : ""}`}
+                            />
                         ))
                     }
                 </div>
