@@ -18,7 +18,7 @@ const blogSchema = {
   "@type": "Blog",
   name: "Blog | Cielo Artuso",
   description: "Guide e appunti pratici su siti web, restyling, SEO e manutenzione.",
-  url: "https://www.cieloartuso.com/blog/",
+  url: "https://www.cieloartuso.com/blog",
   author: {
     "@type": "Person",
     name: "Cielo Artuso",
@@ -29,7 +29,7 @@ const blogSchema = {
     headline: post.data.title,
     description: post.data.description,
     datePublished: post.data.date.toISOString(),
-    url: `https://www.cieloartuso.com/blog/${post.id}/`,
+    url: `https://www.cieloartuso.com/blog/${post.id}`,
     ...(post.data.cover && {
       image: new URL(post.data.cover, "https://www.cieloartuso.com").href,
     }),
@@ -74,7 +74,7 @@ const blogSchema = {
       {
         sortedPosts.map((post) => (
           <a
-            href={`/blog/${post.id}/`}
+            href={`/blog/${post.id}`}
             class="blog-post-card-link reveal"
             data-category={post.data.tag}
           >

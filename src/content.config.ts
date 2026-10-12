@@ -38,7 +38,23 @@ const works = defineCollection({
 });
 
 
+const reviews = defineCollection({
+  loader: glob({
+    pattern: "**/*.md",
+    base: "./src/content/reviews",
+  }),
+  schema: z.object({
+    name: z.string(),
+    company: z.string().optional(),
+    rating: z.number().int().min(1).max(5),
+    date: z.coerce.date(),
+    draft: z.boolean().default(false),
+  }),
+});
+
+
 export const collections = {
   blog,
-  works
+  works,
+  reviews
 };

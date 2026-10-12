@@ -1,0 +1,31 @@
+---
+import { render } from "astro:content";
+import StarIcon from "./icons/StarIcon.astro";
+import { formatItalianDate } from "../utils/date";
+
+const { review, class: className = "" } = Astro.props;
+const { name, company, rating, date } = review.data;
+const { Content } = await render(review);
+---
+
+<figure class={`review-card ${className}`}>
+  <div class="review-card__stars" role="img" aria-label={`${rating} stelle su 5`}>
+    {
+      Array.from({ length: 5 }, (_, i) => (
+        <span class={i < rating ? "is-filled" : ""}>
+          <StarIcon />
+        </span>
+      ))
+    }
+  </div>
+
+  <blockquote class="review-card__text">
+    <Content />
+  </blockquote>
+
+  <figcaption class="review-card__author">
+    <strong>{name}</strong>
+    {company && <span>{company}</span>}
+    <time datetime={date.toISOString()}>{formatItalianDate(date)}</time>
+  </figcaption>
+</figure>

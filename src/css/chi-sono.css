@@ -54,6 +54,7 @@
   position: relative;
   overflow: hidden;
   padding: 70px 50px;
+  margin-top: 50px;
 
   background-image: url("/images/site/cielo-artuso-sustainable.webp");
   background-repeat: no-repeat;
@@ -244,6 +245,157 @@
     font-size: 0.75rem;
   }
 
+}
+
+/* RECENSIONI */
+
+.reviews {
+  background-color: var(--color-bg-dark);
+}
+
+.reviews .section-heading {
+  text-align: center;
+  width: 100%;
+}
+
+.reviews-slider__track {
+  --reviews-gap: 26px;
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - var(--reviews-gap)) / 2);
+  gap: var(--reviews-gap);
+
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.reviews-slider__track::-webkit-scrollbar {
+  display: none;
+}
+
+.reviews-slider__track:focus-visible {
+  outline: 1px solid var(--color-accent);
+  outline-offset: 6px;
+}
+
+.reviews-slider__track .review-card {
+  scroll-snap-align: start;
+}
+
+.reviews-slider__controls {
+  display: none;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.reviews-slider.is-scrollable .reviews-slider__controls {
+  display: flex;
+}
+
+.reviews-slider__button {
+  width: 46px;
+  height: 46px;
+  padding: 0;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--color-text);
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+
+  font-size: 1.1rem;
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.reviews-slider__button:hover:not(:disabled) {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.reviews-slider__button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+}
+
+.review-card__stars {
+  display: flex;
+  gap: 4px;
+  color: var(--color-border);
+}
+
+.review-card__stars .is-filled {
+  color: var(--color-accent);
+}
+
+.review-card__stars .icon {
+  display: block;
+  width: 18px;
+}
+
+.review-card__text {
+  flex: 1;
+  font-size: 16px;
+}
+
+.review-card__text p:last-child {
+  margin-bottom: 0;
+}
+
+.review-card__author {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-border);
+  font-size: 15px;
+}
+
+.review-card__author span {
+  color: var(--color-muted);
+}
+
+.review-card__author time {
+  margin-top: 6px;
+  color: var(--color-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .reviews-slider__track {
+    grid-auto-columns: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .reviews .section-heading {
+    text-align: left;
+  }
+
+  .review-card {
+    padding: 22px 18px;
+  }
 }
 
 /* ALTRO */
