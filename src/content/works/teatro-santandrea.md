@@ -5,7 +5,7 @@ year: 2026
 cover: "/images/works/sito-teatro-santandrea.webp"
 tipo: "Sito Wordpress"
 settore: "Cultura"
-href: "https://teatrosantanadrea.com/"
+href: "https://teatrosantandrea.com/"
 cosaHoFatto:
     - "Nuova struttura di navigazione"
     - "Plugin custom per gestione spettacoli"
