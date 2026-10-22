@@ -65,10 +65,10 @@ I data center non li controlliamo. Possiamo però scegliere come usare i servizi
 * togliere i doppioni: foto e file salvati due o tre volte occupano spazio su server che restano accesi comunque
 * tenere un backup ordinato, invece di copie sparse in cinque servizi diversi
 * chiudere gli account e gli spazi cloud che non usi più
-* se hai un sito, [farlo leggero](/servizi/rifacimento-siti-web): immagini ottimizzate e niente script inutili consumano meno e lo rendono anche più veloce da aprire
+* se hai un sito, [farlo leggero](/servizi/rifacimento-siti-web): immagini ottimizzate e niente script inutili consumano meno e lo rendono anche più veloce da aprire (puoi misurarlo con la mia [analisi gratuita](/analisi-sito))
 * scegli servizi che dichiarano almeno un po' di attenzione all'efficienza energetica.
 
-Non è magia, è infrastruttura.
+## Non è magia, è infrastruttura.
 
 I dati non vivono nell'aria. Stanno in edifici pieni di macchine che consumano e vanno raffreddate.
 

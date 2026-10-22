@@ -31,7 +31,7 @@ Prendiamo come esempio un'azione semplicissima: aprire una pagina web.
 
 Come ho spiegato anche in [questo articolo](/blog/cos-e-un-dominio), quando digitiamo un indirizzo nel browser, il nostro dispositivo invia una richiesta attraverso la rete. 
 
-La richiesta arriva a computer, chiamato server, che contiene le informazioni necessarie a mostrarci quella pagina.
+La richiesta arriva a computer, chiamato **server**, che contiene le informazioni necessarie a mostrarci quella pagina.
 
 Il server risponde mandandoci testi, foto e file che compongono il sito web cercato.
 
@@ -53,9 +53,9 @@ Questi server devono restare accesi continuamente e, come ogni altro dispositivo
 
 A tutti noi è capitato che, dopo un pesante utilizzo del computer, iniziassero a girare le ventole e a scaldarsi il dispositivo.
 
-Immaginiamo invece migliaia di computer molto più potenti tutti insieme nella stessa struttura: il calore diventa inevitabilmente un problema.
+Immaginiamo invece migliaia di computer molto più potenti tutti insieme nella stessa struttura: **il calore diventa inevitabilmente un problema**.
 
-Per questo i data center hanno bisogno di un importante sistema di raffreddamento.
+Per questo i data center hanno bisogno di un importante **sistema di raffreddamento**.
 
 Quindi l'energia non viene usata soltanto dai server, ma anche da tutto ciò che serve per mantenerli nelle condizioni giuste.
 
@@ -64,7 +64,7 @@ Quindi l'energia non viene usata soltanto dai server, ma anche da tutto ciò che
 
 In un modo o nell'altro, i dati devono arrivare fino al nostro dispositivo, che il server sia dietro casa o dall'altra parte del mondo.
 
-Per farlo, attraversano reti di telecomunicazione composte da molte infrastrutture diverse.
+Per farlo, attraversano **reti di telecomunicazione** composte da molte infrastrutture diverse.
 
 * guardando un video, il dispositivo continua a ricevere dati durante la riproduzione
 * quando scarichiamo un file, la rete deve trasferirlo
@@ -94,7 +94,7 @@ Qui è importante non andare nell'estremo opposto, sapere che internet ha un imp
 
 Il punto non è smettere di usarlo, ma capire che **anche il digitale utilizza risorse reali** ed essere consapevoli dei propri consumi.
 
-Non tutte le attività digitali richiedono le stesse risorse. Una pagina di testo, una videochiamata, lo streaming in alta definizione o l'utilizzo di un modello di intelligenza artificiale hanno caratteristiche e consumi molto diversi.
+Non tutte le attività digitali richiedono le stesse risorse. Una pagina di testo, una videochiamata, lo streaming in alta definizione o l'utilizzo di un modello di intelligenza artificiale hanno caratteristiche e **consumi molto diversi**.
 
 Anche all'interno dell'AI cambia molto a seconda del modello utilizzato e del compito richiesto.
 
@@ -105,7 +105,7 @@ Quando parliamo di "Internet" stiamo quindi mettendo insieme attività molto div
 
 ## Anche i siti web possono essere più o meno efficienti
 
-Due siti che fanno praticamente la stessa cosa possono essere costruiti in modi diversi.
+Due siti che fanno praticamente la stessa cosa possono essere **costruiti in modi diversi**.
 
 Uno può avere immagini enormi, caricamenti inutili e tantissimo codice.
 
@@ -115,18 +115,20 @@ Dal punto di vista dell'utente cambia la velocità; dal punto di vista tecnico c
 
 Qui entra in gioco il concetto di [sito web sostenibile](/chi-sono#sostenibile): cercare di ottenere lo stesso risultato evitando sprechi inutili.
 
+Se sei curioso di sapere quanto pesa il tuo sito e quanta CO₂ produce ogni visita, puoi scoprirlo con la mia [analisi gratuita](/analisi-sito).
+
 
 ## Cosa possiamo fare noi?
 
-Una delle cose più utili è semplicemente utilizzare più a lungo i dispositivi che abbiamo già, senza cambiare smartphone ogni volta che esce un nuovo modello (che sarà comunque identico al precedente).
+Una delle cose più utili è semplicemente **utilizzare più a lungo i dispositivi** che abbiamo già, senza cambiare smartphone ogni volta che esce un nuovo modello (che sarà comunque identico al precedente).
 
-Possiamo poi evitare sprechi evidenti nei siti web: video che partono da soli, file enormi inviati senza motivo, backup duplicati ovunque e servizi che non utilizziamo.
+Possiamo poi **evitare sprechi evidenti nei siti web**: video che partono da soli, file enormi inviati senza motivo, backup duplicati ovunque e servizi che non utilizziamo.
 
 Ma una parte importante della responsabilità è anche di chi quei servizi li crea.
 
 Un'applicazione dovrebbe essere efficiente.
 
-Un sito dovrebbe essere ottimizzato.
+Un **sito dovrebbe essere ottimizzato**, ed è proprio da qui che parto quando realizzo un [sito web su misura](/servizi/siti-web-su-misura).
 
 Un servizio online dovrebbe utilizzare le risorse necessarie, non tutte quelle che riesce a utilizzare.
 

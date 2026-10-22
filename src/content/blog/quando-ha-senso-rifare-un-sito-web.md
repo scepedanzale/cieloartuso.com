@@ -56,7 +56,7 @@ La **velocità di un sito** conta più di quanto sembri. Un sito lento fa perder
 
 Le cause possono essere tante: immagini troppo pesanti, codice poco efficiente, plugin inutili, file che si caricano senza motivo.
 
-A volte basta un'**ottimizzazione**. Altre volte il problema è nella struttura stessa del progetto e conviene ricostruirlo in modo più leggero. Per capirlo serve una valutazione del sito esistente: strumenti gratuiti come PageSpeed Insights di Google sono un buon punto di partenza.
+A volte basta un'**ottimizzazione**. Altre volte il problema è nella struttura stessa del progetto e conviene ricostruirlo in modo più leggero. Per capirlo serve una valutazione del sito esistente: strumenti gratuiti come PageSpeed Insights di Google sono un buon punto di partenza, oppure puoi usare la mia [analisi gratuita del sito](/analisi-sito), che misura anche il peso delle pagine e la CO₂ per visita.
 
 ## Il sito non rappresenta più la tua identità
 
@@ -68,7 +68,7 @@ Il sito può funzionare benissimo dal punto di vista tecnico e sembrare comunque
 
 Rifare non è sempre la risposta giusta.
 
-Se il sito è recente, funziona bene, ti rappresenta e ha solo qualche dettaglio da sistemare, probabilmente bastano **correzioni mirate**. Ricostruirlo da zero sarebbe uno spreco di tempo e di budget.
+Se il sito è recente, funziona bene, ti rappresenta e ha solo qualche dettaglio da sistemare, probabilmente bastano **correzioni mirate**, come quelle che rientrano nella [manutenzione di un sito](/servizi/manutenzione-siti-web). Ricostruirlo da zero sarebbe uno spreco di tempo e di budget.
 
 Rifare bene significa anche recuperare ciò che funziona: testi validi, foto, pagine che portano contatti, posizioni su Google già conquistate.
 
@@ -85,6 +85,6 @@ Quando valuto un sito esistente guardo sempre le stesse cose:
 - se l'identità visiva è ancora coerente
 - se il sito comunica chiaramente cosa offri
 
-Sulla base di questo capiamo se serve un **rifacimento completo**, una revisione profonda o qualche correzione mirata, e scegliamo la strada che ha davvero senso per il progetto, senza investire più del necessario.
+Sulla base di questo capiamo se serve un [rifacimento completo](/servizi/rifacimento-siti-web), una revisione profonda o qualche correzione mirata, e scegliamo la strada che ha davvero senso per il progetto, senza investire più del necessario.
 
 Se ti interessa, ho scritto anche [quanto costa un sito web](/blog/quanto-costa-un-sito-web) e da cosa dipende il prezzo.

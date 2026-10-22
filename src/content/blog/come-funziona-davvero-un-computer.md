@@ -279,3 +279,5 @@ Ed è proprio qui che il computer incontra Internet.
 Un messaggio WhatsApp, per esempio, parte come informazione sul tuo telefono, viene trasformato in dati e poi attraversa reti che possono portarlo anche dall’altra parte del pianeta.
 
 Di questo, però, ne parlerò in seguito.
+
+Nel frattempo, è curioso pensare che sia la stessa logica, solo molto più in alto, che uso quando sviluppo [web app e gestionali su misura](/servizi/web-app-gestionali): prendere delle informazioni, organizzarle e trasformarle in qualcosa di utile.

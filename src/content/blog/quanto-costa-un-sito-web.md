@@ -1,9 +1,9 @@
 ---
-title: "Quanto costa un sito web?"
-description: "In questo articolo cerco di dare una risposta completa alla domanda più gettonata sui siti web."
+title: "Quanto costa un sito web? Prezzi di landing page, siti e rifacimenti"
+description: "Quanto costa un sito web, una landing page o il rifacimento di un sito? Prezzi indicativi, cosa incide sul preventivo e i costi da mettere in conto dopo."
 date: 2026-07-28
 cover: "/images/blog/quanto-costa-un-sito-web.webp"
-readingTime: 6
+readingTime: 7
 tag: "siti web"
 draft: false
 ---
@@ -20,6 +20,16 @@ Un [sito web su misura](/servizi/siti-web-su-misura) può avere esigenze molto d
 Una semplice landing page per presentare un servizio, ad esempio, non ha le stesse esigenze di un sito aziendale con numerose pagine, un blog, moduli personalizzati o funzionalità particolari.
 
 Per questo motivo, prima di parlare di prezzo, è importante capire **cosa deve fare realmente il sito**.
+
+**In breve**, per un progetto professionale su misura:
+
+| Tipo di progetto | Prezzo indicativo |
+|---|---|
+| Landing page | da 700 € |
+| Sito con più pagine | da circa 1.800 € |
+| Rifacimento di un sito esistente | dipende dal sito attuale, si valuta caso per caso |
+
+Più sotto trovi cosa incide sul prezzo e cosa considerare anche dopo la pubblicazione.
 
 ## Quanto costa mediamente realizzare un sito?
 
@@ -55,7 +65,7 @@ Utilizzare un tema già pronto e modificarne colori e contenuti richiede general
 
 Un sito sviluppato su misura permette però di adattare struttura, stile e navigazione all'identità dell'attività e agli obiettivi del progetto.
 
-Il costo dipende quindi anche da quanto il sito deve essere unico e personalizzato, [qui spego meglio il mio approccio](/chi-sono#sostenibile) a proposito.
+Il costo dipende quindi anche da quanto il sito deve essere unico e personalizzato, [qui spiego meglio il mio approccio](/chi-sono#sostenibile).
 
 ### Funzionalità
 
@@ -119,7 +129,6 @@ Un sito può essere semplicemente assemblato utilizzando numerosi plugin e compo
 
 Prestazioni, accessibilità, manutenzione del codice e qualità generale dello sviluppo richiedono tempo, ma contribuiscono alla durata del progetto nel lungo periodo.
 
-Anche la [manutenzione del sito web](/servizi/manutenzione-siti-web) dopo la pubblicazione può essere un aspetto da considerare nel budget complessivo.
 
 ## Sito economico o sito professionale?
 
@@ -173,6 +182,18 @@ Bisogna inoltre capire se è possibile mantenere parte del sito esistente oppure
 
 Per questo il costo di un restyling può variare molto: **rifare un sito non significa necessariamente partire da zero, ma nemmeno semplicemente cambiare colori e immagini**. Prima di stabilire un prezzo è necessario valutare cosa funziona, cosa può essere mantenuto e cosa invece deve essere riprogettato.
 
+Un buon punto di partenza è capire com'è messo il sito oggi: con l'[analisi gratuita del sito](/analisi-sito) puoi vedere in un minuto quanto è veloce e quanto pesa.
+
+## Quali costi considerare dopo la pubblicazione?
+
+Al prezzo di realizzazione si aggiungono alcuni costi ricorrenti:
+
+* **dominio**, con un rinnovo annuale;
+* **hosting**, di solito con un abbonamento mensile o annuale;
+* eventuale **[manutenzione del sito](/servizi/manutenzione-siti-web)**, per aggiornamenti, backup, sicurezza e piccole modifiche.
+
+Per un sito leggero e ben costruito questi costi restano generalmente contenuti. Se non ti è chiara la differenza tra dominio e hosting, l'ho spiegata in [questo articolo](/blog/cos-e-un-dominio).
+
 
 ## Perché è difficile dare un prezzo senza conoscere il progetto?
 
@@ -191,7 +212,7 @@ Solo dopo aver chiarito questi aspetti è possibile stimare correttamente il lav
 
 ## Quindi quanto dovrei mettere a budget?
 
-Per un'attività che vuole realizzare un sito professionale, può essere utile considerare **qualche centinaio di euro per una soluzione molto semplice e almeno oltre il migliaio di euro per un progetto più completo e personalizzato**.
+Per un'attività che vuole realizzare un sito professionale, può essere utile considerare **qualche centinaio di euro per una soluzione molto semplice e più di mille euro per un progetto completo e personalizzato**.
 
 Più che cercare un prezzo standard, però, conviene definire prima gli obiettivi.
 

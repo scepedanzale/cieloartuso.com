@@ -253,3 +253,5 @@ Permette di collegare quel nome all'indirizzo IP necessario per individuare il s
 È l'insieme di file, codice, contenuti e dati che il browser riceve e utilizza per mostrarci le pagine.
 
 Sono elementi diversi, ma ogni volta che apriamo un sito lavorano insieme senza che normalmente ce ne accorgiamo.
+
+Se preferisci non occuparti di questa parte tecnica, quando realizzo un [sito web su misura](/servizi/siti-web-su-misura) ti aiuto a scegliere dominio e hosting e mi occupo io della configurazione.

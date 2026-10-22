@@ -12,15 +12,13 @@ Da mesi il mio sito non mi convinceva più.
 
 Non era brutto o rotto, semplicemente non mi rappresentava davvero. Era online, funzionava, mostrava alcuni progetti, ma sembrava più un contenitore che uno spazio pensato con uno scopo preciso.
 
-Il problema era proprio questo: **non gli avevo dato una direzione**.
+Il problema era proprio questo: non gli avevo dato una direzione.
 
-Un sito web personale non dovrebbe essere soltanto una pagina in cui raccogliere qualche informazione e una lista di lavori. Dovrebbe spiegare cosa fai, per chi lo fai e in che modo lavori.
+Un **sito web personale** non dovrebbe essere soltanto una pagina in cui raccogliere qualche informazione e una lista di lavori. Dovrebbe spiegare **cosa fai, per chi lo fai e in che modo lavori**.
 
 Il mio vecchio sito questo non lo faceva abbastanza.
 
-Così ho deciso di riprogettarlo da zero partendo da una domanda semplice:
-
-**cosa voglio che capisca una persona quando arriva qui?**
+Così ho deciso di riprogettarlo da zero partendo da una domanda semplice: cosa voglio che capisca una persona quando arriva qui?
 
 La risposta, alla fine, è diventata la struttura stessa del sito.
 
@@ -32,11 +30,11 @@ Cercavo uno spazio essenziale e ordinato, ma anche riconoscibile e personale.
 
 ## Una homepage che racconta di più
 
-La homepage è stata una delle parti che ho ripensato maggiormente.
+La **homepage** è stata una delle parti che ho ripensato maggiormente.
 
 Nella versione precedente aveva soprattutto il compito di presentarmi e mostrare alcuni progetti.
 
-Oggi invece funziona più come una panoramica di tutto il sito.
+Oggi invece funziona più come una **panoramica di tutto il sito**.
 
 Chi arriva può capire rapidamente chi sono, di cosa mi occupo, quali servizi offro, vedere alcuni lavori e approfondire le sezioni che gli interessano.
 
@@ -46,40 +44,40 @@ L'obiettivo era trovare un equilibrio: dare abbastanza informazioni per orientar
 
 ## Dare più spazio ai servizi
 
-Uno dei cambiamenti più importanti è stato separare meglio i diversi tipi di lavoro che posso offrire.
+Uno dei cambiamenti più importanti è stato separare meglio i diversi **tipi di lavoro che posso offrire**.
 
 Prima il sito raccontava soprattutto i progetti realizzati.
 
-Ora ho aggiunto pagine dedicate ai principali servizi:
+Ora ho aggiunto pagine dedicate ai **principali servizi**:
 
-* rifacimento di siti web;
-* siti web su misura;
-* web app e gestionali;
-* manutenzione di siti web.
+* [rifacimento di siti web](/servizi/rifacimento-siti-web);
+* [siti web su misura](/servizi/siti-web-su-misura);
+* [web app e gestionali](/servizi/web-app-gestionali);
+* [manutenzione di siti web](/servizi/manutenzione-siti-web).
 
 Questa scelta non serve soltanto a presentare meglio quello che faccio.
 
 Mi permette anche di spiegare le differenze tra servizi che, visti dall'esterno, possono sembrare molto simili.
 
-Un restyling di un sito esistente, ad esempio, parte da esigenze molto diverse rispetto alla progettazione di un sito completamente nuovo.
+Un **restyling di un sito esistente**, ad esempio, parte da esigenze molto diverse rispetto alla **progettazione di un sito completamente nuovo**.
 
-Allo stesso modo, una web app non ha gli stessi obiettivi di un sito vetrina.
+Allo stesso modo, una **web app** non ha gli stessi obiettivi di un **sito vetrina**.
 
 Avere pagine separate mi permette di raccontare meglio problemi, esigenze, funzionalità e modalità di lavoro senza comprimere tutto dentro poche righe.
 
 ## Ripartire dai progetti
 
-Il portfolio rimane comunque una parte centrale del sito.
+Il **portfolio** rimane comunque una parte centrale del sito.
 
 Volevo che i lavori fossero facili da trovare e che avessero abbastanza spazio per essere osservati senza essere nascosti dentro pagine troppo dense.
 
-Ogni progetto nasce da esigenze differenti: alcuni sono restyling, altri partono completamente da zero, altri ancora comprendono funzionalità più tecniche o strumenti creati per semplificare la gestione dei contenuti.
+Ogni progetto nasce da **esigenze differenti**: alcuni sono restyling, altri partono completamente da zero, altri ancora comprendono funzionalità più tecniche o strumenti creati per semplificare la gestione dei contenuti.
 
 Per questo non volevo limitarmi a mostrare una serie di screenshot.
 
 Le pagine dei singoli progetti mi permettono di raccontare meglio il contesto, il problema iniziale e il tipo di intervento che ho realizzato.
 
-In questo modo il portfolio non è soltanto una raccolta di lavori, ma anche un modo per mostrare concretamente il mio approccio.
+In questo modo il portfolio non è soltanto una raccolta di lavori, ma anche un modo per mostrare concretamente **il mio approccio**.
 
 ## Un'identità visiva più coerente
 
@@ -103,7 +101,7 @@ Con il tempo ho capito che il sito non doveva servire soltanto a mostrare ciò c
 
 Volevo anche che aiutasse chi arriva a capire meglio alcune scelte e alcuni concetti legati al web.
 
-Quando si cerca un professionista per realizzare o rifare un sito, infatti, ci si trova facilmente davanti a termini come dominio, hosting, SEO, manutenzione, responsive design o CMS.
+Quando si cerca un professionista per realizzare o rifare un sito, infatti, ci si trova facilmente davanti a termini come **dominio, hosting, SEO, manutenzione, responsive design o CMS**.
 
 Per chi lavora nel settore sono parole normali.
 
@@ -121,11 +119,11 @@ Volevo avere uno spazio più libero in cui approfondire argomenti che nelle pagi
 
 Il portfolio mostra il risultato finale, ma non permette sempre di spiegare perché una pagina è strutturata in un certo modo, quali compromessi sono stati fatti o cosa c'è dietro a una determinata scelta tecnica.
 
-Il blog nasce quindi da due esigenze.
+Il **blog** nasce quindi da due esigenze.
 
 La prima è raccontare meglio il mio lavoro.
 
-Qui posso parlare di sviluppo web, progettazione, restyling, manutenzione, performance e delle decisioni che prendo durante i progetti.
+Qui posso parlare di **sviluppo web**, progettazione, restyling, manutenzione, performance e delle decisioni che prendo durante i progetti.
 
 La seconda è più divulgativa.
 
