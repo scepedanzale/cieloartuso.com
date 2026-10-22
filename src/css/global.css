@@ -247,6 +247,12 @@ h2 {
 
 .icon {
     max-width: 70px;
+    /* spessore uguale in px a qualsiasi dimensione; si può cambiare per contesto */
+    stroke-width: var(--icon-stroke, 1.5);
+}
+
+.icon * {
+    vector-effect: non-scaling-stroke;
 }
 
 .link {
