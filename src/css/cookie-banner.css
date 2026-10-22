@@ -15,10 +15,11 @@
 
   padding: 28px;
 
-  border: 1px solid var(--border, #b4b4b4);
+  border: 1px solid var(--color-border);
   border-radius: 5px;
 
-  background: var(--surface, #eee7e2);
+  background: var(--color-surface);
+  color: var(--color-text);
 
   box-shadow:
     0 20px 50px rgba(0, 0, 0, 0.12);
@@ -34,7 +35,7 @@
 .cookie-banner p {
   margin: 0 0 12px;
 
-  color: var(--muted, #646464);
+  color: var(--color-muted);
 
   font-size: 0.95rem;
   line-height: 1.55;
@@ -59,7 +60,7 @@
 
   padding: 0;
 
-  border: 1px solid var(--border, #b4b4b4);
+  border: 1px solid var(--color-border);
   border-radius: 50%;
 
   background: transparent;
@@ -109,9 +110,9 @@
 }
 
 .cookie-button--primary {
-  border: 1px solid var(--soft, #5f7767);
+  border: 1px solid var(--color-soft);
 
-  background: var(--soft, #5f7767);
+  background: var(--color-soft);
   color: white;
 }
 
@@ -120,7 +121,7 @@
 }
 
 .cookie-button--secondary {
-  border: 1px solid var(--border, #b4b4b4);
+  border: 1px solid var(--color-border);
 
   background: transparent;
   color: inherit;
@@ -169,10 +170,11 @@
 
   padding: 32px;
 
-  border: 1px solid var(--border, #b4b4b4);
+  border: 1px solid var(--color-border);
   border-radius: 5px;
 
-  background: var(--surface, #eee7e2);
+  background: var(--color-surface);
+  color: var(--color-text);
 
   z-index: 1;
 
@@ -189,7 +191,7 @@
 .cookie-modal__intro {
   margin: 0 0 24px;
 
-  color: var(--muted, #646464);
+  color: var(--color-muted);
 
   line-height: 1.5;
 }
@@ -207,10 +209,11 @@
 
   padding: 0;
 
-  border: 1px solid var(--border, #b4b4b4);
+  border: 1px solid var(--color-border);
   border-radius: 50%;
 
   background: transparent;
+  color: inherit;
 
   font-size: 1.35rem;
 
@@ -229,11 +232,11 @@
 
   padding: 20px 0;
 
-  border-top: 1px solid var(--border, #b4b4b4);
+  border-top: 1px solid var(--color-border);
 }
 
 .cookie-option:last-of-type {
-  border-bottom: 1px solid var(--border, #b4b4b4);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .cookie-option strong {
@@ -245,7 +248,7 @@
 .cookie-option p {
   margin: 0;
 
-  color: var(--muted, #646464);
+  color: var(--color-muted);
 
   font-size: 0.9rem;
   line-height: 1.45;
@@ -259,7 +262,7 @@
 
   margin-top: 2px;
 
-  accent-color: var(--soft, #5f7767);
+  accent-color: var(--color-soft);
 
   cursor: pointer;
 }
