@@ -1,0 +1,481 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ArrowIcon from "../components/icons/ArrowIcon.astro";
+import WaveLine from "../components/WaveLine.astro";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Analisi gratuita del sito web | Cielo Artuso",
+  description:
+    "Controlla gratis velocità, peso e impatto ambientale del tuo sito web e ricevi un'analisi personalizzata.",
+  url: Astro.url.href,
+  about: {
+    "@id": "https://www.cieloartuso.com/#person",
+  },
+};
+---
+
+<BaseLayout
+  title="Analisi gratuita del sito web | Cielo Artuso"
+  description="Controlla gratis velocità, peso e impatto ambientale del tuo sito web e ricevi un'analisi personalizzata."
+  structuredData={structuredData}
+>
+  <div class="contact-page analysis-page">
+    <!-- HERO + CONTROLLO -->
+    <section class="page-hero analysis-hero">
+      <div class="container">
+        <p class="eyebrow">Analisi gratuita</p>
+        <h1>Quanto è leggero il tuo sito?</h1>
+        <WaveLine />
+        <p class="page-intro">
+          Inserisci l’indirizzo del tuo sito: in meno di un minuto vedi quanto è
+          veloce da smartphone, quanto pesa e quanta CO₂ produce ogni visita.
+        </p>
+
+        <form class="analysis-check reveal" id="analysis-check">
+          <label for="check-url" class="visually-hidden">Indirizzo del sito</label>
+          <input
+            id="check-url"
+            name="url"
+            type="text"
+            inputmode="url"
+            autocomplete="url"
+            placeholder="www.iltuosito.it"
+            required
+          />
+          <button type="submit" class="button button--primary">
+            Analizza
+            <ArrowIcon />
+          </button>
+        </form>
+
+        <p class="analysis-check__note">
+          Il test usa PageSpeed Insights di Google e simula una visita da
+          smartphone.
+        </p>
+      </div>
+    </section>
+
+    <!-- RISULTATI -->
+    <section class="analysis-results" id="analysis-results" hidden>
+      <div class="container">
+        <div class="analysis-results__status">
+          <span class="analysis-loader" aria-hidden="true">
+            <svg viewBox="0 0 160 40">
+              <path
+                d="M0 27 C 18 26, 32 20, 50 23 S 82 34, 100 31 S 124 23, 134 21"
+                pathLength="1"
+              />
+              <circle cx="143" cy="18" r="9" pathLength="1" transform="rotate(162 143 18)" />
+              <circle class="analysis-loader__dot" cx="143" cy="18" r="3.5" />
+            </svg>
+          </span>
+          <p aria-live="polite" role="status"></p>
+        </div>
+
+        <div class="analysis-results__content" hidden>
+          <div class="section-heading">
+            <p class="eyebrow">Risultato</p>
+            <h2 id="analysis-title">Ecco com’è andata</h2>
+          </div>
+
+          <ul class="analysis-metrics">
+            <li data-metric="score">
+              <span class="analysis-metrics__label">Prestazioni mobile</span>
+              <strong class="analysis-metrics__value"></strong>
+              <span class="analysis-metrics__hint">Punteggio Google da 0 a 100</span>
+            </li>
+            <li data-metric="lcp">
+              <span class="analysis-metrics__label">Caricamento</span>
+              <strong class="analysis-metrics__value"></strong>
+              <span class="analysis-metrics__hint" id="lcp-hint">Tempo per vedere il contenuto principale</span>
+            </li>
+            <li data-metric="weight">
+              <span class="analysis-metrics__label">Peso della pagina</span>
+              <strong class="analysis-metrics__value"></strong>
+              <span class="analysis-metrics__hint">Dati scaricati a ogni visita</span>
+            </li>
+            <li data-metric="co2">
+              <span class="analysis-metrics__label">CO₂ per visita</span>
+              <strong class="analysis-metrics__value"></strong>
+              <span class="analysis-metrics__hint">Stima basata sul peso della pagina</span>
+            </li>
+          </ul>
+
+          <p class="analysis-results__summary" id="analysis-summary"></p>
+
+          <p class="analysis-check__note">
+            Il punteggio viene da un test simulato e può variare di qualche
+            punto da un’analisi all’altra, anche su PageSpeed Insights.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COSA GUARDO -->
+    <section class="analysis-why">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Perché contano</p>
+          <h2>Un sito leggero lavora meglio</h2>
+        </div>
+
+        <ul class="reasons__list">
+          <li class="reveal">
+            <div>
+              <h3>Chi arriva, resta</h3>
+              <p>
+                Un sito lento fa perdere pazienza a chi lo visita, soprattutto
+                da smartphone. Più è veloce, più persone arrivano fino ai tuoi
+                contatti.
+              </p>
+            </div>
+          </li>
+          <li class="reveal d1">
+            <div>
+              <h3>Google lo considera</h3>
+              <p>
+                La velocità è uno degli aspetti che Google valuta per
+                l’esperienza offerta dalle pagine: un sito leggero parte
+                avvantaggiato.
+              </p>
+            </div>
+          </li>
+          <li class="reveal d2">
+            <div>
+              <h3>Meno sprechi</h3>
+              <p>
+                Ogni file scaricato consuma energia tra server, rete e
+                dispositivi. Togliere il superfluo rende il sito più veloce e
+                riduce il suo impatto.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section id="form-section">
+      <div class="container">
+        <div class="contact-form-wrapper reveal">
+          <div class="section-heading contact-form__heading">
+            <p class="eyebrow">Analisi personalizzata</p>
+            <h2>Vuoi sapere cosa migliorare?</h2>
+            <p>
+              I numeri dicono come va, non perché. Lasciami il tuo sito: lo
+              guardo io e ti mando qualche osservazione concreta su velocità,
+              struttura e contenuti, gratis e senza impegno.
+            </p>
+          </div>
+
+          <form
+            action="https://formspree.io/f/xzzdlbkq"
+            method="POST"
+            class="contact-form"
+            id="analysis-form"
+          >
+            <input type="hidden" name="_subject" value="Richiesta analisi sito" />
+            <input type="hidden" name="service" value="analisi-sito" />
+            <input type="hidden" name="risultati" id="analysis-data" />
+
+            <div class="contact-form__row">
+              <div class="form-field">
+                <label for="name">Nome</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  placeholder="Come ti chiami?"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  placeholder="nome@email.it"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="website">Sito da analizzare</label>
+              <input
+                id="website"
+                name="website"
+                type="text"
+                inputmode="url"
+                autocomplete="url"
+                placeholder="www.iltuosito.it"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <label for="message">
+                Cosa vorresti migliorare?
+                <span>facoltativo</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Di cosa si occupa la tua attività? C’è qualcosa del sito che non ti convince?"
+              ></textarea>
+            </div>
+
+            <label class="form-checkbox">
+              <input type="checkbox" name="privacy" required />
+              <span>
+                Ho letto e accetto la
+                <a class="link" href="/privacy-policy">privacy policy</a>.
+              </span>
+            </label>
+
+            <div class="contact-form__footer">
+              <button type="submit" class="button button--primary">
+                Richiedi l’analisi
+                <ArrowIcon />
+              </button>
+              <p>Ti rispondo entro 2 giorni lavorativi</p>
+            </div>
+
+            <p class="contact-form__status" aria-live="polite" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<script>
+  // Chiave API di Google PageSpeed Insights (facoltativa ma consigliata:
+  // senza chiave il limite di richieste è condiviso e può dare errore 429).
+  // Da limitare per referrer HTTP a www.cieloartuso.com nella Google Cloud Console.
+  const PSI_API_KEY = "AIzaSyB1RSTCymuWh8fG0t3bChW8cvc-TXslrrA";
+
+  // Stima CO2 secondo il Sustainable Web Design Model (v3), come Website Carbon:
+  // 0.81 kWh per GB, 75% nuove visite e 25% visite di ritorno (2% dei dati),
+  // intensità di carbonio media globale di 442 g/kWh.
+  const gramsCo2PerByte = (0.81 / 1e9) * (0.75 + 0.25 * 0.02) * 442;
+
+  const checkForm = document.querySelector("#analysis-check");
+  const results = document.querySelector("#analysis-results");
+  const status = results?.querySelector(".analysis-results__status");
+  const content = results?.querySelector(".analysis-results__content");
+  const summary = document.querySelector("#analysis-summary");
+  const websiteField = document.querySelector("#website");
+  const analysisData = document.querySelector("#analysis-data");
+
+  const normalizeUrl = (value: string) => {
+    const trimmed = value.trim();
+    const withProtocol = /^https?:\/\//i.test(trimmed)
+      ? trimmed
+      : `https://${trimmed}`;
+    return new URL(withProtocol).href;
+  };
+
+  const formatBytes = (bytes: number) =>
+    bytes >= 1024 * 1024
+      ? `${(bytes / 1024 / 1024).toFixed(1).replace(".", ",")} MB`
+      : `${Math.round(bytes / 1024)} KB`;
+
+  const setMetric = (
+    name: string,
+    value: string,
+    level: "good" | "average" | "poor",
+  ) => {
+    const item = results?.querySelector(`[data-metric="${name}"]`);
+    const valueEl = item?.querySelector(".analysis-metrics__value");
+    if (!(item instanceof HTMLElement) || !valueEl) return;
+
+    valueEl.textContent = value;
+    item.dataset.level = level;
+  };
+
+  const levelOf = (value: number, good: number, poor: number) =>
+    value <= good ? "good" : value >= poor ? "poor" : "average";
+
+  const showStatus = (message: string, loading = false) => {
+    if (!(status instanceof HTMLElement)) return;
+
+    const text = status.querySelector("p");
+    if (text) text.textContent = message;
+    status.hidden = !message;
+    status.classList.toggle("is-loading", loading);
+  };
+
+  if (checkForm instanceof HTMLFormElement && results instanceof HTMLElement) {
+    const input = checkForm.querySelector("input");
+    const button = checkForm.querySelector("button");
+
+    checkForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!(input instanceof HTMLInputElement) || !(button instanceof HTMLButtonElement)) return;
+
+      let url: string;
+      try {
+        url = normalizeUrl(input.value);
+      } catch {
+        input.setCustomValidity("Inserisci un indirizzo valido, ad esempio www.iltuosito.it");
+        input.reportValidity();
+        input.setCustomValidity("");
+        return;
+      }
+
+      const originalButton = button.innerHTML;
+      button.disabled = true;
+      button.innerHTML = "<span>Analisi in corso...</span>";
+      results.hidden = false;
+      if (content instanceof HTMLElement) content.hidden = true;
+      showStatus("Sto analizzando il sito, di solito servono 20–40 secondi…", true);
+      results.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      try {
+        const endpoint = new URL(
+          "https://www.googleapis.com/pagespeedonline/v5/runPagespeed",
+        );
+        endpoint.searchParams.set("url", url);
+        endpoint.searchParams.set("strategy", "mobile");
+        endpoint.searchParams.set("category", "performance");
+        if (PSI_API_KEY) endpoint.searchParams.set("key", PSI_API_KEY);
+
+        const response = await fetch(endpoint, { credentials: "omit" });
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(
+            response.status === 429
+              ? "Troppe analisi in questo momento: riprova tra qualche minuto."
+              : "Non sono riuscito ad analizzare questo indirizzo. Controlla che sia corretto e che il sito sia online.",
+          );
+        }
+
+        const lighthouse = data.lighthouseResult;
+        const score = Math.round((lighthouse.categories.performance.score ?? 0) * 100);
+        // Caricamento: dati reali degli utenti Chrome (ultimi 28 giorni) se Google li ha,
+        // come in Search Console; altrimenti il valore del test simulato
+        const fieldLcp = data.loadingExperience?.metrics?.LARGEST_CONTENTFUL_PAINT_MS?.percentile;
+        const lcp = (fieldLcp ?? lighthouse.audits["largest-contentful-paint"].numericValue) / 1000;
+        const lcpHint = document.querySelector("#lcp-hint");
+        if (lcpHint) {
+          lcpHint.textContent = fieldLcp
+            ? "Dati reali degli utenti, ultimi 28 giorni"
+            : "Misurato nel test, contenuto principale visibile";
+        }
+        const bytes = lighthouse.audits["total-byte-weight"].numericValue;
+        const co2 = bytes * gramsCo2PerByte;
+
+        setMetric("score", String(score), score >= 90 ? "good" : score >= 50 ? "average" : "poor");
+        setMetric("lcp", `${lcp.toFixed(1).replace(".", ",")} s`, levelOf(lcp, 2.5, 4));
+        setMetric("weight", formatBytes(bytes), levelOf(bytes, 1024 * 1024, 2.5 * 1024 * 1024));
+        setMetric("co2", `${co2.toFixed(2).replace(".", ",")} g`, levelOf(co2, 0.3, 0.7));
+
+        const host = new URL(url).hostname.replace(/^www\./, "");
+        const title = document.querySelector("#analysis-title");
+        if (title) title.textContent = `Ecco com’è andata per ${host}`;
+
+        if (summary) {
+          summary.textContent =
+            score >= 90 && bytes <= 1024 * 1024
+              ? "Ottimo risultato: il sito è veloce e leggero. Se vuoi, posso comunque dargli un’occhiata a struttura e contenuti."
+              : score >= 50
+                ? "Il sito funziona, ma c’è margine per renderlo più veloce e leggero. Spesso bastano interventi mirati su immagini, script e caricamenti."
+                : "Il sito è lento da smartphone e probabilmente sta facendo perdere visite. Vale la pena capire da dove nasce il problema.";
+        }
+
+        if (websiteField instanceof HTMLInputElement) websiteField.value = url;
+        if (analysisData instanceof HTMLInputElement) {
+          analysisData.value = `Punteggio ${score}, LCP ${lcp.toFixed(1)} s, peso ${formatBytes(bytes)}, CO2 ${co2.toFixed(2)} g`;
+        }
+
+        showStatus("");
+        if (content instanceof HTMLElement) content.hidden = false;
+      } catch (error) {
+        showStatus(
+          error instanceof Error && error.message
+            ? error.message
+            : "Si è verificato un errore. Riprova tra poco.",
+        );
+      } finally {
+        button.disabled = false;
+        button.innerHTML = originalButton;
+      }
+    });
+  }
+
+  // Invio richiesta di analisi personalizzata (stessa logica del form contatti)
+  const form = document.querySelector("#analysis-form");
+
+  if (form instanceof HTMLFormElement) {
+    const formStatus = form.querySelector(".contact-form__status");
+    const submitButton = form.querySelector('button[type="submit"]');
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!(submitButton instanceof HTMLButtonElement)) return;
+
+      if (websiteField instanceof HTMLInputElement) {
+        try {
+          websiteField.value = normalizeUrl(websiteField.value);
+        } catch {
+          // lascio il valore com'è: lo leggo comunque io
+        }
+      }
+
+      const originalButtonContent = submitButton.innerHTML;
+      submitButton.disabled = true;
+      submitButton.innerHTML = "<span>Invio in corso...</span>";
+
+      if (formStatus instanceof HTMLElement) {
+        formStatus.textContent = "";
+        formStatus.classList.remove(
+          "contact-form__status--success",
+          "contact-form__status--error",
+        );
+      }
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        });
+
+        if (!response.ok) {
+          throw new Error("Non è stato possibile inviare la richiesta.");
+        }
+
+        form.reset();
+
+        if (formStatus instanceof HTMLElement) {
+          formStatus.textContent =
+            "Richiesta inviata! Ti mando l’analisi entro 2 giorni lavorativi.";
+          formStatus.classList.add("contact-form__status--success");
+        }
+
+        submitButton.innerHTML = "<span>Richiesta inviata</span>";
+      } catch (error) {
+        if (formStatus instanceof HTMLElement) {
+          formStatus.textContent =
+            error instanceof Error
+              ? error.message
+              : "Si è verificato un errore. Riprova tra poco.";
+          formStatus.classList.add("contact-form__status--error");
+        }
+
+        submitButton.innerHTML = originalButtonContent;
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+  }
+</script>

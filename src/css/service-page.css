@@ -19,6 +19,16 @@
     max-width: 800px;
 }
 
+.service-page .service-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.service-page .service-hero__actions .button--secondary {
+    color: var(--color-text);
+}
+
 
 /* CTA condivisa */
 .project-cta {

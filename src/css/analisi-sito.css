@@ -1,0 +1,242 @@
+/* ==================================================
+   ANALISI SITO
+================================================== */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* CONTROLLO */
+
+.analysis-check {
+  display: flex;
+  max-width: 680px;
+  margin-top: 30px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-card);
+}
+
+.analysis-check:focus-within {
+  border-color: var(--color-accent);
+}
+
+.analysis-check input {
+  flex: 1;
+  min-width: 0;
+  min-height: 56px;
+  padding: 0 18px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+}
+
+.analysis-check .button {
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.analysis-check .button:disabled {
+  cursor: wait;
+  opacity: 0.75;
+}
+
+.analysis-check__note {
+  margin-top: 12px;
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+/* RISULTATI */
+
+.analysis-results__status {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--color-muted);
+  font-size: 18px;
+}
+
+.analysis-results__status[hidden] {
+  display: none;
+}
+
+.analysis-results__status p {
+  margin: 0;
+}
+
+/* Loader: la linea ondulata si traccia, poi cerchio e punto, poi si cancella e riparte */
+
+.analysis-loader {
+  display: none;
+  flex-shrink: 0;
+  width: 64px;
+  color: var(--color-accent);
+}
+
+.analysis-results__status.is-loading .analysis-loader {
+  display: block;
+}
+
+.analysis-loader svg {
+  display: block;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.analysis-loader path,
+.analysis-loader circle:not(.analysis-loader__dot) {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.analysis-loader path {
+  animation: analysis-loader-line 2.4s ease-in-out infinite;
+}
+
+.analysis-loader circle:not(.analysis-loader__dot) {
+  animation: analysis-loader-circle 2.4s ease-in-out infinite;
+}
+
+.analysis-loader__dot {
+  fill: currentColor;
+  stroke: none;
+  opacity: 0;
+  animation: analysis-loader-dot 2.4s ease-in-out infinite;
+}
+
+@keyframes analysis-loader-line {
+  0% { stroke-dashoffset: 1; }
+  40%, 75% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -1; }
+}
+
+@keyframes analysis-loader-circle {
+  0%, 35% { stroke-dashoffset: 1; }
+  55%, 80% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -1; }
+}
+
+@keyframes analysis-loader-dot {
+  0%, 52% { opacity: 0; }
+  60%, 82% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .analysis-loader path,
+  .analysis-loader circle:not(.analysis-loader__dot) {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+
+  .analysis-loader__dot {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+.analysis-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--color-border);
+}
+
+.analysis-metrics li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 26px 22px;
+  border-top: 3px solid transparent;
+}
+
+.analysis-metrics li:not(:last-child) {
+  border-right: 1px solid var(--color-border);
+}
+
+.analysis-metrics li[data-level="good"] {
+  border-top-color: var(--color-soft);
+}
+
+.analysis-metrics li[data-level="average"] {
+  border-top-color: #c39a3e;
+}
+
+.analysis-metrics li[data-level="poor"] {
+  border-top-color: var(--color-accent);
+}
+
+.analysis-metrics__label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.analysis-metrics__value {
+  font-family: var(--font-title);
+  font-size: 2.2rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.analysis-metrics__hint {
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+.analysis-results__summary {
+  max-width: 720px;
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+/* PERCHÉ CONTANO */
+
+.analysis-why {
+  background-color: var(--color-bg-dark);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+  .analysis-metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .analysis-metrics li:nth-child(2) {
+    border-right: 0;
+  }
+
+  .analysis-metrics li:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--color-border);
+  }
+}
+
+@media (max-width: 576px) {
+  .analysis-check {
+    flex-direction: column;
+  }
+
+  .analysis-check .button {
+    justify-content: space-between;
+  }
+
+  .analysis-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .analysis-metrics li:not(:last-child) {
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+}
