@@ -2,6 +2,7 @@
 import ImageIcon from "../components/icons/ImageIcon.astro";
 import PcIcon from "../components/icons/PcIcon.astro";
 import LockIcon from "../components/icons/LockIcon.astro";
+import CheckIcon from "../components/icons/CheckIcon.astro";
 import WaveLine from "../components/WaveLine.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ArrowIcon from "../components/icons/ArrowIcon.astro";
@@ -47,14 +48,19 @@ const structuredData = {
               e, da remoto, ovunque.
             </p>
             <br />
-            <p><b>Cosa vuol dire web developer?</b></p>
             <p>
-              Nel mio caso, sviluppo siti web, gestionali, dashboard e strumenti
-              automatici.
-              <br />Aiuto brand locali, attività e professionisti a
-              rappresentarsi online in modo chiaro e a costruire strumenti
-              digitali realmente utili al loro lavoro.
+              Progetto e sviluppo siti web e web app su misura: dalla vetrina di
+              un’attività locale al gestionale che ti fa risparmiare ore di
+              lavoro ogni settimana.
             </p>
+            <p>
+              Il mio modo di lavorare si riassume così: la tecnologia giusta,
+              senza sprechi, e un percorso in cui sai sempre a che punto siamo.
+            </p>
+            <a href="#perche-me" class="button button--primary">
+              Perché scegliere me
+              <ArrowIcon />
+            </a>
           </div>
         </div>
         <img
@@ -65,69 +71,83 @@ const structuredData = {
       </header>
     </section>
 
-    <!-- FORMAZIONE -->
-    <section class="training">
+    <!-- PERCHÉ SCEGLIERE ME -->
+    <section id="perche-me" class="reasons">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Formazione</p>
-          <h2>Tra creatività e sviluppo</h2>
+          <p class="eyebrow">Perché scegliere me</p>
+          <h2>Sai sempre a che punto siamo</h2>
           <p>
-            Il mio percorso nasce dall’incontro tra sensibilità visiva e
-            competenze tecniche.
+            Lavorare con me significa avere un processo chiaro dall’inizio alla
+            fine, e qualcuno che ti guida in ogni passaggio.
           </p>
         </div>
 
-        <div class="training__content">
-          <ul class="training__list">
-            <li class="reveal">
-              <ImageIcon />
-              <div>
-                <h3>Una base artistica</h3>
-                <p>
-                  Ho sempre disegnato fin da piccolo e ho poi approfondito
-                  questa inclinazione attraverso il liceo artistico. <br /> Questo
-                  percorso mi ha aiutato a sviluppare attenzione per l’equilibrio
-                  visivo, i colori, la composizione e i dettagli: aspetti che oggi
-                  porto anche nella progettazione di siti web.
-                </p>
-              </div>
-            </li>
+        <div class="reasons__portal reveal">
+          <div>
+            <h3>Un portale dedicato per seguire il tuo progetto</h3>
+            <p>
+              Dal primo giorno alla consegna hai accesso a uno spazio riservato
+              in cui vedi a che punto sono i lavori, quali passi sono stati
+              completati e cosa succede dopo. <br /> Niente email perse o
+              domande del tipo “a che punto siamo?”: è tutto lì, sempre
+              aggiornato.
+            </p>
+          </div>
 
-            <li class="reveal d1">
-              <PcIcon />
-              <div>
-                <h3>Corsi e attestati in ambito tech</h3>
-                <p>
-                  Dopo la base artistica, ho scelto di formarmi in modo più
-                  tecnico attraverso corsi dedicati allo sviluppo web e
-                  software, ottenendo attestati che hanno consolidato le mie
-                  competenze in ambito full stack development.
-                </p>
-              </div>
-            </li>
-
-            <li class="reveal d2">
-              <LockIcon />
-              <div>
-                <h3>Competenze più ampie</h3>
-                <p>
-                  Nel tempo ho ampliato il mio percorso anche verso temi come
-                  networking, sicurezza, infrastruttura e gestione dei sistemi.
-                  <br /> Questo mi permette di guardare un sito non solo dal punto
-                  di vista estetico, ma anche da quello tecnico, pratico e manutentivo.
-                </p>
-              </div>
-            </li>
+          <ul>
+            <li><CheckIcon /> Avanzamento del progetto passo dopo passo</li>
+            <li><CheckIcon /> Prossimi passi sempre chiari</li>
+            <li><CheckIcon /> Cosa serve da parte tua, e quando</li>
           </ul>
         </div>
+
+        <ul class="reasons__list">
+          <li class="reveal">
+            <ImageIcon />
+            <div>
+              <h3>Attenzione alla parte visiva</h3>
+              <p>
+                Disegno da sempre e vengo da un percorso artistico. Equilibrio,
+                colori, composizione e dettagli sono la prima cosa che guardo:
+                un sito deve funzionare, ma anche rappresentarti.
+              </p>
+            </div>
+          </li>
+
+          <li class="reveal d1">
+            <PcIcon />
+            <div>
+              <h3>Su misura, non adattato</h3>
+              <p>
+                Ogni progetto nasce attorno alla tua attività, non da un tema
+                già pronto da riempire. <br /> Mi sono formato nello sviluppo
+                web e software full stack: dal sito vetrina alla web app con
+                database.
+              </p>
+            </div>
+          </li>
+
+          <li class="reveal d2">
+            <LockIcon />
+            <div>
+              <h3>Anche ciò che non si vede</h3>
+              <p>
+                Ho approfondito networking, sicurezza e gestione dei sistemi.
+                <br /> Per questo guardo un sito anche dal lato tecnico: hosting,
+                prestazioni, sicurezza e manutenzione nel tempo.
+              </p>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
 
     <section class="approach">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Il mio approccio</p>
-          <h2>Ti guido io, senza complicare il processo</h2>
+          <p class="eyebrow">Come lavoriamo insieme</p>
+          <h2>Ti guido io, dall’inizio alla fine</h2>
           <p>
             Non serve arrivare con un’idea perfetta, una mappa del sito già
             pronta o parole tecniche da usare. <br /> Il mio lavoro parte proprio
@@ -169,10 +189,10 @@ const structuredData = {
               <p class="approach-step__label">Sviluppo</p>
               <h3>Vedi il sito prendere forma, passo dopo passo</h3>
               <p>
-                Durante il lavoro ti tengo aggiornato con avanzamenti chiari e
-                frequenti. Non sparisco fino alla consegna: ti mostro cosa sto
-                facendo, ti spiego le scelte importanti e mantengo il processo
-                comprensibile.
+                Ogni avanzamento lo trovi nel tuo portale: cosa è stato fatto,
+                cosa sto facendo e cosa viene dopo. Non sparisco fino alla
+                consegna: ti mostro il lavoro, ti spiego le scelte importanti e
+                il processo resta sempre comprensibile.
               </p>
             </div>
           </article>

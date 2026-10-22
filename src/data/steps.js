@@ -2,7 +2,7 @@ export const steps = [
   {
     number: "01",
     title: "Analisi",
-    text: "Ascolto le tue esigenze e analizzo il tuo sito attuale e i tuoi obiettivi.",
+    text: "Ti faccio le domande giuste per capire la tua attività, i tuoi obiettivi e cosa serve davvero.",
   },
   {
     number: "02",
@@ -12,11 +12,11 @@ export const steps = [
   {
     number: "03",
     title: "Sviluppo",
-    text: "Progetto e sviluppo il sito con cura, pulizia e attenzione ai dettagli.",
+    text: "Sviluppo il progetto con cura e tu segui ogni avanzamento dal tuo portale.",
   },
   {
     number: "04",
     title: "Pubblicazione",
-    text: "Test, messa online e supporto per far crescere il tuo progetto.",
+    text: "Test, messa online e una consegna chiara: sai cosa hai in mano e come gestirlo.",
   },
 ];
