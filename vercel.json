@@ -1,4 +1,13 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/works/acquabella", "destination": "/portfolio/osteria-acquabella", "permanent": true },
+    { "source": "/work/:slug", "destination": "/portfolio/:slug", "permanent": true },
+    { "source": "/works/:slug", "destination": "/portfolio/:slug", "permanent": true },
+    { "source": "/privacy", "destination": "/privacy-policy", "permanent": true },
+    { "source": "/cookie", "destination": "/privacy-policy", "permanent": true },
+    { "source": "/blog/come-funziona-davvor-un-computer", "destination": "/blog/come-funziona-davvero-un-computer", "permanent": true },
+    { "source": "/blog/come-funziona-davvero-interruttore-0-1", "destination": "/blog/come-funziona-davvero-un-computer", "permanent": true }
+  ]
 }
