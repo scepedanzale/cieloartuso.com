@@ -5,7 +5,7 @@ date: 2026-11-05
 cover: "/images/blog/ti-hanno-rubato-una-password.webp"
 readingTime: 6
 tag: "tech"
-draft: true
+draft: false
 ---
 
 Ti arriva un'email che dice «Nuovo accesso al tuo account». Non eri tu.
